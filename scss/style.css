@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @layer Reset, Layout,Component, Button, Visual, Form, Heading, Pages, Align, Space;
 :root {
   --primary-900: #020A33;
@@ -310,20 +311,20 @@
   }
 }
 @layer Button {
-  .header .header-btn-wrap {
+  .main-header .header-btn-wrap {
     display: flex;
   }
-  .header .header-btn-wrap button {
+  .main-header .header-btn-wrap button {
     width: 3.6rem;
     height: 3.6rem;
   }
-  .header .header-btn-wrap button.btn-search {
+  .main-header .header-btn-wrap button.btn-search {
     background: url(../asset/images/ico_main_header_01_24.svg) no-repeat center/2.4rem auto;
   }
-  .header .header-btn-wrap button.btn-alarm {
+  .main-header .header-btn-wrap button.btn-alarm {
     background: url(../asset/images/ico_main_header_02_24.svg) no-repeat center/2.4rem auto;
   }
-  .header .header-btn-wrap button.btn-setting {
+  .main-header .header-btn-wrap button.btn-setting {
     background: url(../asset/images/ico_main_header_03_24.svg) no-repeat center/2.4rem auto;
   }
   .btn-arrow-style01 {
@@ -339,14 +340,21 @@
 @layer Component.Pagination {}
 @layer Header.Gnb {}
 @layer Layout.Header {
-  .header {
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
+    background-color: #F4F6F8;
+    transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 애니메이션 적용 */
   }
-  .header .heading.logo {
+  .main-header .heading.logo {
     font-size: 2rem;
     font-weight: 700;
   }
@@ -362,10 +370,14 @@
   footer .footer-group {
     display: flex;
     justify-content: space-around;
-    padding: 1.6rem 0;
+    padding: 1.6rem 0 0.6rem 0;
     width: 100%;
     border-radius: 2.4rem 2.4rem 0 0;
     background-color: var(--white);
+  }
+  footer .footer-group button img {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }
 @layer Layout.Base {
@@ -378,6 +390,7 @@
 @layer pages.index {
   .main {
     padding: 0 1.6rem;
+    margin-top: 3.6rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;

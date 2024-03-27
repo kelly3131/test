@@ -2,13 +2,19 @@
 @import "../components/Gnb";
 
 @layer Layout.Header {
-    .header {
+    .main-header {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index: 1000;
         display:flex;
         justify-content: space-between;
         align-items: center;
         padding-left: 1.6rem;
         padding-right: 1.6rem;
-        //setting아이콘에 이미 여백이 있으니 그 여백을 뺀 나머지 0.7
+        background-color: #F4F6F8;
+        transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 애니메이션 적용 */
         // border:1px solid red;
         .heading.logo {
             font-size: 2rem;
