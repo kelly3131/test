@@ -102,9 +102,11 @@
                         }
                     }
                     .mileage {
-                        color: var(--primary-500);
-                        font-size: 1.6rem;
-                        font-weight: 500;
+                        button {
+                            color: var(--primary-500);
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                        }
                     }
                     button {
                         img {
