@@ -379,6 +379,11 @@
     width: 2.4rem;
     height: 2.4rem;
   }
+  footer .footer-group button p {
+    color: var(--neutral-900);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
 }
 @layer Layout.Base {
   body {
@@ -399,7 +404,7 @@
     display: flex;
     align-items: flex-start;
     height: 12rem;
-    background: url(../../asset/images/clay_main_person.png) no-repeat right top/14.5rem auto;
+    background: url(../asset/images/clay_main_person.png) no-repeat right top/14.5rem auto;
   }
   .main section:nth-of-type(1) .notice .btn-wrap {
     margin-top: 2.3rem;
@@ -449,6 +454,8 @@
     background-color: var(--primary-500);
     color: var(--white);
     text-align: left;
+    font-size: 1.6rem;
+    font-weight: 600;
   }
   .main section:nth-of-type(1) .btn-group .btn-my-qr p {
     position: absolute;
@@ -482,6 +489,11 @@
     font-size: 1.6rem;
     font-weight: 500;
   }
+  .main section:nth-of-type(2) .btn-group .mileage {
+    color: var(--primary-500);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
   .main section:nth-of-type(2) .btn-group button img {
     width: 6.4rem;
     height: 6.4rem;
@@ -499,8 +511,9 @@
     font-weight: 400;
   }
   .main section:nth-of-type(2) .btn-group button.my-performance p:nth-of-type(2), .main section:nth-of-type(2) .btn-group button.map p:nth-of-type(2) {
+    color: var(--neutral-900);
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 600;
   }
   .main section:nth-of-type(2) .btn-group button.my-performance {
     background-color: #DCF1EF;
