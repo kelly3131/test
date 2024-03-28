@@ -44,13 +44,17 @@
         ul {
             padding: 0.8rem 1.6rem;
             display: flex;
+            flex-wrap: nowrap;
             gap: 0.4rem;
+            overflow-x: auto;
             li {
                 button {
-                    padding: 0.4rem 0.8rem;
+                    position: relative;
+                    padding: 0.4rem 0.8rem 0.4rem 3.4rem;
                     color: var(--neutral-600);
                     font-size: 1.4rem;
                     font-weight: 400;
+                    white-space: nowrap;
                     background-color: var(--white);
                     border: 0.1rem solid var(--neutral-300);
                     border-radius: 2.4rem;
@@ -58,6 +62,19 @@
                         color: var(--primary-500);
                         font-weight: 700;
                         border: 0.1rem solid var(--primary-500);
+                    }
+                    &.btn-chip {
+                        &::before {
+                            position: absolute;
+                            top: 0;
+                            left: 0.8rem;
+                            content: "";
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            background-color: var(--neutral-600);
+                            // background: url(../images/ico_login.svg) no-repeat 0 0 / contain;
+                        }
+
                     }
                 }
             }

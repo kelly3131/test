@@ -1,6 +1,6 @@
 @layer Form {
 
-    @layer CommonInput {
+    @layer InputCommon {
 
         .input {
             width: var(--width, auto);
@@ -24,13 +24,13 @@
         }
     }
 
-    @layer SearchInput {
-        .input {
-            &.search-map {
-                --width: calc(100% - 1.6rem * 2);
+    @layer InputSearch {
+        .search-map {
+            --width: calc(100% - 1.6rem * 2);
+            input {
+                width: 100%;
                 margin: 0 1.6rem;
             }
         }
-
     }
 }
