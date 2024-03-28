@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 팝업</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="../scss/style.css" />
+
+</head>
+<body>
+    <main class="pop-up">
+        <div class="container">
+            <a class="btn js-click-modal">Open Modal</a>
+            <div class="modal">
+                <div class="header">This is a full-width modal with a title
+                </div>
+                <div class="body"><p>And here is all its contents.</p>
+                <a class="btn js-close-modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script>
+        $('.js-click-modal').click(function(){
+      $('.container').addClass('modal-open');
+    });
+    
+    $('.js-close-modal').click(function(){
+      $('.container').removeClass('modal-open');
+    });
+    </script>
+</body>
+
+
+</html>
