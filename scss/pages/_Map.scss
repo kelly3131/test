@@ -8,6 +8,68 @@
             height: 100vh;
             z-index: -1;
         }
+        .map-mark-group {
+            position: relative;
+            width: calc(100% - 1.6rem * 2);
+            height: 45rem;
+            box-sizing: border-box;
+            // border: 10px solid red;
+            .map-mark {
+                position: absolute;
+                &::before {
+                    content: "";
+                    display:inline-block;
+                    width: 3.2rem;
+                    height: 4.3rem;
+                }
+                &.btn-company {
+                    bottom: 10rem;
+                    right: 10rem;
+                    &::before {
+                        background: url(../asset/images/ico_company_32_43.svg) no-repeat center / 3.2rem 4.3rem;
+                    }
+                }
+                &.btn-labor {
+                    bottom: 20rem;
+                    right: 20rem;
+                    &::before {
+                        width: 3.8rem;
+                        height: 3.8rem;
+                        background: url(../asset/images/ico_labor_38.svg) no-repeat center / 3.8rem auto;
+                    }
+                    .count {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding-top: 2rem;
+                        color: var(--neutral-900);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+                &.btn-equipment {
+                    bottom: 40rem;
+                    left: 10rem;
+                    &::before {
+                        background: url(../asset/images/ico_equipment_32_43.svg) no-repeat center / 3.2rem 4.3rem;
+                    }
+                }
+                &.btn-materials {
+                    bottom: 0;
+                    right: 0;
+                    &::before {
+                        background: url(../asset/images/ico_materials_32_43.svg) no-repeat center / 3.2rem 4.3rem;
+                    }
+                }
+                &.btn-etc {
+                    top: 10rem;
+                    left: 20rem;
+                    &::before {
+                        background: url(../asset/images/ico_etc_32_43.svg) no-repeat center / 3.2rem 4.3rem;
+                    }
+                }
+            }
+        }
     }
 
 

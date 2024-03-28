@@ -71,10 +71,32 @@
                             content: "";
                             width: 2.4rem;
                             height: 2.4rem;
-                            background-color: var(--neutral-600);
-                            // background: url(../images/ico_login.svg) no-repeat 0 0 / contain;
                         }
-
+                    }
+                    &.company {
+                        &::before {
+                            background: url(../asset/images/ico_company_24.svg) no-repeat center / 2.4rem auto;
+                        }
+                    }
+                    &.labor {
+                        &::before {
+                            background: url(../asset/images/ico_labor_24.svg) no-repeat center / 2.4rem auto;
+                        }
+                    }
+                    &.equipment {
+                        &::before {
+                            background: url(../asset/images/ico_equipment_24.svg) no-repeat center / 2.4rem auto;
+                        }
+                    }
+                    &.materials {
+                        &::before {
+                            background: url(../asset/images/ico_materials_24.svg) no-repeat center / 2.4rem auto;
+                        }
+                    }
+                    &.etc {
+                        &::before {
+                            background: url(../asset/images/ico_etc_24.svg) no-repeat center / 2.4rem auto;
+                        }
                     }
                 }
             }
