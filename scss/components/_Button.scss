@@ -58,6 +58,7 @@
                     background-color: var(--white);
                     border: 0.1rem solid var(--neutral-300);
                     border-radius: 2.4rem;
+                    box-shadow: 0.1rem 0.1rem 0.3rem 0.05rem rgba(73, 80, 87, 0.1g) ;
                     &.--active {
                         color: var(--primary-500);
                         font-weight: 700;

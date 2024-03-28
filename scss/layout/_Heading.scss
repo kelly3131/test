@@ -32,6 +32,10 @@
             border: 0.1rem solid var(--neutral-300);
             border-radius: 2.4rem;
             background-color: var(--white);
+            box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem rgba(73, 80, 87, 0.15) ;
+            input {
+                box-shadow: none;
+            }
         }
     }
     
