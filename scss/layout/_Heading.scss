@@ -1,7 +1,7 @@
 // @import "../components/Logo";
 @import "../components/Gnb";
 
-@layer Layout.Header {
+@layer Layout.Heading {
     .main-header {
         position: fixed;
         top:0;
@@ -21,4 +21,6 @@
             font-weight: 700;
         }
     }
+
+    
 }

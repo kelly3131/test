@@ -38,4 +38,29 @@
     //         background: url(../asset/images/ico_main_group01_03_28.svg) no-repeat 0 0 / contain var(--primary-500);
     //     }
     // }
+
+    
+    .filter-chip {
+        ul {
+            padding: 0.8rem 1.6rem;
+            display: flex;
+            gap: 0.4rem;
+            li {
+                button {
+                    padding: 0.4rem 0.8rem;
+                    color: var(--neutral-600);
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    background-color: var(--white);
+                    border: 0.1rem solid var(--neutral-300);
+                    border-radius: 2.4rem;
+                    &.--active {
+                        color: var(--primary-500);
+                        font-weight: 700;
+                        border: 0.1rem solid var(--primary-500);
+                    }
+                }
+            }
+        }
+    }
 }
