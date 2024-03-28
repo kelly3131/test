@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@layer Reset, Layout,Component, Button, Visual, Form, Heading, Form.InputSearch, Pages, Align, Space;
+@layer Reset, Layout,Component, Button, Visual, Form.InputCommon, Form.InputSearch, Heading, Pages, Align, Space;
 :root {
   --primary-900: #020A33;
   --primary-800: #0C1A66;
@@ -378,6 +378,20 @@
   .filter-chip ul li button.etc::before {
     background: url(../asset/images/ico_etc_24.svg) no-repeat center/2.4rem auto;
   }
+  .btn-back::before {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+    background: url(../asset/images/ico_back_24.svg) no-repeat center/2.4rem auto;
+  }
+  .btn-menu::before {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+    background: url(../asset/images/ico_hamburger_24.svg) no-repeat center/2.4rem auto;
+  }
 }
 @layer Heading {}
 @layer Visual {}
@@ -404,12 +418,11 @@
     }
   }
   @layer InputSearch {
-    .search-map {
-      --width: calc(100% - 1.6rem * 2);
-    }
     .search-map input {
       width: 100%;
-      margin: 0 1.6rem;
+      border: none;
+      border-radius: 0;
+      line-height: 3;
     }
   }
 }
@@ -434,6 +447,17 @@
   .main-header .heading.logo {
     font-size: 2rem;
     font-weight: 700;
+  }
+  .map-header .search-map {
+    padding: 0 1.6rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 3.2rem);
+    box-sizing: border-box;
+    border: 0.1rem solid var(--neutral-300);
+    border-radius: 2.4rem;
+    background-color: var(--white);
   }
 }
 @layer Layout.Footer {

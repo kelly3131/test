@@ -102,4 +102,23 @@
             }
         }
     }
+
+    .btn-back {
+        &::before {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            content: "";
+            background: url(../asset/images/ico_back_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .btn-menu {
+        &::before {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            content: "";
+            background: url(../asset/images/ico_hamburger_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
 }

@@ -21,6 +21,18 @@
             font-weight: 700;
         }
     }
-
+    .map-header {
+        .search-map {
+            padding: 0 1.6rem;
+            margin: 0 auto;
+            display:flex;
+            align-items: center;
+            width: calc(100% - 1.6rem * 2);
+            box-sizing: border-box;
+            border: 0.1rem solid var(--neutral-300);
+            border-radius: 2.4rem;
+            background-color: var(--white);
+        }
+    }
     
 }
