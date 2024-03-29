@@ -1010,8 +1010,7 @@
     top: 0;
   }
   .left-slide-header .nav {
-    position: absolute;
-    right: -120%;
+    position: fixed;
     top: 0;
     z-index: 101;
     transition: right 0.7s;
