@@ -1,0 +1,94 @@
+@layer Component.Tab {
+    .tab-navigation {
+        margin: 1.6rem 0;
+        width: 100%;
+        padding: 0.8rem 0;
+        display: flex;
+        input {
+            overflow: hidden;
+            position: absolute;
+            border: none;
+            width: 1px;
+            height: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            &:checked + label {
+                color: var(--primary-500);
+                font-weight: 600;
+            }
+        }
+        & label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //   height: 5.7rem;
+            color: var(--neutral-400);
+            font-size: 1.4rem;
+            font-weight: 400;
+            //   border-radius: 5.7rem;
+        }
+
+        &.first-depth {
+            display: flex;
+            gap: 1.6rem;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+    }
+    .tabs {
+        @for $i from 1 to 5 {
+            &:has(.tab-navigation li:nth-child(#{$i}) input:checked) {
+                .tab-content:nth-of-type(#{$i}) {
+                    display: block;
+                }
+            }
+        }
+        
+        .tab-content {
+            display: none;
+            // background-color: rgba(0, 0, 0, 0.05);
+        //   line-height: 30vh;
+            text-align: left;
+            
+            ul.bookmark {
+                display: flex;
+                flex-direction: column;
+                li {
+                    padding: 1.6rem 0;
+                    position: relative;
+                    width: 100%;
+                    + li {
+                        border-top: 0.1rem solid var(--neutral-200);
+                    }
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: inline-block;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        content: '';
+                        border-radius: 70%;
+                        background-color: var(--neutral-900);
+                    }
+                    p {
+                        padding-left: 0.8rem;
+                        color: var(--neutral-600);
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+        .tab-inner-tab {
+            ul {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                background-color: var(--neutral-100);
+                li {
+                    padding: 0.8rem 0;
+                    margin-left: 0.8rem;
+                }
+            }
+        }
+    }
+}

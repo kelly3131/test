@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@layer Reset, Layout,Component, Button, Visual, Form.InputCommon, Form.InputSearch, Heading, Pages, Align, Space;
+@layer Reset, Layout, Button, Visual, Form.InputCommon, Form.InputSearch, Component, Heading, Pages, Align, Space;
 :root {
   --primary-900: #020A33;
   --primary-800: #0C1A66;
@@ -311,6 +311,69 @@
   }
 }
 @layer Button {
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    box-sizing: border-box;
+  }
+  .btn.primary {
+    border-color: var(--primary-500);
+    background-color: var(--primary-500);
+    color: var(--white);
+  }
+  .btn.white {
+    border-color: var(--neutral-600);
+    background-color: var(--white);
+    color: var(--neutral-600);
+  }
+  .btn.regular {
+    height: 4rem;
+    padding: 0 2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-size: 1.4rem;
+    border-radius: 1.2rem;
+  }
+  .btn.regular.radius {
+    border-radius: 4rem;
+  }
+  .btn.large {
+    height: 6rem;
+    padding: 0 2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-size: 1.6rem;
+    border-radius: 0.6rem;
+  }
+  .btn.large.radius {
+    border-radius: 6rem;
+  }
+  .btn.small {
+    height: 3rem;
+    padding: 0 1.2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+  }
+  .btn.small.radius {
+    border-radius: 3rem;
+  }
+  .btn.xsmall {
+    height: 2.8rem;
+    padding: 0 1.2rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-size: 1.2rem;
+  }
+  .btn.xsmall.radius {
+    border-radius: 2.8rem;
+  }
+  .btn.fullsize {
+    width: 100%;
+  }
   .main-header .header-btn-wrap {
     display: flex;
   }
@@ -428,6 +491,94 @@
   }
 }
 @layer Component.Table {}
+@layer Component.Tab {
+  .tab-navigation {
+    margin: 1.6rem 0;
+    width: 100%;
+    padding: 0.8rem 0;
+    display: flex;
+  }
+  .tab-navigation input {
+    overflow: hidden;
+    position: absolute;
+    border: none;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .tab-navigation input:checked + label {
+    color: var(--primary-500);
+    font-weight: 600;
+  }
+  .tab-navigation label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neutral-400);
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .tab-navigation.first-depth {
+    display: flex;
+    gap: 1.6rem;
+    border-bottom: 1px solid var(--neutral-200);
+  }
+  .tabs:has(.tab-navigation li:nth-child(1) input:checked) .tab-content:nth-of-type(1) {
+    display: block;
+  }
+  .tabs:has(.tab-navigation li:nth-child(2) input:checked) .tab-content:nth-of-type(2) {
+    display: block;
+  }
+  .tabs:has(.tab-navigation li:nth-child(3) input:checked) .tab-content:nth-of-type(3) {
+    display: block;
+  }
+  .tabs:has(.tab-navigation li:nth-child(4) input:checked) .tab-content:nth-of-type(4) {
+    display: block;
+  }
+  .tabs .tab-content {
+    display: none;
+    text-align: left;
+  }
+  .tabs .tab-content ul.bookmark {
+    display: flex;
+    flex-direction: column;
+  }
+  .tabs .tab-content ul.bookmark li {
+    padding: 1.6rem 0;
+    position: relative;
+    width: 100%;
+  }
+  .tabs .tab-content ul.bookmark li + li {
+    border-top: 0.1rem solid var(--neutral-200);
+  }
+  .tabs .tab-content ul.bookmark li::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    content: "";
+    border-radius: 70%;
+    background-color: var(--neutral-900);
+  }
+  .tabs .tab-content ul.bookmark li p {
+    padding-left: 0.8rem;
+    color: var(--neutral-600);
+    font-size: 1.4rem;
+  }
+  .tabs .tab-inner-tab ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--neutral-100);
+  }
+  .tabs .tab-inner-tab ul li {
+    padding: 0.8rem 0;
+    margin-left: 0.8rem;
+  }
+}
 @layer Component.Pagination {}
 @layer Header.Gnb {}
 @layer Layout.Heading {
@@ -809,19 +960,19 @@
   }
 }
 @layer PopUp {
-  .pop-up {
+  .up-slide {
     color: #333;
     font-weight: 300;
     text-align: center;
     background: #333;
   }
-  .pop-up .container > .btn {
+  .up-slide .container > .btn {
     margin: 60px;
     padding: 20px 40px;
     font-size: 30px;
     border-radius: 40px;
   }
-  .pop-up .modal {
+  .up-slide .modal {
     background: #fff;
     width: 100%;
     height: 100%;
@@ -833,16 +984,16 @@
     left: 0;
     text-align: left;
   }
-  .pop-up .modal .header {
+  .up-slide .modal header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
   }
-  .pop-up .modal .body {
+  .up-slide .modal .body {
     padding: 20px;
   }
-  .pop-up .btn {
-    background: linear-gradient(to right, rgb(220, 227, 91), rgb(69, 182, 73));
+  .up-slide .btn {
+    background-color: var(--primary-500);
     padding: 10px 25px;
     display: inline-block;
     border-radius: 25px;
@@ -852,11 +1003,60 @@
     transition: all 0.4s ease;
     cursor: pointer;
   }
-  .pop-up .btn:hover {
+  .up-slide .btn:hover {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
   }
-  .pop-up .container.modal-open .modal {
+  .up-slide .container.modal-open .modal {
     top: 0;
+  }
+  .left-slide-header .nav {
+    position: absolute;
+    right: -120%;
+    top: 0;
+    z-index: 101;
+    transition: right 0.7s;
+    padding: 15px 24px 15px 22px;
+    width: 80%;
+    height: 100%;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .left-slide-header .nav.on {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .left-slide-header .nav.on nav {
+    padding: 0 0 24px;
+    border-top: 1px solid var(--primary-500);
+  }
+  .left-slide-header .nav.on nav a {
+    height: 40px;
+    line-height: 40px;
+    color: #111;
+  }
+  .left-slide-header .nav.on nav a:before {
+    display: none;
+  }
+  .left-slide-header .nav.on nav li {
+    float: none;
+    border-bottom: 1px solid #eee;
+  }
+  .dim {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .btn-wrap {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 0.8rem;
   }
 }
 @layer pages.sub2 {}/*# sourceMappingURL=style.css.map */

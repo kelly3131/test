@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왼쪽슬라이드</title>
+    
+    <link rel="stylesheet" href="../scss/style.css" />
+</head>
+<body>
+    <header class="left-slide-header">
+        <div class="left">
+            <!-- <h1><a href="#a">Hdac</a></h1> -->
+            <button class="btn-menu left-slide" aria-label="메뉴"></button>
+            <!-- <a href="#a" class="left-slide">left-slide Menu</a> -->
+            <div class="nav">
+                <div class="tab-wrap">
+                    <div class="tabs">
+                        <ul class="tab-navigation first-depth" role="tablist">
+                          <li>
+                            <input type="radio" role="tab" aria-controls="tabpanel-1" name="rag" id="ra1_1" checked />
+                            <label for="ra1_1" id="tab-txt1">카테고리 직종별</label>
+                          </li>
+                          <li>
+                            <input type="radio" role="tab" aria-controls="tabpanel-2" name="rag" id="ra1_2" />
+                            <label for="ra1_2" id="tab-txt2">즐겨찾기</label>
+                          </li>
+                          <!-- <li>
+                            <input type="radio" role="tab" aria-controls="tabpanel-3" name="rag" id="ra1_3" />
+                            <label for="ra1_3" id="tab-txt3">탭3</label>
+                          </li>
+                          <li>
+                            <input type="radio" role="tab" aria-controls="tabpanel-4" name="rag" id="ra1_4" />
+                            <label for="ra1_4" id="tab-txt4">탭4</label>
+                          </li> -->
+                        </ul>
+                        <div class="tab-content" id="tabpanel-1" tabindex="0" aria-describedby="ra1_1">
+                            
+                            <div class="tab-wrap tab-inner-tab">
+                                <div class="tabs">
+                                    <ul class="tab-navigation" role="tablist">
+                                      <li>
+                                        <input type="radio" role="tab" aria-controls="tabpanel-1-1" name="rag" id="ra1_1_1" checked />
+                                        <label for="ra1_1_1" id="tab-txt1-1">시공사</label>
+                                      </li>
+                                      <li>
+                                        <input type="radio" role="tab" aria-controls="tabpanel-1-2" name="rag" id="ra1_1_2"/>
+                                        <label for="ra1_1_2" id="tab-txt1-2">인력관련</label>
+                                      </li>
+                                      <!-- <li>
+                                        <input type="radio" role="tab" aria-controls="tabpanel-3" name="rag" id="ra1_3" />
+                                        <label for="ra1_3" id="tab-txt3">탭3</label>
+                                      </li>
+                                      <li>
+                                        <input type="radio" role="tab" aria-controls="tabpanel-4" name="rag" id="ra1_4" />
+                                        <label for="ra1_4" id="tab-txt4">탭4</label>
+                                      </li> -->
+                                    </ul>
+                                    <div class="tab-content" id="tabpanel-1-1" tabindex="0" aria-describedby="ra1_1_1">
+                                        <p>공통</p>
+                                        <p>토목</p>
+                                        <p>건축</p>
+                                    </div>
+                                    <div class="tab-content" id="tabpanel-1-2" tabindex="0" aria-describedby="ra1_1_2">
+                                        인력관련 탭내용 2
+                                    </div>
+                                    <!-- <div class="tab-content" id="tabpanel-3" tabindex="0" aria-describedby="tab-txt3">
+                                      탭내용 3
+                                    </div>
+                                    <div class="tab-content" id="tabpanel-4" tabindex="0" aria-describedby="tab-txt4">
+                                      탭내용 4
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tabpanel-2" tabindex="0" aria-describedby="ra1_2">
+                            <ul class="bookmark">
+                                <li><p>업체업체업체</p></li>
+                                <li><p>개인개인개인</p></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="tab-content" id="tabpanel-3" tabindex="0" aria-describedby="tab-txt3">
+                          탭내용 3
+                        </div>
+                        <div class="tab-content" id="tabpanel-4" tabindex="0" aria-describedby="tab-txt4">
+                          탭내용 4
+                        </div> -->
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="btn white regular ">초기화</button>
+                    <button class="btn primary regular">선택보기</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="dim"></div>
+    <main class="main-left-slide"></main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+        $(".left-slide").on("click",function(){
+            $(".nav").addClass("on");
+            $(".dim").show();
+        });
+        $(".dim").on("click",function(){
+            $(".nav").removeClass("on");
+            $(".dim").hide();
+        });
+                    
+        });
+    </script>
+
+</body>
+</html>

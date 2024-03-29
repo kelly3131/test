@@ -1,4 +1,90 @@
 @layer Button {
+    .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        box-sizing: border-box;
+        &.primary {
+          border-color: var(--primary-500);
+          background-color: var(--primary-500);
+          color: var(--white);
+        }
+        &.white {
+          border-color: var(--neutral-600);
+          background-color: var(--white);
+          color: var(--neutral-600);
+        }
+        // &.gray {
+        //   border-color: var(--gray99);
+        //   background-color: var(--grayf5);
+        //   color: var(--gray4b);
+        // }
+        &.regular {
+          height: 4rem;
+          padding: 0 2rem;
+          border-width: 0.1rem;
+          border-style: solid;
+          font-size: 1.4rem;
+          border-radius: 1.2rem;
+          &.radius {
+            border-radius: 4rem;
+          }
+        }
+        &.large {
+          height: 6rem;
+          padding: 0 2rem;
+          border-width: 0.1rem;
+          border-style: solid;
+          font-size: 1.6rem;
+          border-radius: 0.6rem;
+          &.radius {
+            border-radius: 6rem;
+          }
+        }
+        &.small {
+          height: 3rem;
+          padding: 0 1.2rem;
+          border-width: 0.1rem;
+          border-style: solid;
+          font-size: 1.2rem;
+          border-radius: 0.4rem;
+          &.radius {
+            border-radius: 3rem;
+          }
+        }
+        &.xsmall {
+          height: 2.8rem;
+          padding: 0 1.2rem;
+          border-width: 0.1rem;
+          border-style: solid;
+          font-size: 1.2rem;
+          &.radius {
+            border-radius: 2.8rem;
+          }
+        }
+        // &.ico1 {
+        //   &::after {
+        //     content: "";
+        //     width: 1.6rem;
+        //     height: 1.6rem;
+        //     background: url(../images/ico_btn1.svg) no-repeat 0 0 / contain;
+        //   }
+        // }
+        // &.ico2 {
+        //   &::after {
+        //     content: "";
+        //     width: 1.6rem;
+        //     height: 1.6rem;
+        //     background: url(../images/ico_btn2.svg) no-repeat 0 0 / contain;
+        //   }
+        // }
+        &.fullsize {
+          width: 100%;
+        }
+      }
+
+      
     .main-header {
         .header-btn-wrap {
             display: flex;
@@ -24,21 +110,6 @@
         height: 1.6rem;
         background: url(../asset/images/ico_arrow_style01_16.svg) no-repeat 0 0 / contain;
     }
-    // .btn-group {
-    //     .btn-contract, .btn-qr-confirm, .btn-my-qr {
-            
-    //     }
-    //     .btn-contract {
-    //         background: url(../asset/images/ico_main_group01_01_28.svg) no-repeat center / 2.8rem auto;
-    //     }
-    //     .btn-qr-confirm {
-    //         background: url(../asset/images/ico_main_group01_02_28.svg) no-repeat  center / 2.8rem auto;
-    //     }
-    //     .btn-my-qr {
-    //         background: url(../asset/images/ico_main_group01_03_28.svg) no-repeat 0 0 / contain var(--primary-500);
-    //     }
-    // }
-
     
     .filter-chip {
         ul {

@@ -1,4 +1,4 @@
-@layer Reset, Layout,Component, Button, Visual, Form.InputCommon, Form.InputSearch, Heading, Pages, Align, Space;
+@layer Reset, Layout, Button, Visual, Form.InputCommon, Form.InputSearch, Component, Heading, Pages, Align, Space;
 
 @import "./abstracts/Mixin"; //믹스인
 @import "./vendors/Swiper"; // 벤더
@@ -9,6 +9,7 @@
 @import "./components/Visual"; // 비주얼
 @import "./components/Form"; // 서식
 @import "./components/Table"; // 표
+@import "./components/Tab"; // 탭
 @import "./components/Pagination"; // 
 @import "./layout/Heading"; // 헤더
 @import "./layout/Footer"; // 푸터
