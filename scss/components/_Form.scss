@@ -51,13 +51,13 @@
             content: "";
             width: 1.6rem;
             height: 1.6rem;
-            background: url(../../asset/images/checkbox_off.svg) no-repeat 0 0 / contain;
+            background: url(../asset/images/checkbox_off.svg) no-repeat 0 0 / contain;
             }
         }
         &:checked {
             + label {
             &::before {
-                background: url(../../asset/images/checkbox_on.svg) no-repeat 0 0 / contain;
+                background: url(../asset/images/checkbox_on.svg) no-repeat 0 0 / contain;
             }
             }
         }
@@ -77,13 +77,13 @@
             content: "";
             width: 2.4rem;
             height: 2.4rem;
-            background: url(../images/radio_off.svg) no-repeat 0 0 / contain;
+            background: url(../asset/images/radio_off.svg) no-repeat 0 0 / contain;
             }
         }
         &:checked {
             + label {
             &::before {
-                background: url(../images/radio_on.svg) no-repeat 0 0 / contain;
+                background: url(../asset/images/radio_on.svg) no-repeat 0 0 / contain;
             }
             }
         }
