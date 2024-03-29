@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/style.css" />
+    <title>현장등록</title>
+</head>
+<body>
+    <header class="sub-header">
+        <button class="btn-back" aria-label="뒤로가기"></button>
+        <p>현장 등록</p>
+        <p class="hide"></p>
+    </header>
+    <main class="registration step1">
+
+        <!-- <div class="input-group">
+            <div class="title-wrap align both">
+                <p class="input-title"></p>
+            </div>
+        </div> -->
+        <section>
+            <div class="input-group">
+                <div class="title-wrap align both">
+                    <p class="input-title">현장명</p>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" class="input h32" placeholder="공사예정 또는 공사중인 현장명을 입력하세요." />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="title-wrap align both">
+                    <p class="input-title">현장주소</p>
+                    <a href="../pages/map.html">지도보기</a>
+                </div>
+                <div class="address">
+                    <input type="number" class="input h32" />
+                    <button class="btn small radius white">우편번호찾기</button>
+                    <input type="text" class="input h32" />
+                    <input type="text" class="input h32" placeholder="상세주소를 입력하세요." />
+                </div>
+                <span class="txt-right">
+                    <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox">
+                    <label for="chk1">해외</label>
+                </span>
+            </div>
+            <div class="input-group">
+                <div class="title-wrap align both">
+                    <p class="input-title">현장관리자</p>
+                    <div class="radio-wrap">
+                        <span class="txt-right mr-8">
+                            <input type="radio" name="radio1" id="radio1" class="a11y-hidden radio">
+                            <label for="radio1">공개</label>
+                        </span>
+                        <span class="txt-right">
+                            <input type="radio" name="radio1" id="radio2" class="a11y-hidden radio">
+                            <label for="radio2">비공개</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" class="input h32" placeholder="이 현장을 관리할 현장관리자를 입력하세요." />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="title-wrap align both">
+                    <p class="input-title">중간관리자</p>
+                    <div class="radio-wrap">
+                        <span class="txt-right mr-8">
+                            <input type="radio" name="radio2" id="radio3" class="a11y-hidden radio">
+                            <label for="radio3">공개</label>
+                        </span>
+                        <span class="txt-right">
+                            <input type="radio" name="radio2" id="radio4" class="a11y-hidden radio">
+                            <label for="radio4">비공개</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" class="input h32" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+                </div>
+            </div>
+        </section>
+
+
+        <section class="btn-wrap">
+            <a href="javascript:;" class="btn --disabled regular fullsize">다음</a>
+            <!-- --disabled 대신 --active 넣으면 활성화 -->
+        </section>
+    </main>
+    <footer>
+        <div class="footer-group">
+            <button class="--active">
+                <img src="../asset/images/ico_footer_01_24_filled.svg" alt="">
+                <p>홈</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_02_24_line.svg" alt="">
+                <p>요청</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_03_24_line.svg" alt="">
+                <p>승인</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_04_24_line.svg" alt="">
+                <p>문서관리</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_05_24_line.svg" alt="">
+                <p>마이건설</p>
+            </button>
+        </div>
+    </footer>
+</body>
+</html>

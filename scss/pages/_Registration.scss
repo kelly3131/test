@@ -1,0 +1,54 @@
+@layer registration {
+    main.registration {
+        padding: 0 1.6rem;
+        height: calc(100vh - (4rem + 5.6rem + 1.6rem));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        section {
+            &:nth-of-type(1) {
+                display: flex;
+                flex-direction: column;
+                gap: 2.4rem;
+                margin-top: 2.4rem;
+            }
+        }
+        .input-group {
+            display:flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            .input-group-inner & {
+                gap: 0.4rem;
+                // 이거 왜 적용안되지
+            }
+            &:has(.address) {
+                .title-wrap {
+                    a {
+                        color: var(--neutral-600);
+                        font-size: 1.2rem;
+                        font-weight: 300;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        ul.input-group-inner {
+            padding-left: 1.6rem;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+    }
+    .list-btn-wrap {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 0.8rem;
+    }
+    .delete {
+        img {
+            width: 1.6rem;
+            height: auto;
+        }
+    }
+}

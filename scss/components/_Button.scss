@@ -5,7 +5,7 @@
         align-items: center;
         gap: 0.8rem;
         box-sizing: border-box;
-        &.primary {
+        &.primary, &.--active {
           border-color: var(--primary-500);
           background-color: var(--primary-500);
           color: var(--white);
@@ -14,6 +14,16 @@
           border-color: var(--neutral-600);
           background-color: var(--white);
           color: var(--neutral-600);
+        }
+        &.red {
+            border-color: var(--red-100);
+            background-color: var(--red-100);
+            color: var(--red-300);
+        }
+        &.--disabled {
+            background-color: var(--neutral-300);
+            border-color: var(--neutral-300);
+            color: var(--neutral-500);
         }
         // &.gray {
         //   border-color: var(--gray99);
@@ -43,14 +53,13 @@
           }
         }
         &.small {
-          height: 3rem;
+          height: 3.2rem;
           padding: 0 1.2rem;
           border-width: 0.1rem;
           border-style: solid;
           font-size: 1.2rem;
-          border-radius: 0.4rem;
           &.radius {
-            border-radius: 3rem;
+              border-radius: 1.2rem;
           }
         }
         &.xsmall {

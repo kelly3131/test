@@ -1,4 +1,10 @@
 @layer pages.Index {
+    body:has(.main) {
+        // min-width: 32rem;
+        // max-width: 54rem;
+        // margin: 0 auto;
+        background-color: #F4F6F8;
+    }
     .main {
         padding: 0 1.6rem;
         margin-top: 3.6rem;//헤더높이
