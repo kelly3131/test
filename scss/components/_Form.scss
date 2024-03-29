@@ -36,4 +36,58 @@
             }
         }
     }
+
+    @layer CheckBox {
+    .checkbox {
+        + label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--gray4b);
+            font-size: 1.2rem;
+            line-height: 100%;
+            letter-spacing: -0.05rem;
+            &::before {
+            content: "";
+            width: 1.6rem;
+            height: 1.6rem;
+            background: url(../../asset/images/checkbox_off.svg) no-repeat 0 0 / contain;
+            }
+        }
+        &:checked {
+            + label {
+            &::before {
+                background: url(../../asset/images/checkbox_on.svg) no-repeat 0 0 / contain;
+            }
+            }
+        }
+        }
+    }
+    @layer Radio {
+    .radio {
+        + label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--gray4b);
+            font-size: 1.2rem;
+            line-height: 100%;
+            letter-spacing: -0.05rem;
+            &::before {
+            content: "";
+            width: 2.4rem;
+            height: 2.4rem;
+            background: url(../images/radio_off.svg) no-repeat 0 0 / contain;
+            }
+        }
+        &:checked {
+            + label {
+            &::before {
+                background: url(../images/radio_on.svg) no-repeat 0 0 / contain;
+            }
+            }
+        }
+        }
+    }
+
 }

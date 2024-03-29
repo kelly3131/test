@@ -51,32 +51,43 @@
           }
     }
 
-      .left-slide-header .nav {  
+      .left .nav {  
         position: fixed; 
         top: 0; 
         z-index: 101; 
+        display: none;
         transition: right 0.7s; 
-        padding: 15px 24px 15px 22px; 
         width:calc(100% - 20%); 
         height: 100%; background: #fff; 
         box-sizing: border-box;
       }
-      .left-slide-header .nav.on { 
+      
+      .left .nav.on { 
         right: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow: hidden;
+        //.left .btn-wrap의 box-shadow 넘치는것 가리기 위함
       }
-      .left-slide-header .nav.on nav { padding: 0 0 24px; border-top: 1px solid var(--primary-500)}
-      .left-slide-header .nav.on nav a { height: 40px; line-height: 40px; color:#111;}
-      .left-slide-header .nav.on nav a:before { display: none;}
-      .left-slide-header .nav.on nav li { float: none; border-bottom: 1px solid #eee;}
+      .left .nav.on nav { padding: 0 0 24px; border-top: 1px solid var(--primary-500)}
+      .left .nav.on nav a { height: 40px; line-height: 40px; color:#111;}
+      .left .nav.on nav a:before { display: none;}
+      .left .nav.on nav li { float: none; border-bottom: 1px solid #eee;}
       
       .dim { display: none;position: fixed; left: 0; top: 0; z-index: 100; width: 100%; height: 100%; background: rgba(0,0,0,0.5);}
       .btn-wrap {
         display: grid;
         grid-template-columns: 1.5fr 2fr;
         gap: 0.8rem;
+        .left & {
+          margin-left: 1.6rem;
+          margin-right: 1.6rem;
+          padding-bottom: 1.6rem;
+          z-index: 100;
+          box-shadow: 0px 20px 50px 50px rgb(255, 255, 255);
+          
+        }
       }
 
 

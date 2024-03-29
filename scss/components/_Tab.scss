@@ -1,56 +1,51 @@
 @layer Component.Tab {
     .tab-navigation {
-        margin: 1.6rem 0;
+        
         width: 100%;
-        padding: 0.8rem 0;
+        height: 4.8rem;
         display: flex;
-        input {
-            overflow: hidden;
-            position: absolute;
-            border: none;
-            width: 1px;
-            height: 1px;
-            clip: rect(1px, 1px, 1px, 1px);
-            &:checked + label {
-                color: var(--primary-500);
-                font-weight: 600;
+        li {
+            a {
+                padding-left: 1.6rem;
+                color: var(--neutral-400);
+                font-size: 1.4rem;
+                font-weight: 400;
             }
-        }
-        & label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            //   height: 5.7rem;
-            color: var(--neutral-400);
-            font-size: 1.4rem;
-            font-weight: 400;
-            //   border-radius: 5.7rem;
+            &.on {
+                a {
+                    color: var(--primary-500);
+                    font-weight: 700;
+                }
+            }
         }
 
         &.first-depth {
             display: flex;
+            align-items: center;
             gap: 1.6rem;
             border-bottom: 1px solid var(--neutral-200);
         }
     }
-    .tabs {
-        @for $i from 1 to 5 {
-            &:has(.tab-navigation li:nth-child(#{$i}) input:checked) {
-                .tab-content:nth-of-type(#{$i}) {
-                    display: block;
-                }
-            }
+    .left {
+        .tab-con.on {
+            display: block;
         }
-        
-        .tab-content {
+        .subtab-con{ 
             display: none;
-            // background-color: rgba(0, 0, 0, 0.05);
-        //   line-height: 30vh;
+        }
+        .subtab-con.on {
+            display: block;
+        }
+      }
+    .tabs {
+        .tab-con {
+            position:relative;
+            display: none;
             text-align: left;
-            
             ul.bookmark {
                 display: flex;
                 flex-direction: column;
+                padding: 0 1.6rem;
                 li {
                     padding: 1.6rem 0;
                     position: relative;
@@ -76,17 +71,51 @@
                     }
                 }
             }
+            &:first-of-type(1) {
+                display:flex;
+            }
         }
-        .tab-inner-tab {
+        .sub-tab {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 85vh;
+            background-color: var(--neutral-100);
+            li {
+                padding-left: 2.4rem;
+                padding-right: 1.6rem;
+                display: flex;
+                align-items: center;
+                height: 4.8rem;
+                background-color: var(--neutral-100);
+                
+                a {
+                    padding-left: 2.4rem;
+                    color: var(--neutral-600);
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        .subtab-con {
+            position:absolute;
+            top: 0;
+            left: 12rem;
+            display:flex;
+            align-items: center;
+            height: 4.8rem;
             ul {
-                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                background-color: var(--neutral-100);
                 li {
-                    padding: 0.8rem 0;
                     margin-left: 0.8rem;
+                    height: min-content;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        height: 4rem;
+                    }
                 }
             }
         }

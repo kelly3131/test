@@ -135,46 +135,60 @@
                         font-weight: 700;
                         border: 0.1rem solid var(--primary-500);
                     }
-                    &.btn-chip {
-                        &::before {
-                            position: absolute;
-                            top: 0;
-                            left: 0.8rem;
-                            content: "";
-                            width: 2.4rem;
-                            height: 2.4rem;
-                        }
-                    }
-                    &.company {
-                        &::before {
-                            background: url(../asset/images/ico_company_24.svg) no-repeat center / 2.4rem auto;
-                        }
-                    }
-                    &.labor {
-                        &::before {
-                            background: url(../asset/images/ico_labor_24.svg) no-repeat center / 2.4rem auto;
-                        }
-                    }
-                    &.equipment {
-                        &::before {
-                            background: url(../asset/images/ico_equipment_24.svg) no-repeat center / 2.4rem auto;
-                        }
-                    }
-                    &.materials {
-                        &::before {
-                            background: url(../asset/images/ico_materials_24.svg) no-repeat center / 2.4rem auto;
-                        }
-                    }
-                    &.etc {
-                        &::before {
-                            background: url(../asset/images/ico_etc_24.svg) no-repeat center / 2.4rem auto;
-                        }
-                    }
+                    
                 }
             }
         }
     }
-
+    .ico {
+        position: relative;
+    }
+    .btn-chip  {
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0.8rem;
+            content: "";
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+    .ico {
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -0.8rem;
+            content: "";
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+    .company {
+        &::before {
+            background: url(../asset/images/ico_company_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .labor {
+        &::before {
+            background: url(../asset/images/ico_labor_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .equipment {
+        &::before {
+            background: url(../asset/images/ico_equipment_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .materials {
+        &::before {
+            background: url(../asset/images/ico_materials_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .etc {
+        &::before {
+            background: url(../asset/images/ico_etc_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
     .btn-back {
         &::before {
             display: inline-block;

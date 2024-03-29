@@ -38,5 +38,18 @@
             }
         }
     }
-    
+    .sub-header {
+        padding: 0 1.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 1.6rem * 2);
+        height: 4rem;
+        // border:1px solid red;
+        p {
+            color: var(--neutral-900);
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
 }
