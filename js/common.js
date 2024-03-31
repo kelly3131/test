@@ -51,3 +51,86 @@ window.addEventListener('scroll', function() {
 //   SubLaytou();
 // } 
 
+
+//2024-03-29 KEJ 추가
+var slideImgList = new Swiper(".swiper.img-list", {
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+});
+$(function () {
+  $(".hide-con").hide();
+  $(".layer-img").on("click", modalImg);// Img Layer Popup
+  $(".layer-toast").on("click", modaltoast);// Toast Layer Popup
+});
+/* Img Layer Popup */
+function modalImg(e) {
+  e.preventDefault();
+  var $body = $("body");
+  var modalPop = $("#" + $(this).attr("data-modal"));
+
+  $("body").addClass("scroll-lock");//body 스크롤방지
+  modalPop.addClass("open");
+  modalPop.on("click", function(event){
+      if (event.target === event.currentTarget) {
+          // 반투명 배경 클릭 시 레이어 닫기
+          modalClose();
+      }
+  });
+  //레이어 닫기
+  function modalClose() {
+      modalPop.removeClass("open");
+      $("body").removeClass("scroll-lock");
+  }
+}
+/* Toast Layer Popup */
+function modaltoast(e) {
+  e.preventDefault();
+  var $popToast = $(".pop-toast");
+  var $toastCloseBtn = $(".pop-toast .pop-close");
+  var modalPop = $("#" + $(this).attr("data-modal"));
+  // 이전에 열려있던 팝업을 닫기
+  $(".pop-toast.open-modal").removeClass("open-modal");
+
+  setTimeout(function(){
+          modalPop.addClass("open-modal");
+      }, 100);
+  $toastCloseBtn.on("click", modalToastClose); 
+  //토스트레이어 닫기
+  function modalToastClose() {
+      var $popToast = $(".pop-toast");
+      $popToast.removeClass("full");
+      setTimeout(function(){
+          $popToast.removeClass("open-modal");
+      }, 100);
+      setTimeout(function(){
+        $(".hide-con").hide();
+    }, 800);
+  }
+  popTouchAction();
+}
+/* Touch Event */
+function popTouchAction() {
+  var startY;
+  var endY;
+  var $popToast = $(".pop-toast");
+  $(".pop-header, .equipment-info, .company-profile").on("touchstart", function(event){
+      startY = event.originalEvent.touches[0].clientY;
+      console.log(startY);
+  });
+
+  $(".pop-header, .equipment-info, .company-profile").on("touchend", function(event){
+      endY = event.originalEvent.changedTouches[0].clientY;
+      if (startY > endY) {
+          // 위로 터치했을 때
+          $popToast.addClass("full");
+          $(".hide-con").slideDown();
+          
+      } else if(endY > startY) {
+          // 아래로 터치했을 때
+          $popToast.removeClass("full");
+          $(".hide-con").slideUp();
+      }
+  });
+}

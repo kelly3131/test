@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/style.css" />
+    <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
+    <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
     <script defer src="../js/common.js"></script>
     <title>건설세상</title>
 </head>
@@ -102,8 +104,8 @@
     <main class="map">
         <img src="../asset/images/map.png" class="map-bg" alt="">
         <section class="map-mark-group">
-            <button class="map-mark btn-company" aria-label="시공사"></button>
-            <button class="map-mark btn-labor" aria-label="노무"><span class="count">50</span></button>
+            <button class="map-mark btn-company layer-toast" aria-label="시공사" data-modal="layerPop1"></button><!-- 2024-03-29 KEJ -->
+            <button class="map-mark btn-labor layer-toast" aria-label="노무" data-modal="layerPop2"><span class="count">50</span></button><!-- 2024-03-29 KEJ -->
             <button class="map-mark btn-equipment" aria-label="건설장비"></button>
             <button class="map-mark btn-materials" aria-label="건설재료"></button>
             <button class="map-mark btn-etc" aria-label="관리/기타"></button>
@@ -134,41 +136,132 @@
             </button>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        $(function () {
-            leftSlide();
-            $(".tab-con:first").addClass("on");//탭 첫번째 컨텐츠
-            $(".subtab-con:first").addClass("on");//탭 첫번째 컨텐츠
-            tabClickAction(".tab-navigation > li > a", ".tab-con");// Tab 메뉴클릭
-            tabClickAction(".sub-tab > li > a", ".subtab-con");// Tab 메뉴클릭
-        });
-
-        /* Left Slide */
-        function leftSlide() {
-            $(".left-slide").on("click",function(){
-                $(".nav").addClass("on");
-                $(".dim").show();
-            });
-            $(".dim").on("click",function(){
-                $(".nav").removeClass("on");
-                $(".dim").hide();
-            });     
-        }
-
-        /* Tab 메뉴클릭 */
-        function tabClickAction(tmSelect, tcSelect) {
-            var tabMenus = $(tmSelect);
-            var tabCons = $(tcSelect);
-            tabMenus.each(function (index) {
-                var tabMenu = $(this);
-                var tabCon = tabCons.eq(index);
-                tabMenu.on("click", function () {
-                    tabMenu.parent().addClass("on").siblings().removeClass("on");
-                    tabCon.addClass("on").siblings().removeClass("on");
-                });
-            });
-        }
-    </script>
+    <!-- 2024-03-29 KEJ : Toast Layer -->
+    <div id="layerPop1" class="pop-toast">
+        <div class="pop-header">
+            <button type="button" class="pop-close">닫기</button>
+        </div>
+        <div class="pop-con">
+            <div class="equipment-info">
+                <div class="info-area">
+                    <h2 class="tit">장비나라(주) 건설장비</h2>
+                    <p>
+                        원창운 010-6789-0123<br>
+                        서울 마포구 상암동 지식산업단지 가동 1502호
+                    </p>
+                </div>
+                <div class="img-area">
+                    <button type="button" class="img  layer-img" data-modal="layerPop3"></button>
+                </div>
+            </div>
+            <!-- 위로 터치시 보이는 영역 -->
+            <div class="hide-con">
+                <ul class="company-notice">
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="company-profile">
+                    회사 소개 설명서가 들어갑니다.   회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다.
+                </div>
+                <div class="pop-footer">
+                    다른회사 장비 보기
+                </div>
+            </div>
+             <!-- //위로 터치시 보이는 영역 -->
+        </div>
+    </div>
+    <!-- //2024-03-29 KEJ : Toast Layer -->
+    <!-- 2024-03-29 KEJ : Toast Layer -->
+    <div id="layerPop2" class="pop-toast">
+        <div class="pop-header">
+            <button type="button" class="pop-close">닫기</button>
+        </div>
+        <div class="pop-con">
+            <div class="equipment-info">
+                <div class="info-area">
+                    <h2 class="tit">장비나라(주) 건설장비2</h2>
+                    <p>
+                        원창운 010-6789-0123<br>
+                        서울 마포구 상암동 지식산업단지 가동 1502호
+                    </p>
+                </div>
+                <div class="img-area">
+                    <button type="button" class="img layer-img" data-modal="layerPop3"></button>
+                </div>
+            </div>
+            <div class="hide-con">
+                <ul class="company-notice">
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="company-con">
+                            <h3 class="tit">흙 퍼갈 펌프기사 모집1</h3>
+                            <p class="con">흙을 퍼갈 덤프기사 긴급 모집합니다. 기간은 2024년 11월 23일 부터 30일까지 입니다. 비용은 상담 요망</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="company-profile">
+                    회사 소개 설명서가 들어갑니다.   회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다. 회사 소개 설명서가 들어갑니다.
+                </div>
+                <div class="pop-footer">
+                    다른회사 장비 보기
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //2024-03-29 KEJ : Toast Layer -->
+    <!-- 2024-03-29 KEJ : Img Layer -->
+    <div id="layerPop3" class="pop-img">
+        <div class="layer-inner">
+            <div class="swiper img-list">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><span style="display:block;width:100%;height:250px;background-color: #333;"><a href="https://www.naver.com" target="_blank">건설이미지</a></span></div>
+                    <div class="swiper-slide"><span style="display:block;width:100%;height:250px;background-color: #17407c;">건설이미지</span></div>
+                    <div class="swiper-slide"><span style="display:block;width:100%;height:250px;background-color: #8db61b;">건설이미지</span></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //2024-03-29 KEJ : Img Layer -->
 </body>
 </html>
