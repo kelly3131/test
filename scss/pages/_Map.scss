@@ -182,6 +182,10 @@
             overflow: hidden;
         }
     }
-
+    .pop-header {
+        padding:0 1.6rem;
+        display:flex;
+        justify-content: space-between;
+    }
 
 }

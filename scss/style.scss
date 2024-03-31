@@ -1,10 +1,10 @@
 @layer Reset, Layout, Button, Visual, Form.InputCommon, Form.InputSearch, Component, Heading, Pages, Align, Space;
 
 @import "./abstracts/Mixin"; //믹스인
-@import "./vendors/Swiper"; // 벤더
 @import "./base/Variable"; // 변수
 @import "./components/Reset"; // reset.css
 @import "./components/Button"; // 버튼
+@import "./vendors/Swiper"; // 벤더
 @import "./components/Heading"; // 제목
 @import "./components/Visual"; // 비주얼
 @import "./components/Form"; // 서식

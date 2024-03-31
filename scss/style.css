@@ -483,6 +483,26 @@
     content: "";
     background: url(../asset/images/ico_hamburger_24.svg) no-repeat center/2.4rem auto;
   }
+  .btn-popup {
+    display: flex;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .btn-popup::before {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+  }
+  .btn-popup.bookmark--normal::before {
+    background: url(../asset/images/ico_bookmark_line_24.svg) no-repeat center/2.4rem auto;
+  }
+  .btn-popup.bookmark--pressed::before {
+    background: url(../asset/images/ico_bookmark_filled_24.svg) no-repeat center/2.4rem auto;
+  }
+  .btn-popup.close::before {
+    background: url(../asset/images/ico_close_24.svg) no-repeat center/2.4rem auto;
+  }
 }
 @layer Heading {}
 @layer Visual {}
@@ -668,20 +688,20 @@
     display: none;
     text-align: left;
   }
-  .tabs .tab-con ul.bookmark {
+  .tabs .tab-con ul.bookmark-data {
     display: flex;
     flex-direction: column;
     padding: 0 1.6rem;
   }
-  .tabs .tab-con ul.bookmark li {
+  .tabs .tab-con ul.bookmark-data li {
     padding: 1.6rem 0;
     position: relative;
     width: 100%;
   }
-  .tabs .tab-con ul.bookmark li + li {
+  .tabs .tab-con ul.bookmark-data li + li {
     border-top: 0.1rem solid var(--neutral-200);
   }
-  .tabs .tab-con ul.bookmark li::before {
+  .tabs .tab-con ul.bookmark-data li::before {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -692,7 +712,7 @@
     border-radius: 70%;
     background-color: var(--neutral-900);
   }
-  .tabs .tab-con ul.bookmark li p {
+  .tabs .tab-con ul.bookmark-data li p {
     padding-left: 0.8rem;
     color: var(--neutral-600);
     font-size: 1.4rem;
@@ -2001,6 +2021,11 @@ button.swiper-pagination-bullet {
     border-radius: 1.2rem;
     background-color: var(--white);
     overflow: hidden;
+  }
+  .pop-header {
+    padding: 0 1.6rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
 @layer registration {

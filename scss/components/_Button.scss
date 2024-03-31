@@ -91,9 +91,7 @@
         &.fullsize {
           width: 100%;
         }
-      }
-
-      
+    }
     .main-header {
         .header-btn-wrap {
             display: flex;
@@ -214,6 +212,34 @@
             height: 2.4rem;
             content: "";
             background: url(../asset/images/ico_hamburger_24.svg) no-repeat center / 2.4rem auto;
+        }
+    }
+    .btn-popup {
+        display: flex;
+        width: 2.4rem;
+        height: 2.4rem;
+        &::before {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            content: "";
+        }
+        &.bookmark {
+            &--normal {
+                &::before {
+                    background: url(../asset/images/ico_bookmark_line_24.svg) no-repeat center / 2.4rem auto;
+                }
+            }
+            &--pressed {
+                &::before {
+                    background: url(../asset/images/ico_bookmark_filled_24.svg) no-repeat center / 2.4rem auto;
+                }
+            }
+        }
+        &.close {
+            &::before {
+                background: url(../asset/images/ico_close_24.svg) no-repeat center / 2.4rem auto;
+            }
         }
     }
 }
