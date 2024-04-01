@@ -807,12 +807,25 @@
     box-shadow: none;
   }
   .sub-header {
-    padding: 0 1.6rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3.2rem 1fr 3.2rem;
     align-items: center;
+    padding: 0 1.6rem;
     width: calc(100% - 3.2rem);
     height: 4rem;
+  }
+  .sub-header > :nth-child(1) {
+    grid-row: 1/-4;
+    grid-column: 1/2;
+  }
+  .sub-header > :nth-child(2) {
+    margin: 0 auto;
+    grid-row: 1/-4;
+    grid-column: 2/3;
+  }
+  .sub-header > :nth-child(3) {
+    grid-row: 1/-4;
+    grid-column: 3/4;
   }
   .sub-header p {
     color: var(--neutral-900);
@@ -2044,11 +2057,6 @@ button.swiper-pagination-bullet {
     grid-row: 1/-4;
     grid-column: 3/4;
   }
-  .pop-toast .pop-footer {
-    padding: 0 1.6rem 0.8rem 1.6rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
   .pop-toast .pop-con {
     overflow: hidden auto;
   }
@@ -2061,6 +2069,12 @@ button.swiper-pagination-bullet {
     border: 1px solid #666;
     border-radius: 0.8rem;
     font-size: 1.4rem;
+  }
+  .pop-footer {
+    padding: 0 1.6rem 0.8rem 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3.2rem;
   }
   .equipment-info {
     padding: 0 1.6rem 0.8rem 1.6rem;
@@ -2098,23 +2112,20 @@ button.swiper-pagination-bullet {
   }
   .equipment-info .info-area .content .info-address-wrap {
     display: flex;
-  }
-  .equipment-info .info-area .content .info-address-wrap .info-address {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    align-items: center;
+    line-height: 1.4;
   }
   .equipment-info .info-area .content .info-address-wrap .more-text {
     margin-left: 0.4rem;
+    display: flex;
+    align-items: center;
   }
   .equipment-info .img-area {
     position: relative;
     width: 10rem;
     height: 10rem;
   }
-  .equipment-info .img-area::before {
+  .equipment-info .img-area.more-img::before {
     position: absolute;
     bottom: 0.4rem;
     right: 0.4rem;
@@ -2162,6 +2173,9 @@ button.swiper-pagination-bullet {
     max-height: 22rem;
     overflow-y: auto;
     box-shadow: 0px 20px 50px 50px rgb(255, 255, 255);
+  }
+  .company-profile:has(.labor-about-me), .labor-profile:has(.labor-about-me) {
+    max-height: initial;
   }
   .company-profile ul, .labor-profile ul {
     line-height: 1.4;
