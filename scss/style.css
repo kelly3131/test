@@ -946,7 +946,7 @@
   .more-text {
     position: relative;
   }
-  .more-text #textbox {
+  .more-text .textbox {
     position: absolute;
     top: -3rem;
     left: -7rem;
@@ -957,7 +957,7 @@
     font-size: 1.3rem;
     font-weight: 400;
     white-space: nowrap;
-    border: 1px solid var(--neutral-600);
+    border: 1px solid var(--neutral-300);
     border-radius: 0.4rem;
     background-color: var(--white);
   }

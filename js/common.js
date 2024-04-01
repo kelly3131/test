@@ -135,13 +135,6 @@ function popTouchAction() {
   });
 }
 function showTextBox() {
-  var textBox = document.getElementById("textbox");
+    var textBox = document.getElementById("textbox");
     textBox.style.display = "block";
-
-    // 바탕 클릭 시 텍스트 상자가 사라지도록 이벤트 핸들러 추가
-    document.body.addEventListener("click", function(event) {
-        if (!textBox.contains(event.target)) {
-            textBox.style.display = "none";
-        }
-    });
 }
