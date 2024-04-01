@@ -104,9 +104,9 @@ function modaltoast(e) {
       setTimeout(function(){
           $popToast.removeClass("open-modal");
       }, 100);
-    //   setTimeout(function(){
-    //     $(".hide-con").hide();
-    // }, 800);
+      setTimeout(function(){
+        $(".hide-con").hide();
+    }, 800);
   }
   popTouchAction();
 }

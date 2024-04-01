@@ -106,11 +106,10 @@
         }
         .pop-footer {
             padding: 1.6rem;
-            border-top: 1px solid #666;
+            // border-top: 1px solid #666;
             text-align: center;
         }
         .pop-con {
-            padding: 0 1.6rem 0.8rem 1.6rem;
             overflow: hidden auto;
 
         }
@@ -126,12 +125,14 @@
         }
     }
     .equipment-info {
+        padding: 0 1.6rem 0.8rem 1.6rem;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         .info-area {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: 0.4rem;
             height: 10rem;
             .tit {
@@ -236,6 +237,48 @@
             overflow: hidden;
         }
     }
-    
-
+    .pop-hide-content {
+        .content-wrap {
+            padding: 0 1.6rem;
+        }
+    }
+    .popup-btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > span {
+            padding: 0 1.6rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--neutral-600)
+        }
+        .popup-btn-footer {
+            &.left, &.right {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: inline-block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    content: "";
+                }
+            }
+            &.left {
+                &::before {
+                    left:0;
+                    background: url(../asset/images/ico_arrow_left_32.svg) no-repeat center / 2.4rem auto;
+                }
+            }
+            &.right {
+                &::before {
+                    right:0;
+                    background: url(../asset/images/ico_arrow_right_32.svg) no-repeat center / 2.4rem auto;
+                }
+            }
+        }
+    }
 }

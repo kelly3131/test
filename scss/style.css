@@ -902,14 +902,40 @@
   .mr-8 {
     margin-right: 0.8rem;
   }
+  .mb-8 {
+    margin-bottom: 0.8rem;
+  }
   .text-plus {
     font-size: 2rem;
     padding-bottom: 0.4rem;
   }
+  h4.popup-group-title {
+    color: var(--neutral-700);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 }
 @layer Layout.Align {}
-@layer Layout.Space {}
-@layer Layout.Space {}
+@layer Layout.Space {
+  .area-bar {
+    width: 100%;
+    background-color: var(--neutral-100);
+  }
+  .area-bar.h5 {
+    margin: 0.8rem 0;
+    height: 0.5rem;
+  }
+}
+@layer Layout.Space {
+  .area-bar {
+    width: 100%;
+    background-color: var(--neutral-100);
+  }
+  .area-bar.h5 {
+    margin: 0.8rem 0;
+    height: 0.5rem;
+  }
+}
 /**
  * Swiper 9.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -1947,11 +1973,9 @@ button.swiper-pagination-bullet {
   }
   .pop-toast .pop-footer {
     padding: 1.6rem;
-    border-top: 1px solid #666;
     text-align: center;
   }
   .pop-toast .pop-con {
-    padding: 0 1.6rem 0.8rem 1.6rem;
     overflow: hidden auto;
   }
   .pop-toast .pop-close {
@@ -1965,6 +1989,7 @@ button.swiper-pagination-bullet {
     font-size: 1.4rem;
   }
   .equipment-info {
+    padding: 0 1.6rem 0.8rem 1.6rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -1972,6 +1997,7 @@ button.swiper-pagination-bullet {
   .equipment-info .info-area {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.4rem;
     height: 10rem;
   }
@@ -2071,6 +2097,42 @@ button.swiper-pagination-bullet {
     border-radius: 1.2rem;
     background-color: var(--white);
     overflow: hidden;
+  }
+  .pop-hide-content .content-wrap {
+    padding: 0 1.6rem;
+  }
+  .popup-btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-btn-wrap > span {
+    padding: 0 1.6rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+  .popup-btn-wrap .popup-btn-footer.left, .popup-btn-wrap .popup-btn-footer.right {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+  }
+  .popup-btn-wrap .popup-btn-footer.left::before, .popup-btn-wrap .popup-btn-footer.right::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+  }
+  .popup-btn-wrap .popup-btn-footer.left::before {
+    left: 0;
+    background: url(../asset/images/ico_arrow_left_32.svg) no-repeat center/2.4rem auto;
+  }
+  .popup-btn-wrap .popup-btn-footer.right::before {
+    right: 0;
+    background: url(../asset/images/ico_arrow_right_32.svg) no-repeat center/2.4rem auto;
   }
 }
 @layer registration {

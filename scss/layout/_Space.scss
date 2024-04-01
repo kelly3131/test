@@ -1,3 +1,11 @@
 @layer Layout.Space {
-    
+    .area-bar {
+        width: 100%; 
+        background-color: var(--neutral-100);
+        &.h5 {
+            margin: 0.8rem 0;
+            height: 0.5rem;
+            
+        }
+    }
 }
