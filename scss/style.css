@@ -395,6 +395,12 @@
     display: inline-block;
     background: url(../asset/images/ico_share_32.svg) no-repeat 0 0/contain;
   }
+  .more-text {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-block;
+    background: url(../asset/images/ico_more_circle_16.svg) no-repeat 0 0/contain;
+  }
   .main-header .header-btn-wrap {
     display: flex;
   }
@@ -2043,27 +2049,27 @@ button.swiper-pagination-bullet {
     color: var(--neutral-500);
   }
   .equipment-info .info-area .content p {
-    padding-right: 0.8rem;
     color: var(--neutral-900);
     font-size: 1.2rem;
     font-weight: 300;
   }
-  .equipment-info .info-area .content p:nth-of-type(1) {
-    padding-bottom: 0.4rem;
-    font-size: 1.3rem;
+  .equipment-info .info-area .content p .phone.member {
+    color: var(--primary-700);
     font-weight: 500;
+    text-decoration: underline;
   }
-  .equipment-info .info-area .content p.info-address {
+  .equipment-info .info-area .content .info-address-wrap {
+    display: flex;
+  }
+  .equipment-info .info-area .content .info-address-wrap .info-address {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
-  .equipment-info .info-area .content p .phone.member {
-    color: var(--primary-700);
-    font-weight: 500;
-    text-decoration: underline;
+  .equipment-info .info-area .content .info-address-wrap .more-text {
+    margin-left: 0.4rem;
   }
   .equipment-info .img-area {
     position: relative;
@@ -2113,6 +2119,10 @@ button.swiper-pagination-bullet {
   }
   .company-profile {
     line-height: 1.4;
+  }
+  .company-profile ul {
+    max-height: 20rem;
+    overflow-y: auto;
   }
   .company-profile ul li span {
     color: var(--neutral-600);
