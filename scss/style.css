@@ -395,12 +395,6 @@
     display: inline-block;
     background: url(../asset/images/ico_share_32.svg) no-repeat 0 0/contain;
   }
-  .more-text {
-    width: 1.6rem;
-    height: 1.6rem;
-    display: inline-block;
-    background: url(../asset/images/ico_more_circle_16.svg) no-repeat 0 0/contain;
-  }
   .main-header .header-btn-wrap {
     display: flex;
   }
@@ -949,26 +943,56 @@
     background: var(--neutral-300);
     border-radius: 0.3rem;
   }
+  .more-text {
+    position: relative;
+  }
+  .more-text #textbox {
+    position: absolute;
+    top: -3rem;
+    left: -7rem;
+    z-index: 10;
+    padding: 0.4rem 0.8rem;
+    display: none;
+    color: var(--neutral-600);
+    font-size: 1.3rem;
+    font-weight: 400;
+    white-space: nowrap;
+    border: 1px solid var(--neutral-600);
+    border-radius: 0.4rem;
+    background-color: var(--white);
+  }
 }
 @layer Layout.Align {}
 @layer Layout.Space {
   .area-bar {
+    border: none;
     width: 100%;
-    background-color: var(--neutral-100);
   }
   .area-bar.h5 {
+    background-color: var(--neutral-100);
     margin: 0.8rem 0;
     height: 0.5rem;
+  }
+  .area-bar.h2 {
+    background-color: var(--neutral-400);
+    margin: 0.8rem 0;
+    height: 0.2rem;
   }
 }
 @layer Layout.Space {
   .area-bar {
+    border: none;
     width: 100%;
-    background-color: var(--neutral-100);
   }
   .area-bar.h5 {
+    background-color: var(--neutral-100);
     margin: 0.8rem 0;
     height: 0.5rem;
+  }
+  .area-bar.h2 {
+    background-color: var(--neutral-400);
+    margin: 0.8rem 0;
+    height: 0.2rem;
   }
 }
 /**
@@ -2050,7 +2074,7 @@ button.swiper-pagination-bullet {
   }
   .equipment-info .info-area .content p {
     color: var(--neutral-900);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 300;
   }
   .equipment-info .info-area .content p .phone.member {
@@ -2118,17 +2142,33 @@ button.swiper-pagination-bullet {
     line-height: 1.2;
   }
   .company-profile {
-    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 22rem;
+    overflow-y: auto;
+    box-shadow: 0px 20px 50px 50px rgb(255, 255, 255);
   }
   .company-profile ul {
-    max-height: 20rem;
-    overflow-y: auto;
+    line-height: 1.4;
+    color: var(--neutral-700);
+    font-size: 1.4rem;
+  }
+  .company-profile ul + ul {
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--neutral-200);
+  }
+  .company-profile ul .company-word {
+    font-weight: 600;
   }
   .company-profile ul li span {
     color: var(--neutral-600);
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.3;
+  }
+  .company-profile ul.company-info-detail {
+    padding-top: 1.2rem;
   }
   .pop-img {
     display: none;

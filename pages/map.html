@@ -155,7 +155,12 @@
                         <!-- class="phone member"일 때(회원) css붙음 -->
                         <div class="info-address-wrap">
                             <p class="info-address"> 서울 건축구</p>
-                            <button class="more-text"></button>
+                            <div class="more-text" onclick="showTextBox()">
+                                <img src="../asset/images/ico_more_circle_16.svg" alt="주소 더보기">
+                                <div class="textbox" id="textbox" style="display: none;">
+                                    <span>서울 건축구 건축동 000-00 00호</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +171,7 @@
                 </div>
             </div>
             <div class="pop-hide-content hide-con">
-                <div class="area-bar h5"></div>
+                <hr class="area-bar h5"></hr>
                 <div class="content-wrap">
                     <div class="popup-group-title align both">
                         <h4 class="title">회사 공지사항</h4>
@@ -199,7 +204,8 @@
                         </li>
                     </ul>
                     <div class="company-profile">
-                        <ul>
+                        <ul class="company-info-detail">
+                            <li class="company-word"><p>아파트 시공! 24년 무사고의 건설세상이 만들면 다릅니다.</p></li>
                             <li><span>공사명 : </span> <span>원당 4구역 주택재개발 정비사업</span></li>
                             <li><span>공사기간 : </span><span>2030. 04 ~ 2033.</span></li>
                             <li><span>대지위치 : </span><span>고양시 덕양구 성사동 000-00 일원</span></li>
@@ -214,9 +220,20 @@
                             <li><span>설계사 : </span><span>수인건설</span></li>
                             <li><span>감리단 : </span><span>(주)쿡더디자인 감리회사</span></li>
                         </ul>
+                        <ul class="company-conect">
+                            <li></li>
+                            <li>031-123-4568</li>
+                            <li>24시간 무료상담</li>
+                            <li>연중 무휴</li>
+                            <li>https://www.aabbcc.co.kr</li>
+                        </ul>
+                        <ul class="company-comect-sns">
+                            <li><p>SNS 바로가기</p></li>
+                            <li></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="area-bar h5"></div>
+                <hr class="area-bar h5"></hr>
                 <div class="pop-footer">
                     <button class="share" aria-label="공유하기"></button>
                     <div class="popup-btn-wrap">
@@ -244,7 +261,14 @@
                         <p> <span>시공사 : </span><span>(주)건**상</span></p>
                         <p> <span class="name">김*축</span> <span class="phone">010-1**4-5**8</span></p>
                         
-                        <p class="info-address"> 서울 건축구 건축동 건축단지 가동 1010호 나머지주소나머지주소나머지주소나머지주소 <button class="more-text"></button></p>
+                        <p class="info-address"> 서울 건축구 건축동
+                            <div class="more-text" onclick="showTextBox()">
+                                <img src="../asset/images/ico_more_circle_16.svg" alt="주소 더보기">
+                                <div class="textbox" id="textbox" style="display: none;">
+                                    <span>서울 건축구 건축동 000-00 00호</span>
+                                </div>
+                            </div>
+                        </p>
                     </div>
                 </div>
                 <div class="img-area">
