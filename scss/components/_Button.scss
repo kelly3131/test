@@ -237,12 +237,12 @@
             content: "";
         }
         &.bookmark {
-            &--normal {
+            &.--normal {
                 &::before {
                     background: url(../asset/images/ico_bookmark_line_24.svg) no-repeat center / 2.4rem auto;
                 }
             }
-            &--pressed {
+            &.--pressed {
                 &::before {
                     background: url(../asset/images/ico_bookmark_filled_24.svg) no-repeat center / 2.4rem auto;
                 }

@@ -500,10 +500,10 @@
     height: 2.4rem;
     content: "";
   }
-  .btn-popup.bookmark--normal::before {
+  .btn-popup.bookmark.--normal::before {
     background: url(../asset/images/ico_bookmark_line_24.svg) no-repeat center/2.4rem auto;
   }
-  .btn-popup.bookmark--pressed::before {
+  .btn-popup.bookmark.--pressed::before {
     background: url(../asset/images/ico_bookmark_filled_24.svg) no-repeat center/2.4rem auto;
   }
   .btn-popup.close::before {
@@ -2028,8 +2028,21 @@ button.swiper-pagination-bullet {
   }
   .pop-toast .pop-header {
     padding: 0.8rem 1.6rem 0.8rem 1.6rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2.4rem 1fr 2.4rem;
+  }
+  .pop-toast .pop-header .bookmark {
+    grid-row: 1/-4;
+    grid-column: 1/2;
+  }
+  .pop-toast .pop-header .handle {
+    margin: 0 auto;
+    grid-row: 1/-4;
+    grid-column: 2/3;
+  }
+  .pop-toast .pop-header .close {
+    grid-row: 1/-4;
+    grid-column: 3/4;
   }
   .pop-toast .pop-footer {
     padding: 0 1.6rem 0.8rem 1.6rem;
@@ -2142,7 +2155,7 @@ button.swiper-pagination-bullet {
     -webkit-line-clamp: 3;
     line-height: 1.2;
   }
-  .company-profile {
+  .company-profile, .labor-profile {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -2150,25 +2163,25 @@ button.swiper-pagination-bullet {
     overflow-y: auto;
     box-shadow: 0px 20px 50px 50px rgb(255, 255, 255);
   }
-  .company-profile ul {
+  .company-profile ul, .labor-profile ul {
     line-height: 1.4;
     color: var(--neutral-700);
     font-size: 1.4rem;
   }
-  .company-profile ul + ul {
+  .company-profile ul + ul, .labor-profile ul + ul {
     padding-top: 0.8rem;
     border-top: 1px solid var(--neutral-200);
   }
-  .company-profile ul .company-word {
+  .company-profile ul .company-word, .labor-profile ul .company-word {
     font-weight: 600;
   }
-  .company-profile ul li span {
+  .company-profile ul li span, .labor-profile ul li span {
     color: var(--neutral-600);
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.3;
   }
-  .company-profile ul.company-info-detail {
+  .company-profile ul.company-info-detail, .labor-profile ul.company-info-detail {
     padding-top: 1.2rem;
   }
   .pop-img {
@@ -2251,6 +2264,23 @@ button.swiper-pagination-bullet {
     width: 1.6rem;
     height: 1.6rem;
     background-size: 1.6rem auto;
+  }
+  ul.popup-labor-list {
+    padding: 0 1.6rem;
+  }
+  ul.popup-labor-list li {
+    padding: 0.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul.popup-labor-list li .labor-job {
+    font-weight: 300;
+  }
+  ul.popup-labor-list li .labor-distance {
+    margin-left: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 400;
   }
 }
 @layer registration {

@@ -101,8 +101,21 @@
         }
         .pop-header {
             padding: 0.8rem 1.6rem 0.8rem 1.6rem;
-            display:flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 2.4rem 1fr 2.4rem;
+            .bookmark {
+                grid-row: 1 / -4;
+                grid-column: 1/ 2;
+            }
+            .handle {
+                margin: 0 auto;
+                grid-row: 1 / -4;
+                grid-column: 2 / 3;
+            }
+            .close {
+                grid-row: 1 / -4;
+                grid-column: 3 / 4;
+            }
         }
         .pop-footer {
             padding: 0 1.6rem 0.8rem 1.6rem;
@@ -227,7 +240,7 @@
             }
         }
     }
-    .company-profile {
+    .company-profile, .labor-profile {
         display:flex;
         flex-direction: column;
         gap: 0.8rem;
@@ -345,6 +358,29 @@
                 height: 1.6rem;
                 background-size: 1.6rem auto;
             }
+        }
+    }
+
+    ul.popup-labor-list {
+        padding: 0 1.6rem;
+        li {
+            padding: 0.2rem 0;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            .labor {
+                &-name {
+                }
+                &-job {
+                    font-weight: 300;
+                }
+                &-distance {
+                    margin-left: 0.8rem;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+            
         }
     }
 }
