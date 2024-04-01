@@ -134,7 +134,3 @@ function popTouchAction() {
       }
   });
 }
-function showTextBox() {
-    var textBox = document.getElementById("textbox");
-    textBox.style.display = "block";
-}
