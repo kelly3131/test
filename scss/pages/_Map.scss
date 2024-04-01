@@ -47,6 +47,13 @@
                         font-weight: 600;
                     }
                 }
+                &.btn-labor-company {
+                    bottom: 6rem;
+                    left: 20rem;
+                    &::before {
+                        background: url(../asset/images/ico_labor_company_32_43.svg) no-repeat center / 3.2rem 4.3rem;
+                    }
+                }
                 &.btn-equipment {
                     bottom: 40rem;
                     left: 10rem;
