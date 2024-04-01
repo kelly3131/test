@@ -937,6 +937,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+  .handle {
+    width: 2.5rem;
+    height: 0.3rem;
+    background: var(--neutral-300);
+    border-radius: 0.3rem;
+  }
 }
 @layer Layout.Align {}
 @layer Layout.Space {
