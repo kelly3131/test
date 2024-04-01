@@ -945,6 +945,7 @@
   }
   .more-text {
     position: relative;
+    display: flex;
   }
   .more-text .textbox {
     position: absolute;

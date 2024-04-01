@@ -90,6 +90,7 @@
     }
     .more-text {
         position: relative;
+        display: flex;
         .textbox {
             position:absolute;
             top:-3rem;
