@@ -56,10 +56,30 @@
         padding-bottom: 0.4rem;
     }
     h4 {
-        &.popup-group-title {
+        &.title {
             color: var(--neutral-700);
             font-size: 1.4rem;
             font-weight: 600;
         }
+    }
+
+    h5 {
+        &.title {
+            color: var(--neutral-600);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }  
+    }
+    .content-text {
+        color: var(--neutral-500);
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+    .text-until-3line {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
     }
 }

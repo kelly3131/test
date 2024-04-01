@@ -92,6 +92,12 @@
           width: 100%;
         }
     }
+    .share {
+        width: 3.2rem;
+        height: 3.2rem;
+        display: inline-block;
+        background: url(../asset/images/ico_share_32.svg) no-repeat 0 0 / contain;
+    }
     .main-header {
         .header-btn-wrap {
             display: flex;
