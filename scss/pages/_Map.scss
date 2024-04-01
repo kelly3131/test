@@ -227,12 +227,15 @@
         flex-wrap: nowrap;
         gap: 0.6rem;
         overflow: auto hidden;
-        .company-con {
+        .company-con, .labor-con {
             width: 18rem;
             padding: 0.8rem;
             background-color: #f8f9ff;
             border-radius: 0.8rem;
             border: 1px solid var(--primary-100);
+            &.labor-con {
+                width: calc(100% - 2rem)
+            }
             .content-text {
                 padding-top: 0.4rem;
                 display: -webkit-box;

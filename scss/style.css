@@ -2150,14 +2150,17 @@ button.swiper-pagination-bullet {
     gap: 0.6rem;
     overflow: auto hidden;
   }
-  .company-notification .company-con {
+  .company-notification .company-con, .company-notification .labor-con {
     width: 18rem;
     padding: 0.8rem;
     background-color: #f8f9ff;
     border-radius: 0.8rem;
     border: 1px solid var(--primary-100);
   }
-  .company-notification .company-con .content-text {
+  .company-notification .company-con.labor-con, .company-notification .labor-con.labor-con {
+    width: calc(100% - 2rem);
+  }
+  .company-notification .company-con .content-text, .company-notification .labor-con .content-text {
     padding-top: 0.4rem;
     display: -webkit-box;
     overflow: hidden;
