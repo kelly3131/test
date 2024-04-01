@@ -93,17 +93,19 @@
             bottom: 0;
         }
         .pop-header {
-            text-align: right;
-            padding-top: 1.6rem;
+            padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+            display:flex;
+            justify-content: space-between;
         }
         .pop-footer {
-            padding: 1.6rem0;
+            padding: 1.6rem;
             border-top: 1px solid #666;
             text-align: center;
         }
         .pop-con {
-            padding: 20px 0 0;
+            padding: 0 1.6rem 0.8rem 1.6rem;
             overflow: hidden auto;
+
         }
         .pop-close {
             display: inline-flex;
@@ -120,26 +122,71 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        padding: 1.6rem;
-        border-bottom: 1px solid #666;
         .info-area {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 0.4rem;
             height: 10rem;
+            .tit {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--neutral-900);
+                .subject-classification {
+                    margin-left: 0.4rem;
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    color: var(--neutral-500)
+                }
+            }
+            .content {
+                p {
+                    padding-right: 0.8rem;
+                    color: var(--neutral-900);
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    &:nth-of-type(1) {
+                        padding-bottom: 0.4rem;
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                    }
+                    &.info-address {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                    }
+                    .phone.member {
+                        color: var(--primary-700);
+                        font-weight: 500;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            
         }
-        .tit {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #000;
-        }
-        .img-area .img {
-            display: block;
+        .img-area {
+            position: relative;
             width: 10rem;
             height: 10rem;
-            background-color: #f5f5f5;
+            &::before {
+                position: absolute;
+                bottom: 0.4rem;
+                right: 0.4rem;
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                content: "";
+                background: url(../asset/images/ico_img_more_32.svg) no-repeat center / 2.4rem auto;
+            }
+            .test-img, .img {
+                display: block;
+                width: 10rem;
+                height: 10rem;
+                background-color: #f5f5f5;
+                object-fit: cover;
+                border-radius: 0.8rem;
+            }
         }
     }
     .company-notice {
@@ -182,10 +229,6 @@
             overflow: hidden;
         }
     }
-    .pop-header {
-        padding:0 1.6rem;
-        display:flex;
-        justify-content: space-between;
-    }
+    
 
 }

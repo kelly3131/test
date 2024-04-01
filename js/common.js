@@ -88,7 +88,7 @@ function modalImg(e) {
 function modaltoast(e) {
   e.preventDefault();
   var $popToast = $(".pop-toast");
-  var $toastCloseBtn = $(".pop-toast .pop-close");
+  var $toastCloseBtn = $(".pop-toast .btn-popup.close");
   var modalPop = $("#" + $(this).attr("data-modal"));
   // 이전에 열려있던 팝업을 닫기
   $(".pop-toast.open-modal").removeClass("open-modal");
@@ -104,9 +104,9 @@ function modaltoast(e) {
       setTimeout(function(){
           $popToast.removeClass("open-modal");
       }, 100);
-      setTimeout(function(){
-        $(".hide-con").hide();
-    }, 800);
+    //   setTimeout(function(){
+    //     $(".hide-con").hide();
+    // }, 800);
   }
   popTouchAction();
 }
