@@ -284,5 +284,41 @@
         </div>
     </div>
     <!-- //2024-03-29 KEJ : Img Layer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            leftSlide();
+            $(".tab-con:first").addClass("on");//탭 첫번째 컨텐츠
+            $(".subtab-con:first").addClass("on");//탭 첫번째 컨텐츠
+            tabClickAction(".tab-navigation > li > a", ".tab-con");// Tab 메뉴클릭
+            tabClickAction(".sub-tab > li > a", ".subtab-con");// Tab 메뉴클릭
+        });
+
+        /* Left Slide */
+        function leftSlide() {
+            $(".left-slide").on("click",function(){
+                $(".nav").addClass("on");
+                $(".dim").show();
+            });
+            $(".dim").on("click",function(){
+                $(".nav").removeClass("on");
+                $(".dim").hide();
+            });     
+        }
+
+        /* Tab 메뉴클릭 */
+        function tabClickAction(tmSelect, tcSelect) {
+            var tabMenus = $(tmSelect);
+            var tabCons = $(tcSelect);
+            tabMenus.each(function (index) {
+                var tabMenu = $(this);
+                var tabCon = tabCons.eq(index);
+                tabMenu.on("click", function () {
+                    tabMenu.parent().addClass("on").siblings().removeClass("on");
+                    tabCon.addClass("on").siblings().removeClass("on");
+                });
+            });
+        }
+    </script>
 </body>
 </html>
