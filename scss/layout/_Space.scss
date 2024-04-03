@@ -2,6 +2,12 @@
     .area-bar {
         border:none;
         width: 100%; 
+        &.h10 {
+            background-color: var(--neutral-100);
+            margin: 0.8rem 0;
+            height: 1rem;
+            
+        }
         &.h5 {
             background-color: var(--neutral-100);
             margin: 0.8rem 0;

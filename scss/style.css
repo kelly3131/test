@@ -1085,6 +1085,11 @@
     border: none;
     width: 100%;
   }
+  .area-bar.h10 {
+    background-color: var(--neutral-100);
+    margin: 0.8rem 0;
+    height: 1rem;
+  }
   .area-bar.h5 {
     background-color: var(--neutral-100);
     margin: 0.8rem 0;
@@ -1100,6 +1105,11 @@
   .area-bar {
     border: none;
     width: 100%;
+  }
+  .area-bar.h10 {
+    background-color: var(--neutral-100);
+    margin: 0.8rem 0;
+    height: 1rem;
   }
   .area-bar.h5 {
     background-color: var(--neutral-100);
@@ -2095,10 +2105,6 @@ button.swiper-pagination-bullet {
     width: 1.6rem;
     height: 1.6rem;
     background: url(../../asset/images/ico_file.svg) no-repeat 0 0/contain;
-  }
-  .join-duplicate-member-03 .corporate-certification .input-wrap {
-    display: flex;
-    flex-direction: column;
   }
 }
 @layer Pages.Login {}
