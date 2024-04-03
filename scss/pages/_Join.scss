@@ -59,6 +59,27 @@
           }
         }
       }
-    .join-duplicate-member-03 {
+    section.add-registration-list {
+        ul {
+            li {
+                
+                border:1px solid blue;
+                + li {
+
+                    
+                    border-top:1px solid var(--neutral-200);
+                }
+                > p {
+                    padding: 1.6rem 0;
+                    color: var(--neutral-700);
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .add-registration {
+        padding: 2.4rem 3.2rem 1.6rem 3.2rem;
+        background:  var(--neutral-100);
     }
 }
