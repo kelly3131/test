@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>건설세상 퍼블리싱 스타일 가이드</title>
   <!-- <link rel="stylesheet" href="css/guide.css" /> -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="scss/style.css" />
+  <link rel="stylesheet" href="scss/guide.css" />
 </head>
 
 <body>
@@ -26,12 +27,97 @@
       <div class="block">
         <h2 id="guide2">정렬</h2>
       </div>
+
       <div class="block">
         <h2 id="guide3">폼</h2>
+
+        <div class="calendar-group">
+          <input type="date" data-placeholder="기간(시작)" required>
+            ~
+          <input type="date" data-placeholder="기간(종료)" required>
+        </div>
+
+        <span class="txt-left">
+          <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox">
+          <label for="chk1"><p class="input-title">공사명</p></label>
+        </span>
+        <span class="txt-left">
+          <input type="checkbox" name="chk2" id="chk2" class="a11y-hidden checkbox">
+          <label for="chk2"><p class="input-title">공사기간</p></label>
+        </span>
+        <div class="radio-wrap">
+          <span class="txt-right mr-8">
+              <input type="radio" name="radio1" id="radio1" class="a11y-hidden radio">
+              <label for="radio1">공개</label>
+          </span>
+          <span class="txt-right">
+              <input type="radio" name="radio1" id="radio2" class="a11y-hidden radio">
+              <label for="radio2">비공개</label>
+          </span>
+        </div>
+        <div class="input-group">
+          <p class="input-title">최고관리자 이름</p>
+          <div class="input-wrap">
+              <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="title-wrap align both">
+              <p class="input-title">중간관리자</p>
+              <div class="radio-wrap">
+                  <span class="txt-right mr-8">
+                      <input type="radio" name="radio2" id="radio3" class="a11y-hidden radio">
+                      <label for="radio3">공개</label>
+                  </span>
+                  <span class="txt-right">
+                      <input type="radio" name="radio2" id="radio4" class="a11y-hidden radio">
+                      <label for="radio4">비공개</label>
+                  </span>
+              </div>
+          </div>
+          <div class="input-wrap">
+              <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+          </div>
+      </div>
+        <div class="input-group">
+          <div class="title-wrap align both">
+              <p class="input-title">현장명</p>
+          </div>
+
+          <div class="input-wrap">
+              <input type="text" class="input h40" placeholder="공사예정 또는 공사중인 현장명을 입력하세요." />
+          </div>
+        </div>
+        <div class="address">
+          <input type="number" class="input h40" />
+          <button class="btn small radius white">우편번호찾기</button>
+          <input type="text" class="input h40" />
+          <input type="text" class="input h40" placeholder="상세주소를 입력하세요." />
+        </div>
+      </div>
+      <div class="input-group">
+        <p class="input-title">휴대폰 번호</p>
+        <div class="certification-number">
+            <input type="number" class="input h40" placeholder="01012345678" />
+            <button class="btn small radius white">인증요청</button>
+            <input type="number" class="input h40 fullsize" placeholder="인증번호 입력" />
+        </div>
       </div>
       <div class="block">
         <h2 id="guide4">버튼</h2>
+        <a href="javascript:;" class="btn --disabled regular fullsize">다음</a>
+        <a href="javascript:;" class="btn --active regular fullsize">다음</a>
+        <div class="btn-wrap delete txt-right">
+          <button class="btn white small radius">
+              <img src="../asset/images/checkbox_on.svg" alt="">
+              항목삭제
+          </button>
+        </div>
+        <div class="btn-wrap">
+          <button class="btn primary radius small fullsize">항목 추가 <span class="text-plus">+</span></button>
+        </div>
       </div>
+
       <div class="block">
         <h2 id="guide5">표</h2>
       </div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../scss/style.css" />
+        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/common.js"></script>
+        <title>건설세상</title>
+    </head>
+    <body>
+        <header class="sub-header">
+            <button class="btn-back" aria-label="뒤로가기"></button>
+            <p>중복 회원가입</p>
+            <button type="button" class="close" aria-label="닫기"></button>
+        </header>
+        <main class="join">
+            <section>
+                <div>
+                    <h2 class="title">서비스 약관에 동의해주세요.</h2>
+                </div>
+                <div class="terms-wrap">
+                    <ul class="align-column">
+                        <li>
+                            <input type="checkbox" id="all" class="checkbox_all a11y-hidden checkbox">
+                            <label for="all" style="color:#c80a1e;"><a href="">
+                                <h5 class="title">모든 약관에 동의합니다.</h5>
+                                </a>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <label for="privacy">
+                                <a href=""><strong class="title-content f-14">개인회원 약관에 동의(필수)</strong></a>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <label for="privacy">
+                                <a href=""><strong class="title-content f-14">개인정보 수집 및 이용에 동의(필수)</strong></a>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <label for="privacy">
+                                <a href=""><strong class="title-content f-14">SMS발송서비스 약관에 동의(필수)</strong></a>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <label for="privacy">
+                                <a href=""><p class="title-content f-14">마케팅 정보 수신 동의 - 이메일(선택)</p></a>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <label for="privacy">
+                                <a href=""><p class="title-content f-14">마케팅 정보 수신 동의 - SMS/MMS(선택)</p></a>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    <script>
+        // 전체동의 클릭시
+        $(".checkbox_all").on("click", function() {
+            // 전체동의의 속성(checked)을 변수에 담아
+            var checkOr = $(this).prop("checked");
+            var checkboxItem = $('.checkbox_item');
+            // 각 동의의 속성(checked)를 전체동의와 동일하게 맞춰준다
+            checkboxItem.prop("checked", checkOr);
+        });
+        </script>
+    </body>
+    <footer>
+        <a href="" class="btn --active regular fullsize">다음</a>
+    </footer>
+</html>

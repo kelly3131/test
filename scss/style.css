@@ -316,7 +316,7 @@
     }
   }
 }
-@layer Button {
+@layer Components.Button {
   .btn {
     display: inline-flex;
     justify-content: center;
@@ -506,13 +506,49 @@
   .btn-popup.bookmark.--pressed::before {
     background: url(../asset/images/ico_bookmark_filled_24.svg) no-repeat center/2.4rem auto;
   }
-  .btn-popup.close::before {
+  button.close {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  button.close::before {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
     background: url(../asset/images/ico_close_24.svg) no-repeat center/2.4rem auto;
   }
 }
-@layer Heading {}
+@layer Components.Heading {
+  .title {
+    color: var(--neutral-900);
+  }
+  h2.title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.1rem;
+  }
+  h5.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+  }
+}
+@layer Typograpy {
+  @layer Common {
+    .title-content.f-14 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.6rem;
+    }
+  }
+  @layer Emphasis {
+    strong {
+      font-weight: 600;
+    }
+  }
+}
 @layer Visual {}
-@layer Form {
+@layer Components.Form {
   @layer InputCommon {
     .input {
       width: var(--width, auto);
@@ -616,6 +652,12 @@
       height: 1.6rem;
       background: url(../asset/images/checkbox_off.svg) no-repeat 0 0/contain;
     }
+    .checkbox + label .checkbox-text {
+      color: var(--neutral-600);
+      font-size: 1.2rem;
+      line-height: 2rem;
+      white-space: nowrap;
+    }
     .checkbox:checked + label::before {
       background: url(../asset/images/checkbox_on.svg) no-repeat 0 0/contain;
     }
@@ -641,7 +683,7 @@
       background: url(../asset/images/radio_on.svg) no-repeat 0 0/contain;
     }
   }
-  @layer address {
+  @layer Address {
     .address {
       display: grid;
       grid-template-columns: 1fr 8rem;
@@ -651,9 +693,65 @@
       grid-column: 1/-1;
     }
     .address .btn {
+      height: 100%;
       padding: 0 0.8rem;
       font-size: 1.2rem;
       letter-spacing: -0.1rem;
+    }
+  }
+  @layer CertificationNumber {
+    .certification-number {
+      display: grid;
+      grid-template-columns: 1fr 8rem;
+      gap: 0.4rem 0.8rem;
+    }
+    .certification-number input[type=text] {
+      grid-column: 1/-1;
+    }
+    .certification-number input:nth-of-type(2) {
+      grid-column: -3/-1;
+    }
+    .certification-number .btn {
+      height: 100%;
+      padding: 0 0.8rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.1rem;
+    }
+  }
+  @layer Calendar {
+    .calendar-group input[type=date] {
+      position: relative;
+      width: 120px;
+      height: 48px;
+      padding: 0 42px 0 16px;
+      background: url(../../asset/images/ico_calendar.svg) no-repeat right 21px center/16px auto;
+      border: 1px solid #E1E1E1;
+      border-radius: 12px;
+    }
+    .calendar-group input[type=date]::-webkit-clear-button,
+    .calendar-group input[type=date]::-webkit-inner-spin-button {
+      display: none;
+    }
+    .calendar-group input[type=date]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      color: transparent;
+      cursor: pointer;
+    }
+    .calendar-group input[type=date]::before {
+      content: attr(data-placeholder);
+      width: 100%;
+    }
+    .calendar-group input[type=date]:valid::before {
+      display: none;
+    }
+    .calendar-group input[data-placeholder]::before {
+      color: #BABABA;
+      font-size: 14px;
     }
   }
 }
@@ -772,7 +870,7 @@
 }
 @layer Component.Pagination {}
 @layer Header.Gnb {}
-@layer Layout.Heading {
+@layer Layout.Header {
   .main-header {
     position: fixed;
     top: 0;
@@ -873,45 +971,6 @@
   .hide {
     opacity: 0;
   }
-  .align {
-    display: flex;
-  }
-  .align.both {
-    justify-content: space-between;
-  }
-  .align.right {
-    justify-content: flex-end;
-  }
-  .align.center {
-    justify-content: center;
-  }
-  .align.vt {
-    align-items: flex-start;
-  }
-  .align.vm {
-    align-items: center;
-  }
-  .align.vb {
-    align-items: flex-end;
-  }
-  .txt-center {
-    text-align: center;
-  }
-  .txt-right {
-    text-align: right;
-  }
-  .txt-left {
-    text-align: left;
-  }
-  .input-title {
-    color: var(--neutral-700);
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-  .input-group-inner .input-title {
-    color: var(--neutral-600);
-    font-size: 1.3rem;
-  }
   .mt-24 {
     margin-top: 2.4rem;
   }
@@ -976,7 +1035,51 @@
     background-color: var(--white);
   }
 }
-@layer Layout.Align {}
+@layer Layout.Align {
+  .align {
+    display: flex;
+  }
+  .align.both {
+    justify-content: space-between;
+  }
+  .align.right {
+    justify-content: flex-end;
+  }
+  .align.center {
+    justify-content: center;
+  }
+  .align.vt {
+    align-items: flex-start;
+  }
+  .align.vm {
+    align-items: center;
+  }
+  .align.vb {
+    align-items: flex-end;
+  }
+  .align-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .txt-center {
+    text-align: center;
+  }
+  .txt-right {
+    text-align: right;
+  }
+  .txt-left {
+    text-align: left;
+  }
+  .input-title {
+    color: var(--neutral-700);
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .input-group-inner .input-title {
+    color: var(--neutral-600);
+    font-size: 1.3rem;
+  }
+}
 @layer Layout.Space {
   .area-bar {
     border: none;
@@ -1709,7 +1812,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-@layer pages.Index {
+@layer Pages.Index {
   body:has(.main) {
     background-color: #F4F6F8;
   }
@@ -1941,7 +2044,65 @@ button.swiper-pagination-bullet {
     font-weight: 600;
   }
 }
-@layer pages.Map {
+@layer Pages.Join {
+  .join-type-choice > div {
+    margin-top: 4rem;
+    gap: 3.2rem;
+    align-items: center;
+  }
+  .terms-wrap > ul {
+    gap: 1.6rem;
+  }
+  .terms-wrap strong {
+    text-decoration: underline;
+  }
+  .join {
+    padding-top: 2.4rem;
+    padding-bottom: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .join section {
+    padding: 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .join section .input-group .input-title {
+    padding-bottom: 0.8rem;
+  }
+  .join section .input-group .input-wrap {
+    padding-bottom: 1.6rem;
+  }
+  .file + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    height: 6rem;
+    background: var(--primary-100);
+    border: 1px dashed var(--primary-300);
+    border-radius: 0.4rem;
+    color: var(--primary-800);
+    font-size: 1.4rem;
+    line-height: 100%;
+    letter-spacing: -0.05rem;
+    cursor: pointer;
+  }
+  .file + label::after {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url(../../asset/images/ico_file.svg) no-repeat 0 0/contain;
+  }
+  .join-duplicate-member-03 .corporate-certification .input-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@layer Pages.Login {}
+@layer Pages.Map {
   .map .map-bg {
     position: absolute;
     top: 0;
@@ -2298,7 +2459,7 @@ button.swiper-pagination-bullet {
     font-weight: 400;
   }
 }
-@layer registration {
+@layer Pages.registration {
   .registration {
     padding: 0 1.6rem 10rem 1.6rem;
     height: 100%;
@@ -2463,4 +2624,4 @@ button.swiper-pagination-bullet {
     box-shadow: 0px 20px 50px 50px rgb(255, 255, 255);
   }
 }
-@layer pages.sub2 {}/*# sourceMappingURL=style.css.map */
+@layer Pages.sub2 {}/*# sourceMappingURL=style.css.map */

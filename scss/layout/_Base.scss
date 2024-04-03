@@ -6,39 +6,6 @@
     .hide {
         opacity: 0;
     }
-    .align {
-        display: flex;
-    }
-    .align.both {
-        justify-content: space-between;
-    }
-    .align.right {
-        justify-content: flex-end;
-    }
-    .align.center {
-        justify-content:center;
-    }
-    .align.vt {
-        align-items: flex-start;
-    }
-    .align.vm {
-        align-items: center;
-    }
-    .align.vb {
-        align-items: flex-end;
-    }
-    .txt-center{ text-align: center;}
-    .txt-right{ text-align: right;}
-    .txt-left{ text-align: left;}
-    .input-title {
-        color: var(--neutral-700);
-        font-size: 1.4rem;
-        font-weight: 400;
-        .input-group-inner & {
-            color: var(--neutral-600);
-            font-size: 1.3rem;
-        }
-    }
     .mt-24 {
         margin-top: 2.4rem;
     }

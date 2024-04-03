@@ -1,0 +1,70 @@
+@layer Pages.Join {
+    .join-type-choice {
+        > div {
+            margin-top: 4rem;
+            gap: 3.2rem;
+            align-items: center;
+        }
+    }
+    .terms-wrap {
+        > ul {
+            gap: 1.6rem;
+        }
+        strong {
+            text-decoration: underline;
+        }
+    }
+
+    .join {
+        padding-top: 2.4rem;
+        padding-bottom: 5.6rem;
+        display:flex;
+        flex-direction: column;
+        gap: 4rem;
+        section {
+            padding: 0 1.6rem;
+            display:flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            .input-group {
+                .input-title {
+                    padding-bottom: 0.8rem;
+                }
+                .input-wrap {
+                    padding-bottom: 1.6rem;
+                }
+            }
+        }
+    }
+    .file {
+        + label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.2rem;
+          height: 6rem;
+          background: var(--primary-100);
+          border: 1px dashed var(--primary-300);
+          border-radius: 0.4rem;
+          color: var(--primary-800);
+          font-size: 1.4rem;
+          line-height: 100%;
+          letter-spacing: -0.05rem;
+          cursor: pointer;
+          &::after {
+            content: "";
+            width: 1.6rem;
+            height: 1.6rem;
+            background: url(../../asset/images/ico_file.svg) no-repeat 0 0 / contain;
+          }
+        }
+      }
+    .join-duplicate-member-03 {
+        .corporate-certification {
+            .input-wrap {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

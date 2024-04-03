@@ -9,9 +9,46 @@
         <script defer src="../js/common.js"></script>
         <title>건설세상</title>
     </head>
-<body>
-    <header></header>
-    <main></main>
+    <body>
+        <header class="sub-header">
+            <button class="btn-back" aria-label="뒤로가기"></button>
+            <p>로그인</p>
+            <button type="button" class="close" aria-label="닫기"></button>
+        </header>
+        <main>
+            <ul class="tab-navigation first-depth">
+                <li class="on"><a href="javascript:;">기업&#5867;중복회원</a></li>
+                <li><a href="javascript:;">개인회원</a></li>
+                <!-- <li><a href="javascript:;">탭메뉴3</a></li>
+                <li><a href="javascript:;">탭메뉴4</a></li> -->
+            </ul>
+            <div class="tab-con-wrap">
+                <div  class="tab-con" id="tab1">
+                    탭내용1
+                </div>
+                <div  class="tab-con" id="tab2">
+                    탭내용2
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            function openTab(tabId) {
+                // 모든 탭 메뉴와 탭 내용 숨기기
+                var tabMenus = document.querySelectorAll('.tab-menu');
+                var tabContents = document.querySelectorAll('.tab-content');
+                tabMenus.forEach(function(tabMenu) {
+                    tabMenu.classList.remove('on');
+                });
+                tabContents.forEach(function(tabContent) {
+                    tabContent.classList.remove('on');
+                });
+
+                // 선택한 탭 메뉴와 탭 내용 보이기
+                document.getElementById(tabId).classList.add('on');
+                document.querySelector('[onclick="openTab(\'' + tabId + '\')"]').classList.add('on');
+            }
+        </script>
+    </body>
     <footer></footer>
-</body>
 </html>

@@ -5,13 +5,14 @@
 @import "./components/Reset"; // reset.css
 @import "./components/Button"; // 버튼
 @import "./vendors/Swiper"; // 벤더
-@import "./components/Heading"; // 제목
+@import "./components/Heading"; // 제목 텍스트 정의
+@import "./components/Typograpy"; // 본문 텍스트정의
 @import "./components/Visual"; // 비주얼
 @import "./components/Form"; // 서식
 @import "./components/Table"; // 표
 @import "./components/Tab"; // 탭
 @import "./components/Pagination"; // 
-@import "./layout/Heading"; // 헤더
+@import "./layout/Header"; // 헤더
 @import "./layout/Footer"; // 푸터
 @import "./layout/Base"; // 기본정의
 @import "./layout/Align"; // 정렬
@@ -20,6 +21,8 @@
 @import "./layout/Swiper"; // 스와이퍼
 
 @import "./pages/Index"; // 메인페이지
+@import "./pages/Join"; // 가입페이지
+@import "./pages/Login"; // 로그인페이지
 @import "./pages/Map"; // 지도페이지
 @import "./pages/Registration"; // 지도페이지
 @import "./popup/PopUp"; // 팝업
