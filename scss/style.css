@@ -549,10 +549,41 @@
     .txt-underline {
       text-decoration: underline;
     }
+    .input-title {
+      color: var(--neutral-700);
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    .input-group-inner .input-title {
+      color: var(--neutral-600);
+      font-size: 1.3rem;
+    }
+    .title-wrap p {
+      color: var(--neutral-700);
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    .title-wrap p:nth-of-type(2) {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    .title-wrap a {
+      color: var(--neutral-600);
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
   }
   @layer Emphasis {
     strong {
       font-weight: 600;
+    }
+  }
+  @layer TxtColor {
+    .primary-500-main {
+      color: var(--primary-500);
+    }
+    .error-400 {
+      color: var(--error-400);
     }
   }
 }
@@ -586,6 +617,9 @@
       padding: 0 1.6rem;
       height: 3.2rem;
       border-radius: 0.8rem;
+    }
+    .input:disabled {
+      background-color: var(--neutral-200);
     }
     .input .input,
     .input .textarea,
@@ -686,6 +720,18 @@
     }
     .radio:checked + label::before {
       background: url(../asset/images/radio_on.svg) no-repeat 0 0/contain;
+    }
+  }
+  @layer InputMix {
+    .check-box-input {
+      display: flex;
+      align-items: center;
+    }
+    .check-box-input .item1 {
+      width: min-content;
+    }
+    .check-box-input .item2 {
+      flex: 1;
     }
   }
   @layer Address {
@@ -1062,15 +1108,6 @@
   }
   .txt-left {
     text-align: left;
-  }
-  .input-title {
-    color: var(--neutral-700);
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-  .input-group-inner .input-title {
-    color: var(--neutral-600);
-    font-size: 1.3rem;
   }
 }
 @layer Layout.Space {
@@ -2124,6 +2161,16 @@ button.swiper-pagination-bullet {
     padding: 2.4rem 3.2rem 1.6rem 3.2rem;
     background: var(--neutral-100);
   }
+  .check-box-input .item1 {
+    padding-right: 0.8rem;
+  }
+  .text-group span {
+    font-size: 1.4rem;
+  }
+  .text-group .text-wrap span.item2 {
+    text-align: center;
+    text-decoration: line-through;
+  }
 }
 @layer Pages.Login {}
 @layer Pages.Map {
@@ -2504,12 +2551,6 @@ button.swiper-pagination-bullet {
   }
   .input-group-inner .registration .input-group {
     gap: 0.4rem;
-  }
-  .registration .input-group:has(.address) .title-wrap a {
-    color: var(--neutral-600);
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-decoration: underline;
   }
   .registration ul.input-group-inner {
     padding-left: 1.6rem;

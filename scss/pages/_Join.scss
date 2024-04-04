@@ -80,4 +80,22 @@
         padding: 2.4rem 3.2rem 1.6rem 3.2rem;
         background:  var(--neutral-100);
     }
+    .check-box-input {
+        .item1 {
+            padding-right: 0.8rem ;
+        }   
+    }
+    .text-group {
+        span {
+            font-size: 1.4rem;
+        }
+        .text-wrap {
+            span {
+                &.item2 {
+                    text-align: center;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
 }

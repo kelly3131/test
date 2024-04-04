@@ -30,6 +30,9 @@
                 height: 3.2rem;
                 border-radius: 0.8rem;
             }
+            &:disabled {
+                background-color: var(--neutral-200);
+            }
             .input,
             .textarea,
             .select {
@@ -143,6 +146,18 @@
             }
             }
         }
+        }
+    }
+    @layer InputMix {
+        .check-box-input {
+            display:flex;
+            align-items: center;
+            .item1 {
+                width: min-content;
+            }
+            .item2 {
+                flex: 1;
+            }
         }
     }
     @layer Address {

@@ -23,13 +23,13 @@
                 <div class="input-group">
                     <p class="input-title">최고관리자 이름</p>
                     <div class="input-wrap">
-                        <input type="text" class="input h40" placeholder="사업장 관리자 및 위임받은 분의 이름을 적습니다." />
+                        <input type="text" class="input h40" placeholder="김건설" disabled/>
                     </div>
                 </div>
                 <div class="input-group">
                     <p class="input-title">아이디</p>
                     <div class="input-wrap">
-                        <input type="text" class="input h40" placeholder="01012345678" />
+                        <input type="text" class="input h40" placeholder="01012345678" disabled/>
                     </div>
                 </div>
                 <div class="input-group">
@@ -303,7 +303,100 @@
                         </span>
                     </div>
                 </div>
+                <div class="input-group">
+                    <div class="input-wrap check-box-input">
+                        <div class="item1">
+                            <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
+                            <label for="chk9"></label>
+                        </div>
+                        <div class="item2">
+                            <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">실행소장</p></label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrap check-box-input">
+                        <div class="item1">
+                            <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
+                            <label for="chk9"></label>
+                        </div>
+                        <div class="item2">
+                            <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
+                        <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                        <label for="chk9"><p class="checkbox-text">실행소장</p></label>
+                    </div>
+                </div>
+                <div class="btn-wrap delete txt-right">
+                    <button class="btn white small radius">
+                        <img src="../asset/images/checkbox_on.svg" alt="">
+                        항목삭제
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <p class="input-title">결제</p>
+                    <div class="input-wrap">
+                        <div class="text-group align both">
+                            <div class="text-wrap">
+                                <span class="item1">매월 88,000원</span>
+                                <span class="item2">92,400원</span>
+                            </div>
+                            <span>무료</span>
+                        </div>
+                        <span class="align right">
+                            <div class="radio-wrap">
+                                <span class="txt-right mr-8">
+                                    <input type="radio" name="radio1" id="payment1" class="a11y-hidden radio">
+                                    <label for="payment1">휴대폰 결제</label>
+                                </span>
+                                <span class="txt-right">
+                                    <input type="radio" name="radio1" id="payment2" class="a11y-hidden radio">
+                                    <label for="payment2">카드결제</label>
+                                </span>
+                                <span class="txt-right">
+                                    <input type="radio" name="radio1" id="payment3" class="a11y-hidden radio">
+                                    <label for="payment3">무통장 입금</label>
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+
+                    <div class="input-group recommender">
+                        <div class="title-wrap align both">
+                            <p class="input-title">추천인코드</p>
+                            <p>입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" class="input h40" placeholder="12자리" />
+                        </div>
+                    </div>
+                    <div class="input-group recommender">
+                        <div class="title-wrap align both">
+                            <p class="input-title">추천인명</p>
+                            <p class="primary-500-main">2024년 5월 16일부터 8,800원이 마일리지로 적립됩니다.</p>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" class="input h40" placeholder="김건설" />
+                        </div>
+                    </div>
+                </div>
             </section>
+            <section></section>
         </main>
         <!-- <script>
             $(".que").click(function() {

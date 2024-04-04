@@ -22,16 +22,6 @@
                 gap: 0.4rem;
                 // 이거 왜 적용안되지
             }
-            &:has(.address) {
-                .title-wrap {
-                    a {
-                        color: var(--neutral-600);
-                        font-size: 1.2rem;
-                        font-weight: 300;
-                        text-decoration: underline;
-                    }
-                }
-            }
         }
         ul.input-group-inner {
             padding-left: 1.6rem;
