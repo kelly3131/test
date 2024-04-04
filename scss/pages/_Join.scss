@@ -30,16 +30,17 @@
                 .input-title {
                     padding-bottom: 0.8rem;
                 }
-                .input-wrap {
-                    padding-bottom: 1.6rem;
-                }
                 input {
                     &.input-ico-search {
                         
                     }
                 }
             }
+            .add-description {
+                padding: 1.2rem;
+            }
         }
+        
     }
     .file {
         + label {
@@ -100,6 +101,53 @@
                     text-align: center;
                     text-decoration: line-through;
                 }
+            }
+        }
+    }
+    section.payment {
+        .radio-wrap {
+            padding-top: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            // gap: 1.2rem;
+            li {
+                display: flex;
+                align-items: center;
+                height: 4rem;
+                border: 1px solid var(--neutral-300);
+                + li {
+                    margin-top: -0.1rem;
+                    
+                }
+                label {
+                    padding: 0 1.2rem;
+                    // border:1px solid red;
+                    font-size: 1.4rem !important;
+                }
+            }
+            .card, .phone, .bank-book {
+                > span {
+                    padding-left: 1.2rem;
+                }
+            }
+            .naver, .kakao, .samsung {
+                img {
+                    padding-left: 1.2rem;
+                }
+            }
+            img {
+                width: auto;
+                height: 2.2rem;
+                // &.naver {
+                // }
+                // &.kakao {
+                //     width: auto;
+                //     height: 3rem;
+                // }
+                // &.samsung {
+                //     width: auto;
+                //     height: 3rem;
+                // }
             }
         }
     }

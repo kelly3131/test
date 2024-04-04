@@ -20,7 +20,7 @@
             background-color: var(--red-100);
             color: var(--red-300);
         }
-        &.--disabled {
+        &.--disabled, &:disabled {
             background-color: var(--neutral-300);
             border-color: var(--neutral-300);
             color: var(--neutral-500);

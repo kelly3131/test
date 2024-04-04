@@ -190,7 +190,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="add-registration">
                 <div class="btn-wrap align center">
                     <button class="btn primary radius small fullsize">사업자 추가 등록하기<span class="text-plus">+</span></button>
                 </div>
@@ -288,14 +288,14 @@
                 </ul>
             </section> -->
             <section>
-                <div>
-                    <h2 class="title">개인회원 내용을<br />입력해주세요.</h2>
-                    <p class="add-description">월정액(소속당) : 22,000원 (2개월 무료구독권)</p>
-                </div>
-                <div class="input-group belong">
+                <h2 class="title">개인회원 내용을<br />입력해주세요.</h2>
+                <p class="add-description">월정액(소속당) : 22,000원 (2개월 무료구독권)</p>
+            </section>
+            <section class="belong">
+                <div class="input-group ">
                     <p class="input-title">소속</p>
                     <div class="input-wrap">
-                        <input type="text" class="input h40 input-ico-search" placeholder="등록되어 있는 기업명을 검색합니다." />
+                        <input type="text" class="input h40 input-ico-search" placeholder="등록되어 있는 기업명을 검색합니다." readonly/>
                         <p class="input-txt-under">소속이 없으면 무소속으로 가입되며 <span class="txt-underline">마이페이지</span>에서 수정 가능합니다.</p>
                         <span class="align right">
                             <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox">
@@ -348,65 +348,116 @@
                     </button>
                 </div>
 
+            </section>
+            <section class="payment">
                 <div class="input-group">
                     <p class="input-title">결제</p>
+                    <div class="input-wrap text-group align both vm add-description">
+                        <div class="text-wrap ">
+                            <span class="item1">매월 88,000원</span>
+                            <span class="item2">92,400원</span>
+                        </div>
+                        <span class="red-400">무료</span>
+                    </div>
+                    <ul class="radio-wrap">
+                        <li>
+                            <input type="radio" name="payment" id="payment1" class="a11y-hidden radio">
+                            <label for="payment1" class="card"><span>신용카드</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment2" class="a11y-hidden radio">
+                            <label for="payment2" class="phone"><span>휴대폰 결제</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment3" class="a11y-hidden radio">
+                            <label for="payment3" class="bank-book"><span>무통장 입금</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment4" class="a11y-hidden radio">
+                            <label for="payment4" class="naver"><img src="../asset/images/ico_payment_naver.png" alt=""><span>네이버페이</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment5" class="a11y-hidden radio">
+                            <label for="payment5" class="kakao"><img src="../asset/images/ico_payment_kakao.png" alt=""><span>카카오페이</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment6" class="a11y-hidden radio">
+                            <label for="payment6" class="samsung"><img src="../asset/images/ico_payment_samsung.png" alt=""><span>삼성페이</span></label>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </section>
+            <section class="recommender">
+                <div class="input-group">
+                    <div class="title-wrap align both">
+                        <p class="input-title">추천인코드</p>
+                        <p>입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
+                    </div>
                     <div class="input-wrap">
-                        <div class="text-group align both">
-                            <div class="text-wrap">
-                                <span class="item1">매월 88,000원</span>
-                                <span class="item2">92,400원</span>
-                            </div>
-                            <span>무료</span>
-                        </div>
-                        <span class="align right">
-                            <div class="radio-wrap">
-                                <span class="txt-right mr-8">
-                                    <input type="radio" name="radio1" id="payment1" class="a11y-hidden radio">
-                                    <label for="payment1">휴대폰 결제</label>
-                                </span>
-                                <span class="txt-right">
-                                    <input type="radio" name="radio1" id="payment2" class="a11y-hidden radio">
-                                    <label for="payment2">카드결제</label>
-                                </span>
-                                <span class="txt-right">
-                                    <input type="radio" name="radio1" id="payment3" class="a11y-hidden radio">
-                                    <label for="payment3">무통장 입금</label>
-                                </span>
-                            </div>
-                        </span>
+                        <input type="text" class="input h40" placeholder="12자리" />
                     </div>
-
-                    <div class="input-group recommender">
-                        <div class="title-wrap align both">
-                            <p class="input-title">추천인코드</p>
-                            <p>입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
-                        </div>
-                        <div class="input-wrap">
-                            <input type="text" class="input h40" placeholder="12자리" />
-                        </div>
+                </div>
+                <div class="input-group">
+                    <div class="title-wrap align both">
+                        <p class="input-title">추천인명</p>
+                        <p class="primary-500-main">2024년 5월 16일부터 8,800원이 마일리지로 적립됩니다.</p>
                     </div>
-                    <div class="input-group recommender">
-                        <div class="title-wrap align both">
-                            <p class="input-title">추천인명</p>
-                            <p class="primary-500-main">2024년 5월 16일부터 8,800원이 마일리지로 적립됩니다.</p>
-                        </div>
-                        <div class="input-wrap">
-                            <input type="text" class="input h40" placeholder="김건설" />
-                        </div>
+                    <div class="input-wrap">
+                        <input type="text" class="input h40" placeholder="김건설" />
                     </div>
                 </div>
             </section>
-            <section></section>
         </main>
-        <!-- <script>
-            $(".que").click(function() {
-            $(this).next(".anw").stop().slideToggle(300);
-            $(this).toggleClass('on').siblings().removeClass('on');
-            $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
+        <div id="layerPop-join-search" class="pop-toast">
+            <div class="pop-header">
+                <div class="handle"></div>
+                <button type="button" class="btn-popup close" aria-label="닫기"></button>
+            </div>
+            <div class="pop-con">
+                <div class="labor-profile">
+                    <ul class="popup-labor-list">
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $(".layer-toast").on("click", modaltoast);// Toast Layer Popup
             });
-        </script> -->
+            /* Toast Layer Popup */
+            function modaltoast(e) {
+            e.preventDefault();
+            var $popToast = $(".pop-toast");
+            var $toastCloseBtn = $(".pop-toast .btn-popup.close");
+            var modalPop = $("#" + $(this).attr("data-modal"));
+            // 이전에 열려있던 팝업을 닫기
+            $(".pop-toast.open-modal").removeClass("open-modal");
+
+            setTimeout(function(){
+                    modalPop.addClass("open-modal");
+                }, 100);
+            $toastCloseBtn.on("click", modalToastClose); 
+            //토스트레이어 닫기
+            function modalToastClose() {
+                var $popToast = $(".pop-toast");
+                $popToast.removeClass("full");
+                setTimeout(function(){
+                    $popToast.removeClass("open-modal");
+                }, 100);
+                setTimeout(function(){
+                    $(".hide-con").hide();
+                }, 800);
+            }
+            popTouchAction();
+            }
+        </script>
     </body>
     <footer>
-        <a href="" class="btn --active regular fullsize">회원가입 완료</a>
+        <button class="btn regular primary fullsize"disabled >회원가입 완료</button>
     </footer>
 </html>
