@@ -196,7 +196,7 @@
                 </div>
             </section>
 
-            <section class="add-registration-list">
+            <!-- <section class="add-registration-list">
                 <ul>
                     <li>
                         <p>사업자 추가등록<span>(1/5)</span><button class="btn-accordion gray"></button></p>
@@ -286,16 +286,32 @@
                     </li>
                     
                 </ul>
+            </section> -->
+            <section>
+                <div>
+                    <h2 class="title">개인회원 내용을<br />입력해주세요.</h2>
+                    <p class="add-description">월정액(소속당) : 22,000원 (2개월 무료구독권)</p>
+                </div>
+                <div class="input-group">
+                    <p class="input-title">소속</p>
+                    <div class="input-wrap">
+                        <input type="text" class="input h40" placeholder="등록되어 있는 기업명을 검색합니다." />
+                        <p class="input-txt-under">소속이 없으면 무소속으로 가입되며 <span class="txt-underline">마이페이지</span>에서 수정 가능합니다.</p>
+                        <span class="align right">
+                            <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">소속없음</p></label>
+                        </span>
+                    </div>
+                </div>
             </section>
-            
         </main>
-        <script>
+        <!-- <script>
             $(".que").click(function() {
             $(this).next(".anw").stop().slideToggle(300);
             $(this).toggleClass('on').siblings().removeClass('on');
             $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
             });
-        </script>
+        </script> -->
     </body>
     <footer>
         <a href="" class="btn --active regular fullsize">회원가입 완료</a>

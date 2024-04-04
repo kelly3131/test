@@ -21,6 +21,7 @@
             &.h40 {
                 //높이에 따라 좌우 padding, border-radius 달라짐
                 padding: 0 1.6rem;
+                width: 100%;
                 height: 4rem;
                 border-radius: 1.2rem;
             }
@@ -62,9 +63,9 @@
             }
         }
         .input-wrap {
-            display: grid;
-            grid-template-columns: 1fr 8rem;
-            gap: 0.4rem 0.8rem;
+            // display: grid;
+            // grid-template-columns: 1fr 8rem;
+            // gap: 0.4rem 0.8rem;
             input[type="text"] {
               grid-column: 1 / -1;
             }
