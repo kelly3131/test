@@ -33,6 +33,10 @@
             &:disabled {
                 background-color: var(--neutral-200);
             }
+            &.input-ico-search {
+                background: url(../asset/images/ico_search_gray_24.svg) no-repeat right 1.6rem center / 1.6rem auto;
+
+            }
             .input,
             .textarea,
             .select {

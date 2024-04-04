@@ -411,6 +411,9 @@
   .main-header .header-btn-wrap button.btn-setting {
     background: url(../asset/images/ico_main_header_03_24.svg) no-repeat center/2.4rem auto;
   }
+  .btn-search {
+    background: url(../asset/images/ico_main_header_01_24.svg) no-repeat center/2.4rem auto;
+  }
   .btn-arrow-style01 {
     width: 1.6rem;
     height: 1.6rem;
@@ -620,6 +623,9 @@
     }
     .input:disabled {
       background-color: var(--neutral-200);
+    }
+    .input.input-ico-search {
+      background: url(../asset/images/ico_search_gray_24.svg) no-repeat right 1.6rem center/1.6rem auto;
     }
     .input .input,
     .input .textarea,
