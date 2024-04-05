@@ -2203,7 +2203,10 @@ button.swiper-pagination-bullet {
     padding-bottom: 1.2rem;
     border-bottom: 0.1rem solid var(--neutral-200);
   }
-  .add-registration {
+  section.add-registration-list .accordion .delete {
+    margin: 1.2rem;
+  }
+  section.add-registration-list .add-registration {
     padding: 2.4rem 3.2rem 1.6rem 3.2rem;
     background: var(--neutral-100);
   }
