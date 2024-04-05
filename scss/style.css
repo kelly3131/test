@@ -954,9 +954,24 @@
 }
 @layer Component.Pagination {}
 @layer Accordion {
-  .accordion .accordion-subject {
+  details.accordion .accordion-subject {
     display: flex;
     justify-content: space-between;
+  }
+  summary.accordion-subject {
+    color: var(--neutral-700);
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .arrow {
+    transition: transform 0.3s;
+    transform: rotate(0deg);
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat center/2.4rem auto;
+  }
+  details[open] .arrow {
+    transform: rotate(180deg);
   }
 }
 @layer Header.Gnb {}
@@ -2183,18 +2198,6 @@ button.swiper-pagination-bullet {
     width: 1.6rem;
     height: 1.6rem;
     background: url(../../asset/images/ico_file.svg) no-repeat 0 0/contain;
-  }
-  section.add-registration-list ul li {
-    border: 1px solid blue;
-  }
-  section.add-registration-list ul li + li {
-    border-top: 1px solid var(--neutral-200);
-  }
-  section.add-registration-list ul li > p {
-    padding: 1.6rem 0;
-    color: var(--neutral-700);
-    font-size: 1.4rem;
-    font-weight: 400;
   }
   .add-registration {
     padding: 2.4rem 3.2rem 1.6rem 3.2rem;
