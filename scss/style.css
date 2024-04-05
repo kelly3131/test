@@ -973,6 +973,9 @@
   details[open] .arrow {
     transform: rotate(180deg);
   }
+  summary::-webkit-details-marker, summary::-moz-details-marker {
+    display: none;
+  }
 }
 @layer Header.Gnb {}
 @layer Layout.Header {

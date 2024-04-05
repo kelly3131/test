@@ -1,36 +1,40 @@
 @layer Accordion {
     details.accordion {
-    .accordion {
-        &-subject {
-            display:flex;
-            justify-content: space-between;
+        .accordion {
+            &-subject {
+                display:flex;
+                justify-content: space-between;
+            }
+            &-content {
+            }
         }
-        &-content {
+        &.style1 {
+
         }
     }
-    &.style1 {
+    summary.accordion-subject {
+        color: var(--neutral-700);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    .arrow {
+        transition: transform 0.3s;
+        // width: 10px;
+        // height: 10px;
+        // border-top: 2px solid grey;
+        // border-right: 2px solid grey;
+        transform: rotate(0deg);
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat center / 2.4rem auto;
 
     }
- }
- summary.accordion-subject {
-    color: var(--neutral-700);
-    font-size: 1.4rem;
-    font-weight: 400;
-}
-.arrow {
-    transition: transform 0.3s;
-    // width: 10px;
-    // height: 10px;
-    // border-top: 2px solid grey;
-    // border-right: 2px solid grey;
-    transform: rotate(0deg);
-    width: 2.4rem;
-    height: 2.4rem;
-    background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat center / 2.4rem auto;
 
-  }
-
-  details[open] .arrow {
-    transform: rotate(180deg);
-  }
+    details[open] .arrow {
+        transform: rotate(180deg);
+    }
+    summary::-webkit-details-marker, summary::-moz-details-marker {
+        display: none;
+    }
+      
 }
