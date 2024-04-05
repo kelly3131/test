@@ -74,7 +74,10 @@
         }
       }
     section.add-registration-list {
-        
+        .accordion {
+            padding-bottom: 1.2rem;
+            border-bottom: 0.1rem solid var(--neutral-200);
+        }
     }
     .add-registration {
         padding: 2.4rem 3.2rem 1.6rem 3.2rem;
