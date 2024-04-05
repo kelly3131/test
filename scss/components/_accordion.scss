@@ -1,0 +1,15 @@
+@layer Accordion {
+ .accordion {
+    .accordion {
+        &-subject {
+            display:flex;
+            justify-content: space-between;
+        }
+        &-content {
+        }
+    }
+    &.style1 {
+
+    }
+ }
+}

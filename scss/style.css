@@ -520,6 +520,16 @@
     content: "";
     background: url(../asset/images/ico_close_24.svg) no-repeat center/2.4rem auto;
   }
+  .btn-accordion {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .btn-accordion.down {
+    background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat center/2.4rem auto;
+  }
+  .btn-accordion.up {
+    background: url(../asset/images/ico_arrow_up_black_24.svg) no-repeat center/2.4rem auto;
+  }
 }
 @layer Components.Heading {
   .title {
@@ -528,7 +538,7 @@
   h2.title {
     font-size: 2rem;
     font-weight: 700;
-    line-height: 2.1rem;
+    line-height: 2.8rem;
   }
   h5.title {
     font-size: 1.4rem;
@@ -545,6 +555,7 @@
     }
     .input-txt-under {
       padding-top: 0.4rem;
+      padding-left: 0.8rem;
       color: var(--neutral-600);
       font-size: 1.2rem;
       font-weight: 400;
@@ -603,6 +614,47 @@
 @layer Visual {}
 @layer Components.Form {
   @layer InputCommon {
+    .input,
+    .textarea,
+    .select {
+      border: 0.1rem solid var(--neutral-300);
+      padding: 0 1.2rem;
+      width: 100%;
+      background-color: var(--white);
+      box-sizing: border-box;
+      color: var(--neutral-600);
+      font-size: 1.2rem;
+      line-height: 100%;
+      border-radius: 0.4rem;
+    }
+    .input:disabled,
+    .textarea:disabled,
+    .select:disabled {
+      background-color: var(--neutral-100);
+      border-color: var(--neutral-300);
+      color: var(--neutral-500);
+    }
+    .input:disabled::placeholder,
+    .textarea:disabled::placeholder,
+    .select:disabled::placeholder {
+      color: var(--neutral-500);
+    }
+    .input.error,
+    .textarea.error,
+    .select.error {
+      color: var(--error-400);
+      border-color: var(--error-400);
+    }
+    .input.error::placeholder,
+    .textarea.error::placeholder,
+    .select.error::placeholder {
+      color: var(--error-400);
+    }
+    .input:focus,
+    .textarea:focus,
+    .select:focus {
+      border-color: var(--primary-500);
+    }
     .input {
       width: var(--width, auto);
       box-sizing: border-box;
@@ -637,49 +689,14 @@
     .input.input-ico-search {
       background: url(../asset/images/ico_search_gray_24.svg) no-repeat right 1.6rem center/1.6rem auto;
     }
-    .input .input,
-    .input .textarea,
-    .input .select {
-      border: 0.1rem solid var(--neutral-300);
-      padding: 0 1.2rem;
-      width: 100%;
-      background-color: var(--white);
-      box-sizing: border-box;
-      color: var(--neutral-600);
-      font-size: 1.2rem;
-      line-height: 100%;
-      border-radius: 0.4rem;
-    }
-    .input .input:disabled,
-    .input .textarea:disabled,
-    .input .select:disabled {
-      background-color: var(--neutral-100);
-      border-color: var(--neutral-300);
-      color: var(--neutral-500);
-    }
-    .input .input:disabled::placeholder,
-    .input .textarea:disabled::placeholder,
-    .input .select:disabled::placeholder {
-      color: var(--neutral-500);
-    }
-    .input .input.error,
-    .input .textarea.error,
-    .input .select.error {
-      color: var(--error-400);
-      border-color: var(--error-400);
-    }
-    .input .input.error::placeholder,
-    .input .textarea.error::placeholder,
-    .input .select.error::placeholder {
-      color: var(--error-400);
-    }
-    .input .input:focus,
-    .input .textarea:focus,
-    .input .select:focus {
-      border-color: var(--primary-500);
-    }
     .input-wrap input[type=text] {
       grid-column: 1/-1;
+    }
+    .select {
+      height: 4rem;
+      padding-left: 1.6rem;
+      border-radius: 1.2rem;
+      background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat right 1.6rem center/2.4rem auto;
     }
   }
   @layer InputSearch {
@@ -936,6 +953,12 @@
   }
 }
 @layer Component.Pagination {}
+@layer Accordion {
+  .accordion .accordion-subject {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 @layer Header.Gnb {}
 @layer Layout.Header {
   .main-header {
@@ -1158,6 +1181,10 @@
       background-color: var(--neutral-400);
       margin: 0.8rem 0;
       height: 0.2rem;
+    }
+    .area-bar.h1 {
+      background-color: var(--neutral-300);
+      height: 0.1rem;
     }
     .gap-8 {
       gap: 0.8rem;
@@ -2101,6 +2128,11 @@ button.swiper-pagination-bullet {
   }
 }
 @layer Pages.Join {
+  section .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
   .join-type-choice > div {
     margin-top: 4rem;
     gap: 3.2rem;
@@ -2178,19 +2210,23 @@ button.swiper-pagination-bullet {
     text-align: center;
     text-decoration: line-through;
   }
+  section.belong .check-box-wrap {
+    padding-left: 1.6rem;
+  }
   section.payment .radio-wrap {
-    padding-top: 1.6rem;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--neutral-300);
+    border-radius: 1.2rem;
   }
   section.payment .radio-wrap li {
     display: flex;
     align-items: center;
     height: 4rem;
-    border: 1px solid var(--neutral-300);
   }
   section.payment .radio-wrap li + li {
     margin-top: -0.1rem;
+    border-top: 1px solid var(--neutral-300);
   }
   section.payment .radio-wrap li label {
     padding: 0 1.2rem;
@@ -2205,6 +2241,58 @@ button.swiper-pagination-bullet {
   section.payment .radio-wrap img {
     width: auto;
     height: 2.2rem;
+  }
+  section.product-purchase .payment-info {
+    padding: 1.6rem;
+    border: 0.1rem solid var(--primary-100);
+    border-radius: 1.2rem;
+    font-size: 1.4rem;
+    background-color: var(--neutral-100);
+  }
+  section.product-purchase .payment-info li {
+    color: var(--neutral-800);
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+  }
+  section.product-purchase .payment-info li:nth-of-type(1), section.product-purchase .payment-info li:nth-of-type(2) {
+    line-height: 1.3;
+  }
+  section.product-purchase .payment-info li:nth-of-type(3) {
+    padding-top: 0.8rem;
+  }
+  section.product-purchase .amount-wrap {
+    padding: 1.6rem;
+    border: 0.1rem solid var(--neutral-300);
+    border-radius: 1.2rem;
+  }
+  section.product-purchase .amount-wrap li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.2rem;
+  }
+  section.product-purchase .amount-wrap li.product-amount .list-subject, section.product-purchase .amount-wrap li.discount-amount .list-subject {
+    color: var(--neutral-600);
+  }
+  section.product-purchase .amount-wrap li.total-amount .list-subject, section.product-purchase .amount-wrap li.total-amount .count {
+    font-weight: 600;
+  }
+  section.product-purchase .amount-wrap li.total-amount .count, section.product-purchase .amount-wrap li.total-amount .won {
+    color: var(--primary-500);
+  }
+  section.product-purchase .amount-wrap li span {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  section.product-purchase .amount-wrap li span.count {
+    font-size: 1.4rem;
+  }
+  section.product-purchase .amount-wrap li span.won {
+    padding-left: 0.1rem;
+  }
+  section.product-purchase .amount-wrap li hr {
+    width: 100%;
   }
 }
 @layer Pages.Login {}
@@ -2757,6 +2845,10 @@ button.swiper-pagination-bullet {
       background-color: var(--neutral-400);
       margin: 0.8rem 0;
       height: 0.2rem;
+    }
+    .area-bar.h1 {
+      background-color: var(--neutral-300);
+      height: 0.1rem;
     }
     .gap-8 {
       gap: 0.8rem;

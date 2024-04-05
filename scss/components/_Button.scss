@@ -267,6 +267,14 @@
 
     }
     .btn-accordion {
+        width: 2.4rem;
+        height: 2.4rem;
+        &.down {
+            background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat center / 2.4rem auto;
+        }
+        &.up {
+            background: url(../asset/images/ico_arrow_up_black_24.svg) no-repeat center / 2.4rem auto;
 
+        }
     }
 }

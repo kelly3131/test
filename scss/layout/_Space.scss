@@ -33,6 +33,11 @@
                 margin: 0.8rem 0;
                 height: 0.2rem;
             }
+            &.h1 {
+                background-color: var(--neutral-300);
+                height: 0.1rem;
+                // input border 와 같은색
+            }
         }
 
         .gap {
