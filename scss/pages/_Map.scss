@@ -195,31 +195,33 @@
             }
             
         }
-        .img-area {
-            position: relative;
-            width: 10rem;
-            height: 10rem;
-            &.more-img {
-                &::before {
-                    position: absolute;
-                    bottom: 0.4rem;
-                    right: 0.4rem;
-                    display: inline-block;
-                    width: 2.4rem;
-                    height: 2.4rem;
-                    content: "";
-                    background: url(../asset/images/ico_img_more_32.svg) no-repeat center / 2.4rem auto;
-                }
-            }
-            .test-img, .img {
-                display: block;
-                width: 10rem;
-                height: 10rem;
-                background-color: #f5f5f5;
-                object-fit: cover;
-                border-radius: 0.8rem;
-            }
-        }
+        //Profile.scss로 이동
+
+        // .img-area {
+        //     position: relative;
+        //     width: 10rem;
+        //     height: 10rem;
+        //     &.more-img {
+        //         &::before {
+        //             position: absolute;
+        //             bottom: 0.4rem;
+        //             right: 0.4rem;
+        //             display: inline-block;
+        //             width: 2.4rem;
+        //             height: 2.4rem;
+        //             content: "";
+        //             background: url(../asset/images/ico_img_more_32.svg) no-repeat center / 2.4rem auto;
+        //         }
+        //     }
+        //     .test-img, .img {
+        //         display: block;
+        //         width: 10rem;
+        //         height: 10rem;
+        //         background-color: #f5f5f5;
+        //         object-fit: cover;
+        //         border-radius: 0.8rem;
+        //     }
+        // }
     }
     .company-notification {
         padding: 0.8rem 0;

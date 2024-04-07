@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/style.css" />
+    <script defer src="../js/common.js"></script>
+    <title>건설세상</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // "open" 클래스를 가진 요소들에 대한 클릭 이벤트 핸들러 추가
+            document.querySelectorAll('.open').forEach(function(element) {
+                element.addEventListener('click', function() {
+                    // "popup" 클래스를 가진 요소와 "dim" 클래스를 가진 요소를 보여줌
+                    document.querySelector('.popup').style.display = 'block';
+                    document.querySelector('.dim').style.display = 'block';
+                });
+            });
+        
+            // "popup" 클래스 내부의 "close" 클래스를 가진 요소들에 대한 클릭 이벤트 핸들러 추가
+            document.querySelectorAll('.popup .close').forEach(function(element) {
+                element.addEventListener('click', function() {
+                    // 현재 요소의 부모 요소를 숨기고 "dim" 클래스를 가진 요소를 숨김
+                    this.parentElement.style.display = 'none';
+                    document.querySelector('.dim').style.display = 'none';
+                });
+            });
+        
+        });
+        
+        </script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="heading logo">건설세상</div>
+        <div class="header-btn-wrap">
+            <button class="btn-search" aria-label="검색"></button>
+            <button class="btn-alarm" aria-label="알림"></button>
+            <button class="btn-setting" aria-label="설정"></button>
+        </div>
+
+    </header>
+    
+    <main class="mypage">
+        <a href="#a" class="open">팝업열기</a>
+
+        <div class="popup">
+            내용내용내용내용
+        </div>
+        <div class="dim"></div>
+    </main>
+    <footer>
+        <div class="footer-group">
+            <button>
+                <img src="../asset/images/ico_footer_01_24_line.svg" alt="">
+                <p>홈</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_02_24_line.svg" alt="">
+                <p>요청</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_03_24_line.svg" alt="">
+                <p>승인</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_04_24_line.svg" alt="">
+                <p>문서관리</p>
+            </button>
+            <button class="--active">
+                <img src="../asset/images/ico_footer_05_24_filled.svg" alt="">
+                <p>마이건설</p>
+            </button>
+        </div>
+    </footer>
+    <div></div>
+</body>
+</html>

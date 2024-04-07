@@ -1,0 +1,36 @@
+@layer Profile {
+    .img-area {
+        position: relative;
+        width: 10rem;
+        height: 10rem;
+        &.more-img {
+            &::before {
+                position: absolute;
+                bottom: 0.4rem;
+                right: 0.4rem;
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                content: "";
+                background: url(../asset/images/ico_img_more_32.svg) no-repeat center / 2.4rem auto;
+            }
+        }
+        &.profile {
+            img {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
+        .test-img, .img {
+            display: block;
+            width: 10rem;
+            height: 10rem;
+            background-color: var(--neutral-200);
+            object-fit: cover;
+            border-radius: 0.8rem;
+            .mypage & {
+                border-radius: 10rem;
+            }
+        }
+    }
+}

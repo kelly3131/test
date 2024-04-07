@@ -2,7 +2,7 @@
 @import "../components/Gnb";
 
 @layer Layout.Header {
-    .main-header {
+    .main-header, .mypage-header{
         position: fixed;
         top:0;
         left:0;
@@ -14,12 +14,18 @@
         padding-left: 1.6rem;
         padding-right: 1.6rem;
         background-color: #F4F6F8;
+        &.mypage-header {
+            background: none;
+        }
         transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 애니메이션 적용 */
         // border:1px solid red;
         .heading.logo {
             font-size: 2rem;
             font-weight: 700;
         }
+    }
+    .mypage-header {
+
     }
     .map-header {
         .search-map {

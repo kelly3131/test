@@ -13,6 +13,8 @@
 @import "./components/Tab"; // 탭
 @import "./components/Pagination"; // 페이지네이션
 @import "./components/Accordion"; // 아코디언
+@import "./components/Profile"; // 프로필
+
 @import "./layout/Header"; // 헤더
 @import "./layout/Footer"; // 푸터
 @import "./layout/Base"; // 기본정의
@@ -26,6 +28,6 @@
 @import "./pages/Map"; // 지도페이지
 @import "./pages/Registration"; // 지도페이지
 @import "./popup/PopUp"; // 팝업
-@import "./pages/sub2"; // 소년소녀부
+@import "./pages/Mypage"; // 소년소녀부
 @import "./layout/Space"; // 여백
 

@@ -1,6 +1,17 @@
 @layer Typograpy {
 
     @layer Common {
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--neutral-900);
+        }
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        h4.group-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
         .title-content {
             &.f-14 {
                 font-size: 1.4rem;

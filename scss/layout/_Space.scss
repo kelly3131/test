@@ -19,6 +19,9 @@
             width: 100%; 
             &.h10 {
                 background-color: var(--neutral-100);
+                .mypage & {
+                    background-color: var(--neutral-200);
+                }
                 margin: 0.8rem 0;
                 height: 1rem;
             }

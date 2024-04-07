@@ -1,0 +1,174 @@
+@layer Mypage {
+    body:has(.mypage) {
+        background-color: #F4F6F8;
+    }
+    .mypage {
+        padding-top: 3.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        section {
+            padding-left: 1.6rem;
+            padding-right: 1.6rem;
+            + section {
+                padding-top: 1.6rem;
+                &.profile-section {
+                    padding-top: 0;
+                }
+            }
+            > h4 {
+                padding-bottom: 1.6rem;
+            }
+        }
+        section.profile-section {
+            .div-wrap {
+                gap: 0.8rem;
+                .p-wrap {
+                    p {
+                        color: var(--neutral-900);
+                        &:first-child {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.8rem;
+                            font-size: 2rem;
+                            font-weight: 700;
+                        }
+                        &:last-child {
+                            padding-top: 0.8rem;
+                            color: var(--neutral-600);
+                            font-size: 1.4rem;
+                            font-weight: 400;
+                        }
+                        button.login {
+                            padding: 0.4rem 0.8rem;
+                            border: 0.1rem solid var(--neutral-600);
+                            border-radius: 1.4rem;
+                        }
+                    }
+                }
+                
+            }
+        }
+        section {
+            .div-wrap {
+                .text-box-wrap {
+                    padding: 1.6rem;
+                    border-radius: 1.2rem;
+                        background-color: var(--white);
+                    .text-box {
+                        max-height: 18rem;
+                        overflow-y: auto;
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        line-height: 2rem;
+                        color: var(--neutral-600);
+                        text-align: left;
+                        
+                        
+                    }
+                }
+                .badge {
+                    & + .badge {
+                        margin-left: 0.4rem;
+                    }
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: var(--neutral-600);
+                    padding: 0.4rem 0.8rem;
+                    border: 0.1rem solid var(--neutral-400);
+                    border-radius: 1.6rem;
+                    background-color: var(--white);
+                }
+            }
+        }
+    }
+    .div-wrap {
+        > p {
+            .non-members & {
+                color: var(--neutral-500);
+                font-size: 1.4rem;
+                text-align: center;
+            }
+        }
+    }
+    section.promotional-photo {
+        padding-right:0;
+        overflow: hidden;
+        .div-wrap {
+            .img-wrap {
+                display: flex;
+                gap: 0.8rem;
+                overflow-x: auto;
+                .img {
+                    width: 10rem;
+                    height: 10rem;
+                    overflow: hidden;
+                    border-radius: 1.2rem;
+                    &.plus {
+                        background-color: var(--neutral-200);
+                        border: 0.1rem dotted var(--neutral-300);
+                        img {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    .affiliated-company {
+        padding-bottom: 4rem;
+        .div-wrap{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 10rem;
+            gap: 0.8rem;
+
+            .img-wrap {
+                .img {
+                    overflow: hidden;
+                    border-radius: 1.2rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                p {
+                    padding: 0.8rem 0.4rem;
+                    font-size: 1.4rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .mypage-etc {
+        padding-bottom: 10rem;
+        ul {
+            li {
+                height: 4rem;
+            }
+            li, p {
+                color: var(--neutral-900);
+                font-size: 1.6rem;
+                font-weight: 600;
+                &.logout {
+                    margin-top: 4rem;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    p, button {
+                        color: var(--neutral-500);
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
