@@ -12,26 +12,55 @@
         <div class="heading logo hide">건설세상</div>
         <div class="header-btn-wrap">
             <button class="btn-search" aria-label="검색"></button>
-            <button class="btn-alarm" aria-label="알림"></button>
+            <button class="btn-alarm-update" aria-label="알림"></button>
             <button class="btn-setting" aria-label="설정"></button>
         </div>
     </header>
     <main class="mypage">
     <!-- <main class="mypage non-members"> 일 때 소개내용부터 비회원 css붙음 -->
-        <section>
+        <section class="align vm both">
             <h2 class="title">내정보</h2>
+            <div class="toggle-wrap align right vm">
+                <span>정보 공개여부</span>
+                <fieldset class="toggle">
+                    <input type="checkbox" id="toggle" hidden>
+                    <label for="toggle" class="toggleSwitch">
+                        <span class="toggleButton"></span>
+                    </label>
+                </fieldset>
+            </div>
         </section>
         <section class="profile-section">
             <div class="div-wrap align vm">
                 <div class="img-area profile">
                     <button type="button" class="img">
-                        <img src="../asset/images/ico_camera_24.svg" alt="">
+                        <!-- <img class="non-members-profile" src="../asset/images/ico_camera_24.svg" alt=""> -->
+                        <img class="my-profile" src="../asset/images/labor-profile.png" alt="">
                     </button>
                 </div>
-                <div class="p-wrap">
+                <div class="my-info">
+                    <ul>
+                        <li><span>고객명 : </span><span>홍길동</span></li>
+                        <li><span>연락처 : </span><span>010-6523-9568</span></li>
+                        <li><span>주민번호 : </span><span>7102515 - 1******</span></li>
+                        <li><span>주소 : </span><span>서울시 마포구 상암대로 9</span></li>
+                        <li><span>계좌 : </span><span>우리 3904-093-0375843</span></li>
+                        <li><span>업력 : </span><span>16년차</span></li>
+                    </ul>
+
+                </div>
+                <!-- <div class="p-wrap">
                     <p>로그인이 필요해요 <button class="login">로그인</button></p>
                     <p>원활한 서비스를 위해 로그인 해주세요.</p>
-                </div>
+                </div> -->
+            </div>
+            <div class="div-wrap">
+                <p class="subscribe">구독중</p>
+                <p class="line"></p>
+                <p class="mileage align vm center">
+                    <img src="../asset/images/ico_mileage.svg" alt="">
+                    <span>44,932</span>
+                </p>
             </div>
         </section>
         <section class="introduction">
