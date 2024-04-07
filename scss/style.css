@@ -2949,10 +2949,14 @@ button.swiper-pagination-bullet {
     padding-right: 0;
     overflow: hidden;
   }
+  section.promotional-photo .div-wrap {
+    display: grid;
+    grid-auto-rows: 1fr;
+    overflow-x: auto;
+  }
   section.promotional-photo .div-wrap .img-wrap {
     display: flex;
     gap: 0.8rem;
-    overflow-x: auto;
   }
   section.promotional-photo .div-wrap .img-wrap .img {
     width: 10rem;
@@ -2983,6 +2987,8 @@ button.swiper-pagination-bullet {
     gap: 0.8rem;
   }
   .affiliated-company .div-wrap .img-wrap .img {
+    width: auto;
+    height: 10rem;
     overflow: hidden;
     border-radius: 1.2rem;
   }
@@ -3017,6 +3023,18 @@ button.swiper-pagination-bullet {
     font-size: 1.4rem;
     font-weight: 500;
     text-align: center;
+  }
+  .mypage-terms {
+    padding: 0 1.6rem;
+  }
+  .mypage-terms section {
+    padding-top: 1.6rem;
+  }
+  .mypage-terms section div p {
+    color: var(--neutral-900);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
   }
 }
 @layer Layout.Space {
