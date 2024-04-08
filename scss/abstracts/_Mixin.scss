@@ -6,3 +6,27 @@
   //   @content;
   // }
 }
+@mixin bar($method, $width, $height, $margin, $background) {
+  // $method가 선표현방식이라면 그렇게 갈것이고, 이미지 표현방식이라면 ~~
+  display: flex;
+  > * {
+      // > * 부모 기준으로 모든 자신선택자. p, div, span 상관없음
+      display: flex;
+      align-items: center;
+      //모든 자식들은 flex가 된다. before content는 블록요소로 바뀌게됨
+      + * {
+          //형제선택자를 잡는다.
+          &::before {
+              content: '';
+              width: $width;
+              height: $height;
+              margin: 0 $margin;
+              @if $method == 'line' or $method == '1' {
+                  background-color: $background;
+              } @else if $method == 'image' or $method == 'img' or $method == 'i' {
+                  @include background($background, null, null, contain);
+              }
+          }
+      }
+  }
+}

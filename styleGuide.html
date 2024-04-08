@@ -12,7 +12,7 @@
 
 <body>
     <header class="header">헤더영역</header>
-    <main>
+    <main class="guide">
       <nav class="guide-nav">
         <a href="#guide1">제목</a>
         <a href="#guide2">정렬</a>
@@ -20,6 +20,7 @@
         <a href="#guide4">버튼</a>
         <a href="#guide5">표</a>
         <a href="#guide6">텍스트</a>
+        <a href="#guide7">탭</a>
       </nav>
       <div class="block">
         <h2 id="guide1">제목</h2>
@@ -28,7 +29,7 @@
         <h2 id="guide2">정렬</h2>
       </div>
 
-      <div class="block">
+      <div class="block align-column gap-32">
         <h2 id="guide3">폼</h2>
 
         <div class="calendar-group">
@@ -36,7 +37,18 @@
             ~
           <input type="date" data-placeholder="기간(종료)" required>
         </div>
-
+        <div class="input-group">
+          <div class="input-wrap">
+              <p class="input-title">추천인코드</p>
+              <input type="text" class="input h40" placeholder="12자리" />
+              <p class="input-txt-under">입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
+          </div>
+          <div class="input-wrap">
+              <p class="input-title">추천인명</p>
+              <input type="text" class="input h40" placeholder="김건설" />
+              <p class="primary-500-main input-txt-under">2024년 5월 16일부터 8,800원이 마일리지로 적립됩니다.</p>
+          </div>
+        </div>
         <span class="txt-left">
           <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox">
           <label for="chk1"><p class="input-title">공사명</p></label>
@@ -78,7 +90,7 @@
           <div class="input-wrap">
               <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
           </div>
-      </div>
+        </div>
         <div class="input-group">
           <div class="title-wrap align both">
               <p class="input-title">현장명</p>
@@ -94,17 +106,19 @@
           <input type="text" class="input h40" />
           <input type="text" class="input h40" placeholder="상세주소를 입력하세요." />
         </div>
-      </div>
-      <div class="input-group">
-        <p class="input-title">휴대폰 번호</p>
-        <div class="certification-number">
-            <input type="number" class="input h40" placeholder="01012345678" />
-            <button class="btn small radius white">인증요청</button>
-            <input type="number" class="input h40 fullsize" placeholder="인증번호 입력" />
         </div>
-      </div> 
+        <div class="input-group">
+          <p class="input-title">휴대폰 번호</p>
+          <div class="certification-number">
+              <input type="number" class="input h40" placeholder="01012345678" />
+              <button class="btn small radius white">인증요청</button>
+              <input type="number" class="input h40 fullsize" placeholder="인증번호 입력" />
+          </div>
+        </div> 
       <div class="block">
         <h2 id="guide4">버튼</h2>
+        <button class="btn regular primary fullsize">다음</button>
+        <button class="btn regular fullsize" disabled>다음</button>
         <a href="javascript:;" class="btn --disabled regular fullsize">다음</a>
         <a href="javascript:;" class="btn --active regular fullsize">다음</a>
         <div class="btn-wrap delete txt-right">
@@ -124,8 +138,46 @@
       <div class="block">
         <h2 id="guide6">텍스트</h2>
       </div>
+      <div class="block">
+        <h2 id="guide7">탭</h2>
+        <section class="pl-0 pr-0">
+          <div class="tab-wrap">
+              <ul class="tabs">
+                  <li class="tab-menu on" onclick="openTab('tab1')">기업/중복회원</li>
+                  <li class="tab-menu" onclick="openTab('tab2')">개인회원</li>
+              </ul>
+              <hr class="area-bar h1" />
+              <div id="tab1" class="tab-content on">
+                  <h2 class="title">환영합니다. <br />건설세상입니다:)</h2>
+                  <p>This is the content of Tab 1.</p>
+              </div>
+              <div id="tab2" class="tab-content">
+                  <h2 class="title">환영합니다. <br />건설세상입니다:)</h2>
+                  <p>This is the content of Tab 2.</p>
+              </div>
+          </div>
+      </section>
+      </div>
     </main>
     <footer class="footer">푸터영역</footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            function openTab(tabId) {
+                // 모든 탭 메뉴와 탭 내용 숨기기
+                var tabMenus = document.querySelectorAll('.tab-menu');
+                var tabContents = document.querySelectorAll('.tab-content');
+                tabMenus.forEach(function(tabMenu) {
+                    tabMenu.classList.remove('on');
+                });
+                tabContents.forEach(function(tabContent) {
+                    tabContent.classList.remove('on');
+                });
+
+                // 선택한 탭 메뉴와 탭 내용 보이기
+                document.getElementById(tabId).classList.add('on');
+                document.querySelector('[onclick="openTab(\'' + tabId + '\')"]').classList.add('on');
+            }
+        </script>
 </body>
 
 </html>

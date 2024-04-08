@@ -62,4 +62,29 @@
             background-color: var(--white);
         }
     }
+
+    section {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+        &:first-child {
+            margin-top: 1.2rem;
+        }
+    }
+    .input-group {
+        display:flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        .input-group-inner & {
+            gap: 0.4rem;
+            // 이거 왜 적용안되지
+        }
+    }
+    ul.input-group-inner {
+        padding-left: 1.6rem;
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
 }

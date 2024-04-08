@@ -26,6 +26,15 @@
         display: flex;
         flex-direction: column;
     }
+    .gap-8 {
+        gap: 0.8rem;
+    }
+    .gap-16 {
+        gap: 1.6rem;
+    }
+    .gap-32 {
+        gap: 3.2rem;
+    }
     .txt-center{ 
         text-align: center;
     }

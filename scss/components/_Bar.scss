@@ -1,0 +1,9 @@
+@layer Components.Bar{
+    .bar-type1 {
+        @include bar(line, rem(1), rem(10), rem(10), var(--neutral-400));
+        color: var(--neutral-700);
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: rem(18);
+    }
+}

@@ -15,21 +15,84 @@
             <p>로그인</p>
             <button type="button" class="close" aria-label="닫기"></button>
         </header>
-        <main>
-            <ul class="tab-navigation first-depth">
-                <li class="on"><a href="javascript:;">기업&#5867;중복회원</a></li>
-                <li><a href="javascript:;">개인회원</a></li>
-                <!-- <li><a href="javascript:;">탭메뉴3</a></li>
-                <li><a href="javascript:;">탭메뉴4</a></li> -->
-            </ul>
-            <div class="tab-con-wrap">
-                <div  class="tab-con" id="tab1">
-                    탭내용1
+        <main class="login">
+            <!-- <div> 
+                <ul class="tab-navigation first-depth">
+                    <li class="on"><a href="javascript:;">기업&#5867;중복회원</a></li>
+                    <li><a href="javascript:;">개인회원</a></li>
+                </ul>
+                <div class="tab-con-wrap">
+                    <div  class="tab-con" id="tab1">
+                        탭내용1
+                    </div>
+                    <div  class="tab-con" id="tab2">
+                        탭내용2
+                    </div>
                 </div>
-                <div  class="tab-con" id="tab2">
-                    탭내용2
+            </div> -->
+            <section class="pl-0 pr-0">
+                <div class="tab-wrap">
+                    <ul class="tabs">
+                        <li class="tab-menu on" onclick="openTab('tab1')">기업/중복회원</li>
+                        <li class="tab-menu" onclick="openTab('tab2')">개인회원</li>
+                    </ul>
+                    <hr class="area-bar h1" />
+                    <div id="tab1" class="tab-content on">
+                        <h2 class="title">환영합니다. <br />건설세상입니다:)</h2>
+                        <div class="input-group">
+                            <div class="input-wrap">
+                                <input type="text" class="input h40" placeholder="아이디 입력 01012345678" />
+                                <p class="input-txt-under">휴대폰인증시 최고관리자의 휴대폰번호가 아이디입니다.</p>
+                                <p class="input-txt-under error-400">에러메세지</p>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="input h40" placeholder="비밀번호 입력" />
+                                <p class="input-txt-under error-400">에러메세지</p>
+                            </div>
+                            <span class="txt-left">
+                                <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox">
+                                <label for="chk1"><p class="input-title">로그인 상태 유지</p></label>
+                            </span>
+                            <!-- <button class="btn regular primary fullsize">로그인</button> -->
+                            <button class="btn regular fullsize" disabled>로그인</button>
+                            <div class="">
+                                <ul class="bar-type1 align center vm">
+                                    <li><a href="./join-choice.html">회원가입</a></li>
+                                    <li><a href="">아이디 찾기</a></li>
+                                    <li><a href="">비밀번호 찾기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-content">
+                        <h2 class="title">환영합니다. <br />건설세상입니다:)</h2>
+                        <div class="input-group">
+                            <div class="input-wrap">
+                                <input type="text" class="input h40" placeholder="아이디 입력 01012345678" />
+                                <p class="input-txt-under">휴대폰인증시 휴대폰번호가 아이디입니다.</p>
+                                <p class="input-txt-under error-400">에러메세지</p>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="input h40" placeholder="비밀번호 입력" />
+                                <p class="input-txt-under error-400">에러메세지</p>
+                            </div>
+                            <span class="txt-left">
+                                <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox" checked>
+                                <label for="chk1"><p class="input-title">로그인 상태 유지</p></label>
+                            </span>
+                            <button class="btn regular primary fullsize">로그인</button>
+                            <!-- <button class="btn regular fullsize" disabled>로그인</button> -->
+                            <div class="">
+                                <ul class="bar-type1 align center vm">
+                                    <li><a href="./join-choice.html">회원가입</a></li>
+                                    <li><a href="">아이디 찾기</a></li>
+                                    <li><a href="">비밀번호 찾기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </main>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>
