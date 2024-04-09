@@ -738,14 +738,17 @@
       height: 1.6rem;
       background: url(../asset/images/checkbox_off.svg) no-repeat 0 0/contain;
     }
-    .checkbox + label .checkbox-text {
+    .checkbox:checked + label::before {
+      background: url(../asset/images/checkbox_on.svg) no-repeat 0 0/contain;
+    }
+    .checkbox-text {
       color: var(--neutral-600);
       font-size: 1.2rem;
       line-height: 2rem;
       white-space: nowrap;
     }
-    .checkbox:checked + label::before {
-      background: url(../asset/images/checkbox_on.svg) no-repeat 0 0/contain;
+    .join .checkbox-text {
+      font-size: 1.4rem;
     }
   }
   @layer Radio {
@@ -2358,7 +2361,10 @@ button.swiper-pagination-bullet {
     align-items: center;
   }
   .terms-wrap > ul {
-    gap: 1.6rem;
+    gap: 0.8rem;
+  }
+  .terms-wrap > ul li label a h5 {
+    font-size: 1.8rem;
   }
   .terms-wrap strong {
     text-decoration: underline;
@@ -2508,12 +2514,11 @@ button.swiper-pagination-bullet {
   section.product-purchase .amount-wrap li hr {
     width: 100%;
   }
-}
-@layer Pages.Login {
-  .title {
-    padding-bottom: 2.4rem;
+  .join-enterprise-member-03 .company-registration-number .error-400 {
+    padding-bottom: 0.8rem;
   }
 }
+@layer Pages.Login {}
 @layer Pages.Map {
   .map .map-bg {
     position: absolute;

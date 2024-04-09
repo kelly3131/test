@@ -121,20 +121,24 @@
             height: 1.6rem;
             background: url(../asset/images/checkbox_off.svg) no-repeat 0 0 / contain;
             }
-            .checkbox-text {
-                color: var(--neutral-600);
-                font-size: 1.2rem;
-                line-height: 2rem;
-                white-space: nowrap;
+            
+        }
+            &:checked {
+                + label {
+                &::before {
+                    background: url(../asset/images/checkbox_on.svg) no-repeat 0 0 / contain;
+                }
+                }
             }
         }
-        &:checked {
-            + label {
-            &::before {
-                background: url(../asset/images/checkbox_on.svg) no-repeat 0 0 / contain;
+        .checkbox-text {
+            color: var(--neutral-600);
+            font-size: 1.2rem;
+            line-height: 2rem;
+            white-space: nowrap;
+            .join & {
+                font-size: 1.4rem;
             }
-            }
-        }
         }
     }
     @layer Radio {

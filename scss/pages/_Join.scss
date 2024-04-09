@@ -16,7 +16,19 @@
     }
     .terms-wrap {
         > ul {
-            gap: 1.6rem;
+            gap: 0.8rem;
+            li {
+                label {
+                    a {
+                        h5 {
+                            font-size: 1.8rem;
+                            //왜 _Form한테 css 먹히는건지 질문
+                        }
+
+                    }
+
+                }
+            }
         }
         strong {
             text-decoration: underline;
@@ -217,6 +229,13 @@
     
                     
                 }
+            }
+        }
+    }
+    .join-enterprise-member-03 {
+        .company-registration-number {
+            .error-400 {
+                padding-bottom: 0.8rem;
             }
         }
     }
