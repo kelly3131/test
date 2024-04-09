@@ -33,7 +33,7 @@
     details[open] .arrow {
         transform: rotate(180deg);
     }
-    summary::-webkit-details-marker, summary::-moz-details-marker {
+    summary::-webkit-details-marker, summary::-moz-details-marker, summary {
         display: none;
     }
       

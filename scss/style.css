@@ -997,7 +997,7 @@
   details[open] .arrow {
     transform: rotate(180deg);
   }
-  summary::-webkit-details-marker, summary::-moz-details-marker {
+  summary::-webkit-details-marker, summary::-moz-details-marker, summary {
     display: none;
   }
 }
@@ -3021,7 +3021,7 @@ button.swiper-pagination-bullet {
 @layer Pages.FindIdPassword {
   .find-password2 .password-information {
     height: 6.4rem;
-    background-color: var(--neutral-100);
+    background-color: var(--neutral-200);
     border-radius: 1.2rem;
   }
   .find-password2 .password-information p {
