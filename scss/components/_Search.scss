@@ -1,0 +1,47 @@
+@layer Components.Search {
+    .search-box-wrap {
+        position: relative;
+        .search-result-box {
+            position: absolute;
+            top: 4.2rem;
+            left: 0;
+            width: 100%;
+            height: auto;
+            // border: 1px solid red;
+            // background-color: var(--neutral-100);
+            background-color: var(--white);
+            // border: 0.1rem solid var(--neutral-300);
+            border-radius: 0.4rem 0.4rem 1.2rem 1.2rem;
+            box-shadow: 0 0.6rem 1rem 0 rgba(0,0,0,.1);
+            ul {
+                padding: 0.8rem 0;
+                li {
+                    display: grid;
+                    gap: 0.4rem;
+                    padding: 0.6rem 1.6rem;
+                    color: var(--neutral-600);
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    .company-name {
+                        font-weight: 600;
+                    }
+                    &:active {
+                        background-color: var(--neutral-200);
+                        color: var(--neutral-800);
+                    }
+                }
+                &.col-3 {
+                    li {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                }
+                &.col-2 {
+                    li {
+                        grid-template-columns: 1fr 1fr;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

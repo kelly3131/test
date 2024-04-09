@@ -1132,6 +1132,45 @@
     letter-spacing: -0.1rem;
   }
 }
+@layer Components.Search {
+  .search-box-wrap {
+    position: relative;
+  }
+  .search-box-wrap .search-result-box {
+    position: absolute;
+    top: 4.2rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 0.4rem 0.4rem 1.2rem 1.2rem;
+    box-shadow: 0 0.6rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+  .search-box-wrap .search-result-box ul {
+    padding: 0.8rem 0;
+  }
+  .search-box-wrap .search-result-box ul li {
+    display: grid;
+    gap: 0.4rem;
+    padding: 0.6rem 1.6rem;
+    color: var(--neutral-600);
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  .search-box-wrap .search-result-box ul li .company-name {
+    font-weight: 600;
+  }
+  .search-box-wrap .search-result-box ul li:active {
+    background-color: var(--neutral-200);
+    color: var(--neutral-800);
+  }
+  .search-box-wrap .search-result-box ul.col-3 li {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .search-box-wrap .search-result-box ul.col-2 li {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @layer Header.Gnb {}
 @layer Layout.Header {
   .main-header, .mypage-header {
@@ -2368,6 +2407,14 @@ button.swiper-pagination-bullet {
   }
   .terms-wrap strong {
     text-decoration: underline;
+  }
+  .input-belong a {
+    padding-left: 0.4rem;
+  }
+  .social-security-number span {
+    padding: 0 0.8rem;
+    font-size: 2rem;
+    font-weight: 100;
   }
   .join {
     padding-top: 2.4rem;

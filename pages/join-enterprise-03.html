@@ -44,12 +44,12 @@
             </section>
             <hr class="area-bar h10"></hr>
             <section>
-                <h2 class="title">기업회원<br />내용을 입력해주세요.</h2>
+                <h2 class="title">기업회원 내용을 입력해주세요.</h2>
                 <div class="input-group">
                     <div class="input-wrap company-registration-number">
                         <p class="input-title">사업자등록번호</p>
                         <input type="text" class="input h40" placeholder="숫자만 입력" />
-                        <p class="input-txt-under error-400 align vm">이미 등록된 사업자입니다. <a class="txt-underline" href="">개인회원 가입페이지</a>로 이동</p>
+                        <p class="input-txt-under error-400 align vm">이미 등록된 사업자입니다. <a class="txt-underline" href="./join-individual-01.html">개인회원 가입페이지</a>로 이동</p>
                         <div class="check-box-wrap">
                             <span class="txt-left">
                                 <input type="checkbox" name="chk" id="chk1" class="a11y-hidden checkbox">
@@ -74,36 +74,6 @@
                         </div>
                     </div>
                     <div class="input-wrap">
-                        <p class="input-title">기업명</p>
-                        <input type="text" class="input h40" placeholder="" />
-                    </div>
-                    <div class="input-wrap">
-                        <p class="input-title">대표자</p>
-                        <input type="text" class="input h40" placeholder="" />
-                    </div>
-                    <div class="input-wrap">
-                        <p class="input-title">회사주소</p>
-                        <div class="address">
-                            <input type="number" class="input h40" />
-                            <button class="btn small radius white">우편번호찾기</button>
-                            <input type="text" class="input h40" />
-                            <input type="text" class="input h40" placeholder="상세주소를 입력하세요." />
-                        </div>
-                        <span class="align right">
-                            <input type="checkbox" name="chk" id="chk6" class="a11y-hidden checkbox">
-                            <label for="chk6"><p class="checkbox-text">해외</p></label>
-                        </span>
-                    </div>
-                    <div class="input-wrap">
-                        <p class="input-title">개업일</p>
-                        <input type="text" class="input h40" placeholder="20550101" />
-                    </div>
-                </div>
-            </section>
-            <hr class="area-bar h10"></hr>
-            <section class="corporate-certification">
-                <div class="input-group">
-                    <div class="input-wrap">
                         <p class="input-title">기업인증</p>
                         <input type="file" id="file1_1" class="a11y-hidden file" /><label for="file1_1">'사업자등록증명원'을 첨부해주세요.</label>
                         <div class="checkbox-wrap align-column mb-8">
@@ -123,9 +93,11 @@
                     </div>
                 </div>
             </section>
+            <hr class="area-bar h10"></hr>
+
             <section class="add-registration">
                 <div class="btn-wrap align center">
-                    <button class="btn primary radius small fullsize">사업자 추가 등록하기<span class="text-plus">+</span></button>
+                    <button class="btn primary radius small fullsize" disabled>사업자 추가 등록하기<span class="text-plus">+</span></button>
                 </div>
             </section>
             <section class="add-registration-list">
@@ -412,7 +384,16 @@
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">추천인명</p>
-                        <input type="text" class="input h40" placeholder="김건설" />
+                        <div class="search-box-wrap">
+                            <input type="text" class="input h40" placeholder="김건설" />
+                            <div class="search-result-box">
+                                <!-- hide 추가시 div 사라짐 -->
+                                
+                                <ul class="col-2">
+                                    <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                                </ul>
+                            </div>
+                        </div>
                         <p class="primary-500-main input-txt-under">2024년 4월 26일부터 5,500원이 마일리지로 적립됩니다.</p>
                     </div>
                 </div>

@@ -34,7 +34,18 @@
             text-decoration: underline;
         }
     }
-
+    .input-belong {
+         a {
+            padding-left: 0.4rem;
+         }
+    }
+    .social-security-number {
+        span {
+            padding: 0 0.8rem;
+            font-size: 2rem;
+            font-weight: 100;
+        }
+    }
     .join {
         padding-top: 2.4rem;
         padding-bottom: 5.6rem;

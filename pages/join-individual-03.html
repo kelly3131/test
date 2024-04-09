@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../scss/style.css" />
+        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/common.js"></script>
+        <title>건설세상</title>
+    </head>
+    <body>
+        <header class="sub-header">
+            <button class="btn-back" aria-label="뒤로가기"></button>
+            <p>기업 회원가입</p>
+            <button type="button" class="close hide" aria-label="닫기"></button>
+        </header>
+        <main class="join join-enterprise-member-03">
+            <section>
+                <h2 class="title">개인계정을 생성해주세요.<br /></h2>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <p class="input-title">이름</p>
+                        <div class="input-wrap">
+                            <input type="text" class="input h40" placeholder="김건설" disabled/>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">아이디</p>
+                        <div class="input-wrap">
+                            <input type="text" class="input h40" placeholder="01012345678" disabled/>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">비밀번호</p>
+                        <input type="text" class="input h40" placeholder="" />
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">비밀번호 확인</p>
+                        <input type="text" class="input h40" placeholder="" />
+                        <p class="input-txt-under error-400">비밀번호가 일치하지 않습니다.</p>
+                    </div>
+                    <div class="input-wrap input-belong">
+                        <p class="input-title">소속</p>
+                        <div class="search-box-wrap">
+                            <input type="text" class="input h40 input-ico-search" placeholder="등록되어 있는 기업명을 검색합니다." readonly/>
+                            <div class="search-result-box">
+                                <!-- hide 추가시 div 사라짐 -->
+                                
+                                <ul class="col-3">
+                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
+                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
+                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
+                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="input-txt-under align vm">소속이 없으면 무소속으로 가입되며 <a class="txt-underline" href="./mypage.html">마이페이지</a>에서 수정 가능합니다.</p>
+                        <span class="align right">
+                            <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">소속없음</p></label>
+                        </span>
+                    </div>
+                    <div class="input-wrap">
+                        <div class="check-box-input">
+                            <div class="item1">
+                                <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
+                                <label for="chk9"></label>
+                            </div>
+                            <div class="item2">
+                                <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
+                            </div>
+                        </div>
+                        <div class="check-box-wrap">
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">실행소장</p></label>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <div class="check-box-input">
+                            <div class="item1">
+                                <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
+                                <label for="chk9"></label>
+                            </div>
+                            <div class="item2">
+                                <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
+                            </div>
+                        </div>
+                        <div class="check-box-wrap">
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
+                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
+                            <label for="chk9"><p class="checkbox-text">실행소장</p></label>
+                        </div>
+                    </div>
+                    <div class="input-wrap delete txt-right">
+                        <button class="btn white small radius">
+                            <img src="../asset/images/checkbox_on.svg" alt="">
+                            항목삭제
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="area-bar h10"></hr>
+            <section class="product-purchase">
+                <h2 class="title">상품 구매하기</h2>
+                <div class="input-group">
+                    
+                    <ul class="payment-info input-wrap">
+                        <li>회원가입시 1개월 무료구독권 증정</li>
+                        <li><p>월정액 구독시 <strong>2개월 무료구독권</strong>을 드립니다.</p></li>
+                        <li>
+                            <span><strong>기업회원</strong> 월정액</span>
+                            <span>33,000원</span>
+                        </li>
+                        <li>
+                            <span><strong>개인회원</strong> 월정액(소속당)</span>
+                            <span>22,000원</span>
+                        </li>
+                    </ul>
+                    <div class="input-wrap">
+                        <p class="input-title">할인쿠폰</p>
+                        <select class="select">
+                            <option>회원가입 기념 1개월 구독권</option>
+                            <option>없음</option>
+                        </select>
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">최종 결제금액</p>
+                        <ul class="amount-wrap">
+                            <li class="product-amount">
+                                <span class="list-subject">상품금액</span>
+                                <span class="count">22,000<span class="won">원</span></span>
+                            </li>
+                            <li class="discount-amount">
+                                <span class="list-subject">회원가입 기념 1개월 무료</span>
+                                <span class="count">- 22,000<span class="won">원</span></span>
+                            </li>
+                            <li>
+                                <hr class="area-bar h1" />
+                            </li>
+                            <li class="total-amount">
+                                <span class="list-subject">결제 금액</span>
+                                <span class="count">0<span class="won">원</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <p class="add-description"></p> -->
+            </section>
+            
+            <section class="payment">
+                <div class="input-group">
+                    <p class="input-title">결제수단</p>
+                    <!-- <div class="input-wrap text-group align both vm add-description">
+                        <div class="text-wrap ">
+                            <span class="item1">매월 88,000원</span>
+                            <span class="item2">92,400원</span>
+                        </div>
+                        <span class="red-400">무료</span>
+                    </div> -->
+                    <ul class="radio-wrap">
+                        <li>
+                            <input type="radio" name="payment" id="payment1" class="a11y-hidden radio">
+                            <label for="payment1" class="card"><span>신용카드</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment2" class="a11y-hidden radio">
+                            <label for="payment2" class="phone"><span>휴대폰 결제</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment3" class="a11y-hidden radio">
+                            <label for="payment3" class="bank-book"><span>무통장 입금</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment4" class="a11y-hidden radio">
+                            <label for="payment4" class="naver"><img src="../asset/images/ico_payment_naver.png" alt=""><span>네이버페이</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment5" class="a11y-hidden radio">
+                            <label for="payment5" class="kakao"><img src="../asset/images/ico_payment_kakao.png" alt=""><span>카카오페이</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="payment" id="payment6" class="a11y-hidden radio">
+                            <label for="payment6" class="samsung"><img src="../asset/images/ico_payment_samsung.png" alt=""><span>삼성페이</span></label>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </section>
+            <hr class="area-bar h10"></hr>
+            <section class="recommender">
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <p class="input-title">추천인코드</p>
+                        <input type="text" class="input h40" placeholder="12자리" />
+                        <p class="input-txt-under">입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">추천인명</p>
+                        <div class="search-box-wrap">
+                            <input type="text" class="input h40" placeholder="김건설" />
+                            <div class="search-result-box">
+                                <!-- hide 추가시 div 사라짐 -->
+                                
+                                <ul class="col-2">
+                                    <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="primary-500-main input-txt-under">2024년 4월 26일부터 5,500원이 마일리지로 적립됩니다.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <button class="btn regular primary fullsize"disabled >회원가입 완료</button>
+            </section>
+        </main>
+        <div id="layerPop-join-search" class="pop-toast">
+            <div class="pop-header">
+                <div class="handle"></div>
+                <button type="button" class="btn-popup close" aria-label="닫기"></button>
+            </div>
+            <div class="pop-con">
+                <div class="labor-profile">
+                    <ul class="popup-labor-list">
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                        <li><p><span class="labor-name">홍길동</span> <span class="labor-job">(배관공)</span><span class="labor-distance">현장으로부터 332m</span></p><button type="button" class="btn-popup bookmark --normal" aria-label="즐겨찾기 등록하기"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $(".layer-toast").on("click", modaltoast);// Toast Layer Popup
+            });
+            /* Toast Layer Popup */
+            function modaltoast(e) {
+            e.preventDefault();
+            var $popToast = $(".pop-toast");
+            var $toastCloseBtn = $(".pop-toast .btn-popup.close");
+            var modalPop = $("#" + $(this).attr("data-modal"));
+            // 이전에 열려있던 팝업을 닫기
+            $(".pop-toast.open-modal").removeClass("open-modal");
+
+            setTimeout(function(){
+                    modalPop.addClass("open-modal");
+                }, 100);
+            $toastCloseBtn.on("click", modalToastClose); 
+            //토스트레이어 닫기
+            function modalToastClose() {
+                var $popToast = $(".pop-toast");
+                $popToast.removeClass("full");
+                setTimeout(function(){
+                    $popToast.removeClass("open-modal");
+                }, 100);
+                setTimeout(function(){
+                    $(".hide-con").hide();
+                }, 800);
+            }
+            popTouchAction();
+            }
+        </script>
+    </body>
+    <footer>
+       
+    </footer>
+</html>

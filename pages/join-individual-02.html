@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../scss/style.css" />
+        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
+        <script defer src="../js/common.js"></script>
+        <title>건설세상</title>
+    </head>
+    <body>
+        <header class="sub-header">
+            <button class="btn-back" aria-label="뒤로가기"></button>
+            <p>개인 회원가입</p>
+            <button type="button" class="close hide" aria-label="닫기"></button>
+        </header>
+        <main class="join join-enterprise-member-02">
+            <section>
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <p class="input-title">이름</p>
+                        <input type="text" class="input h40" placeholder="김건설" />
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">주민등록번호</p>
+                        <div class="input-wrap">
+                            <div class="social-security-number align vm">
+                                <input type="number" class="input h40" placeholder="6자리 숫자" />
+                                <span>-</span>
+                                <input type="number" class="input h40" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-wrap">
+                        <p class="input-title">휴대폰 번호</p>
+                        <div class="certification-number">
+                            <input type="number" class="input h40" placeholder="01012345678" />
+                            <button class="btn small radius white">인증요청</button>
+                        </div>
+                        <!-- <p class="input-txt-under error-400">존재하지 않는 회원 휴대폰번호입니다.</p> -->
+                        <p class="input-txt-under primary-500-main">인증번호가 전송되었습니다.</p>
+                        <div class="certification-number-wrap">
+                            <input type="text" class="input h40 certification-number" placeholder="인증번호 입력" />
+                            <span class="count">2:49</span>
+                        </div>
+                        <p class="input-txt-under error-400">인증번호가 맞지 않습니다.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer>
+        <button class="btn regular primary fullsize" disabled >인증 완료</button>
+    </footer>
+</html>
