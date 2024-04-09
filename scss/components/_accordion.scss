@@ -35,6 +35,8 @@
     }
     summary::-webkit-details-marker, summary::-moz-details-marker, summary {
         display: none;
+        list-style: none;
+        padding-left: 1em;
     }
       
 }
