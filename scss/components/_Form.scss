@@ -6,7 +6,8 @@
         .textarea,
         .select {
             border: 0.1rem solid var(--neutral-300);
-            padding: 0 1.2rem;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
             width: 100%;
             background-color: var(--white);
             box-sizing: border-box;
@@ -32,6 +33,10 @@
             &:focus {
                 border-color: var(--primary-500);
             }
+        }
+        .textarea {
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
         }
         .input {
             width: var(--width, auto);

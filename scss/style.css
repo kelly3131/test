@@ -332,6 +332,11 @@
     background-color: var(--primary-500);
     color: var(--white);
   }
+  .btn.primary-line {
+    border-color: var(--primary-500);
+    background-color: var(--white);
+    color: var(--primary-500);
+  }
   .btn.white {
     border-color: var(--neutral-600);
     background-color: var(--white);
@@ -340,6 +345,11 @@
   .btn.red {
     border-color: var(--red-100);
     background-color: var(--red-100);
+    color: var(--red-300);
+  }
+  .btn.red-line {
+    border-color: var(--red-200);
+    background-color: var(--white);
     color: var(--red-300);
   }
   .btn.--disabled, .btn:disabled {
@@ -536,6 +546,10 @@
   .btn-accordion.up {
     background: url(../asset/images/ico_arrow_up_black_24.svg) no-repeat center/2.4rem auto;
   }
+  img.circle-plus {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }
 @layer Components.Heading {
   .title {
@@ -640,7 +654,8 @@
     .textarea,
     .select {
       border: 0.1rem solid var(--neutral-300);
-      padding: 0 1.2rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
       width: 100%;
       background-color: var(--white);
       box-sizing: border-box;
@@ -676,6 +691,10 @@
     .textarea:focus,
     .select:focus {
       border-color: var(--primary-500);
+    }
+    .textarea {
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
     }
     .input {
       width: var(--width, auto);
@@ -1488,6 +1507,9 @@
   @layer Common {
     .mt-24 {
       margin-top: 2.4rem;
+    }
+    .mt-16 {
+      margin-top: 1.6rem;
     }
     .mt-8 {
       margin-top: 0.8rem;
@@ -3454,6 +3476,9 @@ button.swiper-pagination-bullet {
   @layer Common {
     .mt-24 {
       margin-top: 2.4rem;
+    }
+    .mt-16 {
+      margin-top: 1.6rem;
     }
     .mt-8 {
       margin-top: 0.8rem;

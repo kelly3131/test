@@ -78,6 +78,11 @@
             height: auto;
         }
     }
+    .company-notice {
+        .delete {
+            // width: calc(50% - 0.8rem);
+        }
+    }
     .status-bar-wrap {
         width: 100%;
         height: 0.3rem;
