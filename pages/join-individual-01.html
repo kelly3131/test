@@ -4,14 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../scss/style.css" />
-        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
         <title>건설세상</title>
+        <script type="text/javascript">
+            function next_click(){
+                location.href = './join-individual-02.html'
+            }
+        </script>
     </head>
     <body>
         <header class="sub-header">
-            <button class="btn-back" aria-label="뒤로가기"></button>
+            <button class="btn-back" aria-label="뒤로가기" onclick="history.back();"></button>
             <p>개인 회원가입</p>
             <button type="button" class="close hide" aria-label="닫기"></button>
         </header>
@@ -31,6 +35,7 @@
         </main>
     </body>
     <footer>
-        <button class="btn regular primary fullsize" disabled>휴대폰번호로 계속하기</button>
+        <button class="btn regular primary fullsize" onclick="next_click()">휴대폰번호로 계속하기</button>
     </footer>
+    <script type="text/javascript" src="../js/common.js"></script>
 </html>

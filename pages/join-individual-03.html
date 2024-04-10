@@ -4,14 +4,379 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../scss/style.css" />
-        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/common.js"></script>
         <title>건설세상</title>
+        <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
+        <script type="text/javascript">
+            var user_name;
+            var jumin_no1;
+            var jumin_no2;
+            var phone_no;
+            var total_price = 0;
+            $(document).ready(function(){
+                var now = new Date();	// 현재 날짜 및 시간
+                var yyyy = now.getFullYear();
+                var mm = now.getMonth()+2;
+                var dd = now.getDate();
+                var str_yyyy = yyyy+'년'+mm+'월'+dd+'일부터 5,500원이 마일리지로 적립됩니다.';
+                alert(str_yyyy);
+                $('#p_info').html(str_yyyy);
+                $('#pwd_error').hide();
+                $('#div_search').hide();
+                $('#reco_list').hide();
+                user_name = getData('user_name');
+                jumin_no1 = getData('jumin_no1');
+                jumin_no2 = getData('jumin_no2');
+                phone_no = getData('phone_no');
+                $('#user_name').val(user_name);
+                $('#phone_no').val(phone_no);
+                set_total_price();
+            });
+            function set_total_price(){
+                var str = numberWithCommas(total_price)+'<span class="won">원</span>';
+                $('#total_price').html(str);
+                var sel_val = $('#sel_coupon').val();
+                if(sel_val == 1){
+                    if((total_price - 22000) < 0){
+                        var str = numberWithCommas(0)+'<span class="won">원</span>';
+                        $('#pay_amount').html(str);
+                    }else{
+                        var str = numberWithCommas((total_price - 22000))+'<span class="won">원</span>';
+                        $('#pay_amount').html(str);
+                    }
+                    
+                }else{
+                    var str = numberWithCommas(total_price)+'<span class="won">원</span>';
+                    $('#pay_amount').html(str);
+                }
+            }
+            function search_user(){
+                
+                if(!$('#search_reco_name').val()){
+                    alert('회사명을 입력해주세요');
+                    return;
+                }
+                $('#div_search').hide();
+                var data = {
+                    "search_keyword" :$('#search_reco_name').val() 
+                };
+                var sendData = JSON.stringify(data);
+                ajaxFunc("post",
+                 BACK_END_URL+"/cwi/api/user/search_user",
+				 JSON.stringify({
+					 search_keyword : $('#search_reco_name').val()
+				 }),
+				 "",
+				 "application/json",
+				 true,
+				 receive_reco_data,
+				 null,
+				 null);
+            }
+            function search_company(){
+                if(!$('#search_company_name').val()){
+                    alert('회사명을 입력해주세요');
+                    return;
+                }
+                $('#div_search').hide();
+                var data = {
+                    "search_keyword" :$('#search_company_name').val() 
+                };
+                var sendData = JSON.stringify(data);
+                ajaxFunc("post",
+                 BACK_END_URL+"/cwi/api/user/search_company",
+				 JSON.stringify({
+					 search_keyword : $('#search_company_name').val()
+				 }),
+				 "",
+				 "application/json",
+				 true,
+				 receive_data,
+				 null,
+				 null);
+            }
+            
+            function set_reco(search_reco_name,reco_code){
+                $('#search_reco_name').val(search_reco_name);
+                $('#reco_code').val(reco_code);
+                $('#reco_list').html('');
+                $('#reco_list').hide();
+            }
+            function receive_reco_data(event){
+                var msg = event;
+                var str = '';
+                if(msg.data_list != null && msg.data_list.length > 0){
+                    $.each(msg.data_list, function (index, entry) {
+                        str = str + '<li onclick="set_reco(\''+entry.USER_NAME+'\',\''+entry.RECO_CODE+'\');"><span class="company-name">'+entry.USER_NAME+'</span><span class="txt-right">'+entry.PHONE_NO+'</span></li>';
+                    });
+                    alert(str);
+                    $('#reco_list').html(str);
+                    $('#reco_list').show();
+                }else{
+                    alert('검색 결과가 없습니다.');
+                }
+            }
+            function receive_data(event){
+                var msg = event;
+                var str = '';
+                if(msg.data_list != null && msg.data_list.length > 0){
+                    $.each(msg.data_list, function (index, entry) {
+                        str = str + '<li onclick="insert_company(\''+entry.IDX+'\',\''+entry.COMPANY_NAME+'\',\''+entry.COMPANY_TYPE+'\');"><span class="company-name">'+entry.COMPANY_NAME+'</span><span>'+entry.COMPANY_TYPE_NAME+'</span><span class="txt-right">'+entry.COMPANY_TEL+'</span></li>';
+                    });
+                    $('#div_search').show();
+                    $('#ul_search').html(str);
+                    $('#search_company_name').val('');
+                    $('#chk999').prop("checked", false);
+                }else{
+                    alert('검색 결과가 없습니다.');
+                }
+            }
+            var com_list = 1;
+            function insert_company(idx,company_name,company_type){
+                $('#div_search').hide();
+                $('#ul_search').html('');
+                var str = '';
+                str = str + '<div id="div_com_list'+com_list+'" class="input-wrap">';
+                str = str + '<div class="check-box-input">';
+                str = str + '<div class="item1">';
+                str = str + '<input type="checkbox" name="chk" id="chk'+com_list+'" value="'+com_list+'" class="a11y-hidden checkbox fullsize" data-idx="'+idx+'">';
+                str = str + '<label for="chk'+com_list+'"></label>';
+                str = str + '</div>';
+                str = str + '<div class="item2">';
+                str = str + '<input type="text" class="input h40" placeholder="'+company_name+'" disabled />';
+                str = str + '</div>';
+                str = str + '</div>';
+                str = str + '<div class="check-box-wrap">';
+                //1:현장관리자,2:중간관리자,3:실행관리자,4:기사(직원),5:근로자,6:장비기사,7:직원
+                if(company_type == 1){
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk1'+com_list+'" value="1" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="1" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk1'+com_list+'"><p class="checkbox-text">현장관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk2'+com_list+'" value="2" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="2" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk2'+com_list+'"><p class="checkbox-text">중간관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk3'+com_list+'" value="3" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="3" data-price="33000" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk3'+com_list+'"><p class="checkbox-text">실행소장</p></label>';
+                }else if(company_type == 2){
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk1'+com_list+'" value="1" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="2" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk1'+com_list+'"><p class="checkbox-text">중간관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk2'+com_list+'" value="2" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="5" data-price="4400" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk2'+com_list+'"><p class="checkbox-text">근로자</p></label>';
+                }else if(company_type == 3){
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk1'+com_list+'" value="1" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="2" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk1'+com_list+'"><p class="checkbox-text">중간관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk2'+com_list+'" value="2" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="6" data-price="4400" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk2'+com_list+'"><p class="checkbox-text">장비기사</p></label>';
+                }else if(company_type == 4){
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk1'+com_list+'" value="1" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="2" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk1'+com_list+'"><p class="checkbox-text">중간관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk2'+com_list+'" value="2" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="4" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk2'+com_list+'"><p class="checkbox-text">기사(직원)</p></label>';
+                }else{
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk1'+com_list+'" value="1" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="2" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk1'+com_list+'"><p class="checkbox-text">중간관리자</p></label>';
+                    str = str + '   <input type="checkbox" name="chk_item" id="chk2'+com_list+'" value="2" onclick="set_chk(this,'+com_list+')" data-idx="'+idx+'" data-jointype="7" data-price="0" class="a11y-hidden checkbox">';
+                    str = str + '   <label for="chk2'+com_list+'"><p class="checkbox-text">직원</p></label>';
+                }
+                
+                str = str + '</div>';
+                str = str + '</div>';
+                $('#company_list').append(str);
+                com_list = com_list+1;
+            }
+
+            function del_list(){
+                $("input[name=chk]:checked").each(function(){
+                    var chk = $(this).val();
+                    $('#div_com_list'+chk+' input[type=checkbox]').each(function() {
+                        if ($(this).is(":checked")) {
+                            var price = $(this).data("price");
+                            if(price){
+                                total_price = total_price - price;
+                                console.log('ddddddd#'+price);
+                            }
+                        }
+                    });
+                    set_total_price();
+                    $('#div_com_list'+chk).remove();
+                    //com_list = com_list -1;
+                });
+            }
+
+            function set_chk(obj,no){
+                $('#sel_coupon').val(2);
+                var data = $(obj).val();
+                var price = $(obj).data("price");
+                if($(obj).is(":checked")){
+                    console.log('checked');
+                    if(price > 0) total_price = total_price + price;
+                }else{
+                    if(price > 0) total_price = total_price - price;
+                    set_total_price();
+                    console.log('unchecked');
+                    return;
+                }
+                
+                if(data == 1){
+                    if($("#chk2"+no).is(":checked")){
+                        price = $("#chk2"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+                    if($("#chk3"+no).is(":checked")){
+                        price = $("#chk3"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+
+                    $("#chk2"+no).prop("checked", false);
+                    $("#chk3"+no).prop("checked", false);
+                }else if(data == 2){
+                    if($("#chk1"+no).is(":checked")){
+                        price = $("#chk1"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+                    if($("#chk3"+no).is(":checked")){
+                        price = $("#chk3"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+                    $("#chk1"+no).prop("checked", false);
+                    $("#chk3"+no).prop("checked", false);
+                }else {
+                    if($("#chk1"+no).is(":checked")){
+                        price = $("#chk1"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+                    if($("#chk2"+no).is(":checked")){
+                        price = $("#chk2"+no).data("price");
+                        if(price > 0) total_price = total_price - price;
+                    }
+                    $("#chk1"+no).prop("checked", false);
+                    $("#chk2"+no).prop("checked", false);
+                }
+                set_total_price();
+            }
+
+            function init_com(){
+                $('#company_list').html('');
+            }
+
+            function regi_user(){
+                var user_idx = getData('user_idx');
+                var total = $("input[name=chk_item]").length;
+                var tmp = 0;
+                var check_cnt = 0;
+                if(!$('#pwd').val()){
+                    alert('비밀번호를 입력해주세요.');
+                    return;
+                }
+                if($('#pwd').val() != $('#pwd2').val()){
+                    alert('비밀번호가 일치하지 않습니다.다시 입력해주세요.');
+                    return;
+                }
+                for(var i = 0; i < total; i++){
+                    var obj = $("input[name=chk_item]").eq(i);
+                    var company_idx = $(obj).data("idx");
+                    if(tmp == 0){
+                        tmp = company_idx;
+                    }
+                    if(tmp != company_idx){
+                        if(check_cnt == 0){
+                            alert('직급을 선택해주세요.');
+                            return;
+                        }
+                        check_cnt = 0;
+                        tmp = company_idx;
+                    }
+                    var jointype = $(obj).data("jointype");
+                    if($(obj).is(":checked")){
+                        check_cnt = check_cnt +1;
+                        console.log(company_idx+'###'+jointype);
+                    }
+                }
+                if(check_cnt == 0){
+                    alert('직급을 선택해주세요.');
+                    return
+                }
+                ajaxFunc("post",
+                 BACK_END_URL+"/cwi/api/user/regi_user",
+				 JSON.stringify({
+					user_name  : $('#user_name').val()
+                    ,jumin_no1  : getData('jumin_no1')
+                    ,jumin_no2  : getData('jumin_no2')
+                    ,phone_no  : $('#phone_no').val()
+                    ,pwd  : $('#pwd').val()
+                    ,user_type  : getData('user_type')
+                    ,terms_person  : 1
+                    ,terms_collect  : 1
+                    ,terms_sms  : 1
+                    ,terms_marketing_email  : getData('terms_marketing_email')
+                    ,terms_marketing_sms  : getData('terms_marketing_sms')
+				 }),
+				 "",
+				 "application/json",
+				 false,
+				 receive_regi_user,
+				 null,
+				 null);
+            }
+
+            function receive_regi_user(event){
+                var msg = event;
+                var user_idx = event.user_idx;
+                setData('user_idx',user_idx);
+                regi_joincom();
+            }
+
+            function regi_joincom(){
+                var user_idx = getData('user_idx');
+                var total = $("input[name=chk_item]").length;
+                var tmp = 0;
+                var check_cnt = 0;
+                for(var i = 0; i < total; i++){
+                    var obj = $("input[name=chk_item]").eq(i);
+                    var company_idx = $(obj).data("idx");
+                    var jointype = $(obj).data("jointype");
+                    if($(obj).is(":checked")){
+                        send_joincom(company_idx,jointype);
+                    }
+                }
+            }
+
+            function send_joincom(company_idx,join_type){
+                var user_idx = getData('user_idx');
+                ajaxFunc("post",
+                 BACK_END_URL+"/cwi/api/user/regi_join_com",
+				 JSON.stringify({
+					user_idx  : user_idx
+                    ,company_idx  : company_idx
+                    ,join_type  : join_type
+				 }),
+				 "",
+				 "application/json",
+				 false,
+				 null,
+				 null,
+				 null);
+            }
+
+            function set_coupon(obj){
+                var sel_val = $(obj).val();
+                if(sel_val == 1){
+                    if((total_price - 22000) < 0){
+                        var str = numberWithCommas(0)+'<span class="won">원</span>';
+                        $('#pay_amount').html(str);
+                    }else{
+                        var str = numberWithCommas((total_price - 22000))+'<span class="won">원</span>';
+                        $('#pay_amount').html(str);
+                    }
+                    
+                }else{
+                    var str = numberWithCommas(total_price)+'<span class="won">원</span>';
+                    $('#pay_amount').html(str);
+                }
+            }
+        </script>
     </head>
     <body>
         <header class="sub-header">
-            <button class="btn-back" aria-label="뒤로가기"></button>
+            <button class="btn-back" aria-label="뒤로가기" onclick="history.back();"></button>
             <p>기업 회원가입</p>
             <button type="button" class="close hide" aria-label="닫기"></button>
         </header>
@@ -22,85 +387,46 @@
                     <div class="input-wrap">
                         <p class="input-title">이름</p>
                         <div class="input-wrap">
-                            <input type="text" class="input h40" placeholder="김건설" disabled/>
+                            <input type="text" id="user_name" class="input h40" placeholder="김건설" disabled/>
                         </div>
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">아이디</p>
                         <div class="input-wrap">
-                            <input type="text" class="input h40" placeholder="01012345678" disabled/>
+                            <input type="text" id="phone_no" class="input h40" placeholder="01012345678" disabled/>
                         </div>
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">비밀번호</p>
-                        <input type="text" class="input h40" placeholder="" />
+                        <input type="password" id="pwd" class="input h40" placeholder="" maxlength="12"/>
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">비밀번호 확인</p>
-                        <input type="text" class="input h40" placeholder="" />
-                        <p class="input-txt-under error-400">비밀번호가 일치하지 않습니다.</p>
+                        <input type="password" id="pwd2" class="input h40" placeholder=""  maxlength="12"/>
+                        <p id="pwd_error" class="input-txt-under error-400">비밀번호가 일치하지 않습니다.</p>
                     </div>
                     <div class="input-wrap input-belong">
                         <p class="input-title">소속</p>
                         <div class="search-box-wrap">
-                            <input type="text" class="input h40 input-ico-search" placeholder="등록되어 있는 기업명을 검색합니다." readonly/>
-                            <div class="search-result-box">
+                            <input type="text" id="search_company_name" class="input h40 input-ico-search" placeholder="등록되어 있는 기업명을 검색합니다.입력 후에 엔터키를 눌러주세요." onkeyup="if(window.event.keyCode==13){search_company()}"/>
+                            <div id="div_search" class="search-result-box">
                                 <!-- hide 추가시 div 사라짐 -->
-                                
-                                <ul class="col-3">
-                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
-                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
-                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
-                                    <li><span class="company-name">수인산업</span><span>시공사(건설회사)</span><span class="txt-right">000-00-000000</span></li>
+                                <ul id="ul_search" class="col-3">
+                                    
                                 </ul>
                             </div>
                         </div>
                         <p class="input-txt-under align vm">소속이 없으면 무소속으로 가입되며 <a class="txt-underline" href="./mypage.html">마이페이지</a>에서 수정 가능합니다.</p>
                         <span class="align right">
-                            <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">소속없음</p></label>
+                            <input type="checkbox" name="chk999" id="chk999" class="a11y-hidden checkbox" onclick="init_com();">
+                            <label for="chk999"><p class="checkbox-text">소속없음</p></label>
                         </span>
                     </div>
-                    <div class="input-wrap">
-                        <div class="check-box-input">
-                            <div class="item1">
-                                <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
-                                <label for="chk9"></label>
-                            </div>
-                            <div class="item2">
-                                <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
-                            </div>
-                        </div>
-                        <div class="check-box-wrap">
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">실행소장</p></label>
-                        </div>
-                    </div>
-                    <div class="input-wrap">
-                        <div class="check-box-input">
-                            <div class="item1">
-                                <input type="checkbox" name="chk" id="chk9" class="a11y-hidden checkbox fullsize">
-                                <label for="chk9"></label>
-                            </div>
-                            <div class="item2">
-                                <input type="text" class="input h40" placeholder="(주)건설세상" disabled />
-                            </div>
-                        </div>
-                        <div class="check-box-wrap">
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">현장관리자</p></label>
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">중간관리자</p></label>
-                            <input type="checkbox" name="chk" id="chk11" class="a11y-hidden checkbox">
-                            <label for="chk9"><p class="checkbox-text">실행소장</p></label>
-                        </div>
+                    <div id="company_list">
+                        
                     </div>
                     <div class="input-wrap delete txt-right">
-                        <button class="btn white small radius">
+                        <button class="btn white small radius" onclick="del_list()">
                             <img src="../asset/images/checkbox_on.svg" alt="">
                             항목삭제
                         </button>
@@ -127,9 +453,9 @@
                     </ul>
                     <div class="input-wrap">
                         <p class="input-title">할인쿠폰</p>
-                        <select class="select">
-                            <option>회원가입 기념 1개월 구독권</option>
-                            <option>없음</option>
+                        <select id="sel_coupon" class="select" onchange="set_coupon(this)">
+                            <option value="1">회원가입 기념 1개월 구독권</option>
+                            <option value="2" selected="selected">없음</option>
                         </select>
                     </div>
                     <div class="input-wrap">
@@ -137,7 +463,7 @@
                         <ul class="amount-wrap">
                             <li class="product-amount">
                                 <span class="list-subject">상품금액</span>
-                                <span class="count">22,000<span class="won">원</span></span>
+                                <span id="total_price" class="count"></span>
                             </li>
                             <li class="discount-amount">
                                 <span class="list-subject">회원가입 기념 1개월 무료</span>
@@ -148,7 +474,7 @@
                             </li>
                             <li class="total-amount">
                                 <span class="list-subject">결제 금액</span>
-                                <span class="count">0<span class="won">원</span></span>
+                                <span id="pay_amount" class="count">0<span class="won">원</span></span>
                             </li>
                         </ul>
                     </div>
@@ -171,26 +497,6 @@
                             <input type="radio" name="payment" id="payment1" class="a11y-hidden radio">
                             <label for="payment1" class="card"><span>신용카드</span></label>
                         </li>
-                        <li>
-                            <input type="radio" name="payment" id="payment2" class="a11y-hidden radio">
-                            <label for="payment2" class="phone"><span>휴대폰 결제</span></label>
-                        </li>
-                        <li>
-                            <input type="radio" name="payment" id="payment3" class="a11y-hidden radio">
-                            <label for="payment3" class="bank-book"><span>무통장 입금</span></label>
-                        </li>
-                        <li>
-                            <input type="radio" name="payment" id="payment4" class="a11y-hidden radio">
-                            <label for="payment4" class="naver"><img src="../asset/images/ico_payment_naver.png" alt=""><span>네이버페이</span></label>
-                        </li>
-                        <li>
-                            <input type="radio" name="payment" id="payment5" class="a11y-hidden radio">
-                            <label for="payment5" class="kakao"><img src="../asset/images/ico_payment_kakao.png" alt=""><span>카카오페이</span></label>
-                        </li>
-                        <li>
-                            <input type="radio" name="payment" id="payment6" class="a11y-hidden radio">
-                            <label for="payment6" class="samsung"><img src="../asset/images/ico_payment_samsung.png" alt=""><span>삼성페이</span></label>
-                        </li>
                     </ul>
                     
                 </div>
@@ -200,27 +506,26 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <p class="input-title">추천인코드</p>
-                        <input type="text" class="input h40" placeholder="12자리" />
+                        <input type="text" id="reco_code" class="input h40" placeholder="12자리"  maxlength="12"/>
                         <p class="input-txt-under">입력하지 않으면 <strong>건설세상</strong>으로 처리됩니다.</p>
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">추천인명</p>
                         <div class="search-box-wrap">
-                            <input type="text" class="input h40" placeholder="김건설" />
+                            <input type="text" id="search_reco_name" class="input h40" placeholder="이름을 입력한 후 엔터키를 눌러주세요." onkeyup="if(window.event.keyCode==13){search_user()}" maxlength="12"/>
                             <div class="search-result-box">
                                 <!-- hide 추가시 div 사라짐 -->
-                                
-                                <ul class="col-2">
-                                    <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                                <ul id="reco_list" class="col-2">
+                                    
                                 </ul>
                             </div>
                         </div>
-                        <p class="primary-500-main input-txt-under">2024년 4월 26일부터 5,500원이 마일리지로 적립됩니다.</p>
+                        <p id="p_info" class="primary-500-main input-txt-under"></p>
                     </div>
                 </div>
             </section>
             <section>
-                <button class="btn regular primary fullsize"disabled >회원가입 완료</button>
+                <button class="btn regular primary fullsize" onclick="regi_user();">회원가입 완료</button>
             </section>
         </main>
         <div id="layerPop-join-search" class="pop-toast">
@@ -274,4 +579,5 @@
     <footer>
        
     </footer>
+    <script type="text/javascript" src="../js/common.js"></script>
 </html>

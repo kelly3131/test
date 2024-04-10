@@ -4,15 +4,72 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../scss/style.css" />
-        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
         <title>건설세상</title>
+        <script type="text/javascript">
+            var user_type;
+            $(document).ready(function(){
+                user_type = getData('user_type');
+                if(user_type == 1){
+                    $('#user_type').text('개인 회원가입');
+                }else if(user_type == 2){
+                    $('#user_type').text('기업 회원가입');
+                }else{
+                    $('#user_type').text('중복 회원가입');
+                }
+                $("#cbx_chkAll").click(function() {
+                    if($("#cbx_chkAll").is(":checked")) $("input[name=chk]").prop("checked", true);
+                    else $("input[name=chk]").prop("checked", false);
+                });
+
+                $("input[name=chk]").click(function() {
+                    var total = $("input[name=chk]").length;
+                    var checked = $("input[name=chk]:checked").length;
+
+                    if(total != checked) $("#cbx_chkAll").prop("checked", false);
+                    else $("#cbx_chkAll").prop("checked", true); 
+                });
+            });
+            function next_click(){
+                if(!$("#privacy1").is(":checked")){
+                    alert('개인회원 약관에 동의해주세요');
+                    return;
+                }
+                if(!$("#privacy2").is(":checked")){
+                    alert('개인정보 수집 및 이용에 동의해주세요');
+                    return;
+                }
+                if(!$("#privacy3").is(":checked")){
+                    alert('SMS발송서비스 약관에 동의해주세요');
+                    return;
+                }
+                if(!$("#privacy4").is(":checked")){
+                    setData('terms_marketing_email',0);
+                }else{
+                    setData('terms_marketing_email',1);
+                }
+                if(!$("#privacy5").is(":checked")){
+                    setData('terms_marketing_sms',0);
+                }else{
+                    setData('terms_marketing_sms',1);
+                }
+                
+                if(user_type == 1){
+                    location.href = './join-individual-01.html'
+                }else if(user_type == 2){
+                    location.href = './join-enterprise-01.html'
+                }else{
+                    location.href = './join-duplicate-member-01.html'
+                }
+                
+            }
+        </script>
     </head>
     <body>
         <header class="sub-header">
-            <button class="btn-back" aria-label="뒤로가기"></button>
-            <p>중복 회원가입</p>
+            <button class="btn-back" aria-label="뒤로가기" onclick="history.back();"></button>
+            <p id="user_type"></p>
             <button type="button" class="close hide" aria-label="닫기"></button>
         </header>
         <main class="join">
@@ -23,38 +80,38 @@
                 <div class="terms-wrap">
                     <ul class="align-column">
                         <li>
-                            <input type="checkbox" id="all" class="checkbox_all a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="cbx_chkAll">
                             <label for="all" style="color:#c80a1e;"><a href="">
                                 <h5 class="checkbox-text">모든 약관에 동의합니다.</h5>
                                 </a>
                             </label>
                         </li>
                         <li>
-                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="privacy1">
                             <label for="privacy">
                                 <a href=""><strong class="checkbox-text f-14">개인회원 약관에 동의(필수)</strong></a>
                             </label>
                         </li>
                         <li>
-                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="privacy2">
                             <label for="privacy">
                                 <a href=""><strong class="checkbox-text f-14">개인정보 수집 및 이용에 동의(필수)</strong></a>
                             </label>
                         </li>
                         <li>
-                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="privacy3">
                             <label for="privacy">
                                 <a href=""><strong class="checkbox-text f-14">SMS발송서비스 약관에 동의(필수)</strong></a>
                             </label>
                         </li>
                         <li>
-                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="privacy4">
                             <label for="privacy">
                                 <a href=""><p class="checkbox-text f-14">마케팅 정보 수신 동의 - 이메일(선택)</p></a>
                             </label>
                         </li>
                         <li>
-                            <input type="checkbox" id="privacy" class="checkbox_item a11y-hidden checkbox">
+                            <input type="checkbox" name="chk" id="privacy5">
                             <label for="privacy">
                                 <a href=""><p class="checkbox-text f-14">마케팅 정보 수신 동의 - SMS/MMS(선택)</p></a>
                             </label>
@@ -63,18 +120,12 @@
                 </div>
             </section>
         </main>
-    <script>
-        // 전체동의 클릭시
-        $(".checkbox_all").on("click", function() {
-            // 전체동의의 속성(checked)을 변수에 담아
-            var checkOr = $(this).prop("checked");
-            var checkboxItem = $('.checkbox_item');
-            // 각 동의의 속성(checked)를 전체동의와 동일하게 맞춰준다
-            checkboxItem.prop("checked", checkOr);
-        });
+        <script type="text/javascript">
+            
         </script>
     </body>
     <footer>
-        <a href="" class="btn --active regular fullsize">다음</a>
+        <a href="#" class="btn --active regular fullsize" onclick="next_click()">다음</a>
     </footer>
+    <script type="text/javascript" src="../js/common.js"></script>
 </html>

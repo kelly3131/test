@@ -4,14 +4,46 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../scss/style.css" />
-        <script defer src="../js/jquery-3.7.1.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/swiper-bundle.min.js"></script><!-- 2024-03-29 KEJ -->
-        <script defer src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
         <title>건설세상</title>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+            });
+            function next_click(){
+                var user_name = $('#user_name').val();
+                var jumin_no1 = $('#jumin_no1').val();
+                var jumin_no2 = $('#jumin_no2').val();
+                var phone_no = $('#phone_no').val();
+                if(!user_name){
+                    alert('이름을 입력해주세요.');
+                    return;
+                }
+                if(!jumin_no1){
+                    alert('주민 번호를 입력해주세요.');
+                    return;
+                }
+                if(!jumin_no2){
+                    alert('주민 번호를 입력해주세요.');
+                    return;
+                }
+                if(!phone_no){
+                    alert('핸드폰 번호를 입력해주세요.');
+                    return;
+                }
+                setData('user_name',user_name);
+                setData('jumin_no1',jumin_no1);
+                setData('jumin_no2',jumin_no2);
+                setData('phone_no',phone_no);
+                location.href = './join-individual-03.html'
+            }
+            
+        </script>
     </head>
     <body>
         <header class="sub-header">
-            <button class="btn-back" aria-label="뒤로가기"></button>
+            <button class="btn-back" aria-label="뒤로가기" onclick="history.back();"></button>
             <p>개인 회원가입</p>
             <button type="button" class="close hide" aria-label="닫기"></button>
         </header>
@@ -20,37 +52,38 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <p class="input-title">이름</p>
-                        <input type="text" class="input h40" placeholder="김건설" />
+                        <input type="text" id="user_name" class="input h40" placeholder="김건설" />
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">주민등록번호</p>
                         <div class="input-wrap">
                             <div class="social-security-number align vm">
-                                <input type="number" class="input h40" placeholder="6자리 숫자" />
+                                <input type="number" id="jumin_no1" class="input h40" placeholder="6자리 숫자"  maxlength="6"/>
                                 <span>-</span>
-                                <input type="number" class="input h40" placeholder="" />
+                                <input type="number" id="jumin_no2" class="input h40" placeholder=""  maxlength="7"/>
                             </div>
                         </div>
                     </div>
                     <div class="input-wrap">
                         <p class="input-title">휴대폰 번호</p>
                         <div class="certification-number">
-                            <input type="number" class="input h40" placeholder="01012345678" />
-                            <button class="btn small radius white">인증요청</button>
+                            <input type="number" id="phone_no" class="input h40" placeholder="01012345678" />    
+                            <!--<button class="btn small radius white">인증요청</button>-->
                         </div>
                         <!-- <p class="input-txt-under error-400">존재하지 않는 회원 휴대폰번호입니다.</p> -->
-                        <p class="input-txt-under primary-500-main">인증번호가 전송되었습니다.</p>
+                        <!--<p class="input-txt-under primary-500-main">인증번호가 전송되었습니다.</p>
                         <div class="certification-number-wrap">
                             <input type="text" class="input h40 certification-number" placeholder="인증번호 입력" />
                             <span class="count">2:49</span>
                         </div>
-                        <p class="input-txt-under error-400">인증번호가 맞지 않습니다.</p>
+                        <p class="input-txt-under error-400">인증번호가 맞지 않습니다.</p>-->
                     </div>
                 </div>
             </section>
         </main>
     </body>
     <footer>
-        <button class="btn regular primary fullsize" disabled >인증 완료</button>
+        <button class="btn regular primary fullsize" onclick="next_click()">휴대폰번호로 계속하기</button>
     </footer>
+    <script type="text/javascript" src="../js/common.js"></script>
 </html>
