@@ -577,6 +577,11 @@
       font-size: 1.2rem;
       font-weight: 400;
     }
+    .input-txt-on {
+      color: var(--neutral-600);
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
     .txt-underline {
       text-decoration: underline;
     }
@@ -1193,6 +1198,50 @@
     font-size: 1.1rem;
   }
 }
+@layer Components.List {
+  .line-list {
+    border: 1px solid var(--neutral-300);
+    border-radius: 1.2rem;
+  }
+  .line-list li {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr 6rem 8rem 6rem;
+    align-items: center;
+    height: 4rem;
+  }
+  .line-list li + li {
+    margin-top: -0.1rem;
+    border-top: 1px solid var(--neutral-300);
+  }
+  .line-list li label {
+    font-size: 1.4rem !important;
+  }
+  .line-list img {
+    width: auto;
+    height: 2.2rem;
+  }
+  .line-list .list-subject {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .line-list .list-item {
+    color: var(--neutral-600);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 100%;
+    letter-spacing: -0.05rem;
+  }
+  .line-list .list-item.list-posting.on {
+    color: var(--primary-500);
+    font-weight: 600;
+  }
+  .line-list .list-item.list-posting.off {
+    color: var(--neutral-500);
+  }
+}
 @layer Header.Gnb {}
 @layer Layout.Header {
   .main-header, .mypage-header {
@@ -1356,7 +1405,7 @@
   .input-group {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.6rem;
   }
   .input-group-inner .input-group {
     gap: 0.4rem;
@@ -2950,7 +2999,7 @@ button.swiper-pagination-bullet {
   .registration .input-group {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.6rem;
   }
   .input-group-inner .registration .input-group {
     gap: 0.4rem;
@@ -3027,6 +3076,33 @@ button.swiper-pagination-bullet {
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--neutral-500);
+  }
+  .div-wrap .plus {
+    background-color: var(--neutral-200);
+    border: 0.1rem dotted var(--neutral-300);
+  }
+  .div-wrap .plus img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .div-wrap .img-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 8rem 8rem;
+    gap: 0.8rem;
+  }
+  .div-wrap .img-wrap .img {
+    overflow: hidden;
+    border-radius: 1.2rem;
+  }
+  .div-wrap .img-wrap .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .div-wrap .img-wrap .img.no-img {
+    border: 0.1rem dotted var(--neutral-500);
+    background-color: var(--neutral-100);
   }
 }
 @layer Mypage {
