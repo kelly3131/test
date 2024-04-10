@@ -29,6 +29,14 @@
         .pr-0 {
             padding-right: 0;
         }
+        .w100 {
+            width: 100%;
+        }
+        //section에 pl-0, pr-0할 땐 w100같이써야함. 
+        //width: calc(100% - (1.6rem * 2)); 이거 해놔서.
+        .pb-0 {
+            padding-bottom: 0;
+        }
         .area-bar {
             border:none;
             width: 100%; 

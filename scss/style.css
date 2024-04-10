@@ -324,6 +324,9 @@
     gap: 0.8rem;
     box-sizing: border-box;
   }
+  .btn:has(.text-plus) {
+    line-height: 2;
+  }
   .btn.primary, .btn.--active {
     border-color: var(--primary-500);
     background-color: var(--primary-500);
@@ -695,7 +698,7 @@
     .input.h32 {
       padding: 0 1.6rem;
       height: 3.2rem;
-      border-radius: 0.8rem;
+      border-radius: 1.2rem;
     }
     .input:disabled {
       background-color: var(--neutral-200);
@@ -1376,7 +1379,9 @@
     gap: 4rem;
   }
   main section {
-    padding: 0 1.6rem;
+    width: calc(100% - 3.2rem);
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -1458,6 +1463,12 @@
     }
     .pr-0 {
       padding-right: 0;
+    }
+    .w100 {
+      width: 100%;
+    }
+    .pb-0 {
+      padding-bottom: 0;
     }
     .area-bar {
       border: none;
@@ -2924,7 +2935,7 @@ button.swiper-pagination-bullet {
 }
 @layer Pages.registration {
   .registration {
-    padding: 0 1.6rem 10rem 1.6rem;
+    padding-bottom: 10rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -2951,20 +2962,48 @@ button.swiper-pagination-bullet {
     flex-direction: column;
     gap: 0.8rem;
   }
-  .registration ul li .title-wrap p {
-    position: relative;
+  .registration .inner-list {
+    padding-left: 1.2rem;
   }
-  .registration ul li .title-wrap p::before {
+  .registration .inner-list .input-wrap p {
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+  .registration .inner-list .input-wrap p::before {
     position: absolute;
-    left: 50%;
+    left: -1rem;
     top: 50%;
-    z-index: var(--zindex, 1);
-    transform: translate(-50%, -50%);
+    z-index: var(--zindex, 0);
+    transform: translateY(-50%);
     width: 0.4rem;
     height: 0.4rem;
     content: "";
     border-radius: 70%;
     background-color: var(--neutral-900);
+  }
+  .registration .add-settitle {
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+  .registration .add-settitle::before {
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    z-index: var(--zindex, 0);
+    transform: translateY(-50%);
+    width: 0.4rem;
+    height: 0.4rem;
+    content: "";
+    border-radius: 70%;
+    background-color: var(--neutral-900);
+  }
+  .registration .add-list {
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    background-color: var(--neutral-100);
+  }
+  .registration .add-list .add-settitle {
+    margin-bottom: 0.8rem;
   }
   .list-btn-wrap {
     display: grid;
@@ -3363,6 +3402,12 @@ button.swiper-pagination-bullet {
     }
     .pr-0 {
       padding-right: 0;
+    }
+    .w100 {
+      width: 100%;
+    }
+    .pb-0 {
+      padding-bottom: 0;
     }
     .area-bar {
       border: none;

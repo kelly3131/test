@@ -5,6 +5,12 @@
         align-items: center;
         gap: 0.8rem;
         box-sizing: border-box;
+        &:has(.text-plus) {
+            line-height: 2;
+            button.btn {
+
+            }
+        }
         &.primary, &.--active {
           border-color: var(--primary-500);
           background-color: var(--primary-500);
@@ -72,6 +78,7 @@
             border-radius: 2.8rem;
           }
         }
+        
         // &.ico1 {
         //   &::after {
         //     content: "";

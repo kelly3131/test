@@ -96,7 +96,9 @@
         flex-direction: column;
         gap: 4rem;
         section {
-            padding: 0 1.6rem;
+            width: calc(100% - (1.6rem * 2));
+            padding-left: 1.6rem;
+            padding-right: 1.6rem;
             display:flex;
             flex-direction: column;
             gap: 1.6rem;
