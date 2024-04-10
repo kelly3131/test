@@ -800,42 +800,6 @@
       letter-spacing: -0.1rem;
     }
   }
-  @layer Calendar {
-    .calendar-group input[type=date] {
-      position: relative;
-      width: 120px;
-      height: 48px;
-      padding: 0 42px 0 16px;
-      background: url(../../asset/images/ico_calendar.svg) no-repeat right 21px center/16px auto;
-      border: 1px solid #E1E1E1;
-      border-radius: 12px;
-    }
-    .calendar-group input[type=date]::-webkit-clear-button,
-    .calendar-group input[type=date]::-webkit-inner-spin-button {
-      display: none;
-    }
-    .calendar-group input[type=date]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      color: transparent;
-      cursor: pointer;
-    }
-    .calendar-group input[type=date]::before {
-      content: attr(data-placeholder);
-      width: 100%;
-    }
-    .calendar-group input[type=date]:valid::before {
-      display: none;
-    }
-    .calendar-group input[data-placeholder]::before {
-      color: #BABABA;
-      font-size: 14px;
-    }
-  }
 }
 @layer Component.Table {}
 @layer Component.Tab {
@@ -1098,6 +1062,24 @@
     margin: 0 1rem;
     background-color: var(--neutral-400);
   }
+  .bar-type2 {
+    display: flex;
+    color: var(--neutral-700);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+  }
+  .bar-type2 > * {
+    display: flex;
+    align-items: center;
+  }
+  .bar-type2 > * + *::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.2rem;
+    margin: 0 0.4rem;
+    background-color: var(--neutral-300);
+  }
 }
 @layer Certification {
   .certification-number-wrap {
@@ -1169,6 +1151,43 @@
   }
   .search-box-wrap .search-result-box ul.col-2 li {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@layer Components.Calendar {
+  .calendar-group input[type=date] {
+    position: relative;
+    height: 4rem;
+    padding: 0 1.6rem;
+    background: url(../../asset/images/ico_calendar.svg) no-repeat right 1.6rem center/16px auto;
+    border: 0.1rem solid var(--neutral-300);
+    border-radius: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--neutral-600);
+  }
+  .calendar-group input[type=date]::-webkit-clear-button,
+  .calendar-group input[type=date]::-webkit-inner-spin-button {
+    display: none;
+  }
+  .calendar-group input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  .calendar-group input[type=date]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+  }
+  .calendar-group input[type=date]:valid::before {
+    display: none;
+  }
+  .calendar-group input[data-placeholder]::before {
+    color: var(--neutral-500);
+    font-size: 1.1rem;
   }
 }
 @layer Header.Gnb {}
@@ -1349,6 +1368,22 @@
     flex-direction: column;
     gap: 0.8rem;
   }
+  main {
+    padding-top: 2.4rem;
+    padding-bottom: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  main section {
+    padding: 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  main section .input-group .input-title {
+    padding-bottom: 0.8rem;
+  }
 }
 @layer Layout.Align {
   .align {
@@ -1411,6 +1446,9 @@
     }
     .pl-16 {
       padding-left: 1.6rem;
+    }
+    .pl-8 {
+      padding-left: 0.8rem;
     }
     .pr-16 {
       padding-right: 1.6rem;
@@ -2416,23 +2454,7 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
     font-weight: 100;
   }
-  .join {
-    padding-top: 2.4rem;
-    padding-bottom: 5.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-  .join section {
-    padding: 0 1.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-  .join section .input-group .input-title {
-    padding-bottom: 0.8rem;
-  }
-  .join section .add-description {
+  .join .add-description {
     padding: 1.2rem;
   }
   .file + label {
@@ -2929,6 +2951,21 @@ button.swiper-pagination-bullet {
     flex-direction: column;
     gap: 0.8rem;
   }
+  .registration ul li .title-wrap p {
+    position: relative;
+  }
+  .registration ul li .title-wrap p::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: var(--zindex, 1);
+    transform: translate(-50%, -50%);
+    width: 0.4rem;
+    height: 0.4rem;
+    content: "";
+    border-radius: 70%;
+    background-color: var(--neutral-900);
+  }
   .list-btn-wrap {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -3314,6 +3351,9 @@ button.swiper-pagination-bullet {
     }
     .pl-16 {
       padding-left: 1.6rem;
+    }
+    .pl-8 {
+      padding-left: 0.8rem;
     }
     .pr-16 {
       padding-right: 1.6rem;

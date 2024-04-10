@@ -47,29 +47,8 @@
         }
     }
     .join {
-        padding-top: 2.4rem;
-        padding-bottom: 5.6rem;
-        display:flex;
-        flex-direction: column;
-        gap: 4rem;
-        section {
-            padding: 0 1.6rem;
-            display:flex;
-            flex-direction: column;
-            gap: 1.6rem;
-            .input-group {
-                .input-title {
-                    padding-bottom: 0.8rem;
-                }
-                input {
-                    &.input-ico-search {
-                        
-                    }
-                }
-            }
-            .add-description {
-                padding: 1.2rem;
-            }
+        .add-description {
+            padding: 1.2rem;
         }
         
     }

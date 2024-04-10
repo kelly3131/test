@@ -6,4 +6,11 @@
         font-weight: 500;
         line-height: rem(18);
     }
+    .bar-type2 {
+        @include bar(line, rem(8), rem(2), rem(4), var(--neutral-300));
+        color: var(--neutral-700);
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: rem(18);
+    }
 }

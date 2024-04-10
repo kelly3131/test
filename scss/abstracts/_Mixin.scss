@@ -30,3 +30,25 @@
       }
   }
 }
+
+@mixin position($value, $x, $y, $z: 1) {
+    @if $value == "a" or $value == "absolute" {
+      position: absolute;
+    } @else if $value == "f" or $value == "fixed" {
+      position: fixed;
+    }
+  
+    // position: $value;
+    left: $x;
+    top: $y;
+    z-index: var(--zindex, $z);
+  
+    @if $x == 50% and $y == 50% {
+      transform: translate(-50%, -50%);
+    } @else if $x == 50% {
+      transform: translateX(-50%);
+    } @else if $y == 50% {
+      transform: translateY(-50%);
+    }
+  }
+  

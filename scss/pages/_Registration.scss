@@ -30,6 +30,23 @@
             flex-direction: column;
             gap: 0.8rem;
         }
+        ul {
+            li {
+                .title-wrap {
+                    p {
+                        position: relative;
+                        &::before {
+                            @include position(absolute, 50%, 50%);
+                            width: rem(4);
+                            height: rem(4);
+                            content: '';
+                            border-radius: 70%;
+                            background-color: var(--neutral-900);
+                        }
+                    }
+                }
+            }
+        }
     }
     .list-btn-wrap {
         display: grid;
@@ -58,4 +75,5 @@
             }
         }
     }
+    
 }

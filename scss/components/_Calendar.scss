@@ -1,0 +1,38 @@
+@layer Components.Calendar {
+    .calendar-group {
+        input[type="date"] { 
+            position: relative;
+            height: 4rem;
+            padding:0 1.6rem;
+            background: url(../../asset/images/ico_calendar.svg) no-repeat right 1.6rem center / 16px auto;
+            border: 0.1rem solid var(--neutral-300);
+            border-radius: 1.2rem;
+            font-size: 1.1rem;
+            color: var(--neutral-600);
+        }
+        input[type="date"]::-webkit-clear-button,
+        input[type="date"]::-webkit-inner-spin-button { display: none;} 
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: transparent;
+            cursor: pointer;
+        }
+
+        input[type="date"]::before {
+            content: attr(data-placeholder);
+            width: 100%;
+        }
+        input[type="date"]:valid::before {
+            display: none;
+        }
+        input[data-placeholder]::before {
+            color: var(--neutral-500);
+            font-size: 1.1rem;
+        }
+    }
+}
