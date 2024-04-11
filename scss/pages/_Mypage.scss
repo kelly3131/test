@@ -208,9 +208,9 @@
                 height: 4rem;
             }
             li, p {
-                color: var(--neutral-900);
-                font-size: 1.6rem;
-                font-weight: 600;
+                color: var(--neutral-600);
+                font-size: 1.5rem;
+                font-weight: 400;
                 &.logout {
                     margin-top: 4rem;
                     display: grid;
@@ -223,6 +223,10 @@
                     }
                 }
             }
+        }
+        .version {
+            font-size: 1.4rem;
+            color: var(--neutral-500);
         }
     }
     .mypage-terms {
@@ -237,6 +241,14 @@
                     line-height: 1.6;
                 }
             }
+        }
+    }
+
+    .my-subscribe {
+        .subscribe {
+            font-size: 1.2rem;
+            color: var(--neutral-600);
+            font-weight: 300;
         }
     }
 }

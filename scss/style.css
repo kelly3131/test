@@ -550,6 +550,52 @@
     width: 1.6rem;
     height: 1.6rem;
   }
+  .arrow-left, .arrow-right {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+  }
+  .arrow-left::before, .arrow-right::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    content: "";
+  }
+  .arrow-left::before {
+    left: 0;
+    background: url(../asset/images/ico_arrow_left_32.svg) no-repeat center;
+    background-size: 2.4rem auto;
+  }
+  .arrow-left.--16 {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .arrow-left.--16::before {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: 1.6rem auto;
+  }
+  .arrow-right::before {
+    right: 0;
+    background: url(../asset/images/ico_arrow_right_32.svg) no-repeat center;
+    background-size: 2.4rem auto;
+  }
+  .arrow-right.--16 {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .arrow-right.--16::before {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: 1.6rem auto;
+  }
+  .arrow-right--gray {
+    background: url(../asset/images/ico_arrow_right_gray2_24.svg) no-repeat center;
+    background-size: 2.4rem auto;
+  }
 }
 @layer Components.Heading {
   .title {
@@ -575,7 +621,7 @@
       font-size: 1.8rem;
       font-weight: 600;
     }
-    h4.group-title {
+    h4, h4.group-title {
       font-size: 1.6rem;
       font-weight: 600;
     }
@@ -1149,6 +1195,7 @@
     position: absolute;
     top: 4.2rem;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: auto;
     background-color: var(--white);
@@ -1185,7 +1232,7 @@
     position: relative;
     height: 4rem;
     padding: 0 1.6rem;
-    background: url(../../asset/images/ico_calendar.svg) no-repeat right 1.6rem center/16px auto;
+    background: url(../asset/images/ico_calendar.svg) no-repeat right 1.6rem center/16px auto;
     border: 0.1rem solid var(--neutral-300);
     border-radius: 1.2rem;
     font-size: 1.1rem;
@@ -2558,7 +2605,7 @@ button.swiper-pagination-bullet {
     content: "";
     width: 1.6rem;
     height: 1.6rem;
-    background: url(../../asset/images/ico_file.svg) no-repeat 0 0/contain;
+    background: url(../asset/images/ico_file.svg) no-repeat 0 0/contain;
   }
   section.add-registration-list .accordion {
     padding-bottom: 1.2rem;
@@ -2944,48 +2991,6 @@ button.swiper-pagination-bullet {
     color: var(--neutral-600);
     white-space: nowrap;
   }
-  .arrow-left, .arrow-right {
-    width: 2.4rem;
-    height: 2.4rem;
-    position: relative;
-  }
-  .arrow-left::before, .arrow-right::before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
-    content: "";
-  }
-  .arrow-left::before {
-    left: 0;
-    background: url(../asset/images/ico_arrow_left_32.svg) no-repeat center;
-    background-size: 2.4rem auto;
-  }
-  .arrow-left.--16 {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-  .arrow-left.--16::before {
-    width: 1.6rem;
-    height: 1.6rem;
-    background-size: 1.6rem auto;
-  }
-  .arrow-right::before {
-    right: 0;
-    background: url(../asset/images/ico_arrow_right_32.svg) no-repeat center;
-    background-size: 2.4rem auto;
-  }
-  .arrow-right.--16 {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-  .arrow-right.--16::before {
-    width: 1.6rem;
-    height: 1.6rem;
-    background-size: 1.6rem auto;
-  }
   ul.popup-labor-list {
     padding: 0 1.6rem;
   }
@@ -3125,6 +3130,22 @@ button.swiper-pagination-bullet {
   .div-wrap .img-wrap .img.no-img {
     border: 0.1rem dotted var(--neutral-500);
     background-color: var(--neutral-100);
+  }
+  .photo-added {
+    position: relative;
+  }
+  .photo-added::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    content: "";
+    background: url(../asset/images/ico_delete_circle_48.svg) no-repeat center;
+    background-size: 4.8rem auto;
   }
 }
 @layer Mypage {
@@ -3311,9 +3332,9 @@ button.swiper-pagination-bullet {
     height: 4rem;
   }
   .mypage-etc ul li, .mypage-etc ul p {
-    color: var(--neutral-900);
-    font-size: 1.6rem;
-    font-weight: 600;
+    color: var(--neutral-600);
+    font-size: 1.5rem;
+    font-weight: 400;
   }
   .mypage-etc ul li.logout, .mypage-etc ul p.logout {
     margin-top: 4rem;
@@ -3326,6 +3347,10 @@ button.swiper-pagination-bullet {
     font-weight: 500;
     text-align: center;
   }
+  .mypage-etc .version {
+    font-size: 1.4rem;
+    color: var(--neutral-500);
+  }
   .mypage-terms {
     padding: 0 1.6rem;
   }
@@ -3337,6 +3362,11 @@ button.swiper-pagination-bullet {
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.6;
+  }
+  .my-subscribe .subscribe {
+    font-size: 1.2rem;
+    color: var(--neutral-600);
+    font-weight: 300;
   }
 }
 @layer PopUp {

@@ -23,7 +23,8 @@
                 </div>
                 <div class="input-wrap">
                     <div class="title-wrap align both">
-                        <p class="input-title">회사주소</p>
+                        <p class="input-title">현장주소</p>
+                        <a class="txt-underline" href="../pages/map.html">지도보기</a>
                     </div>
                     <div class="address">
                         <input type="number" class="input h40" />
@@ -50,7 +51,16 @@
                             </span>
                         </div>
                     </div>
-                    <input type="text" class="input h40" placeholder="이 현장을 관리할 현장관리자를 입력하세요." />
+                    <div class="search-box-wrap">
+                        <input type="text" class="input h40" placeholder="이 현장을 관리할 현장관리자를 입력하세요." />
+                        <div class="search-result-box">
+                            <!-- hide 추가시 div 사라짐 -->
+                            
+                            <ul class="col-2">
+                                <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="input-wrap">
                     <div class="title-wrap align both">
@@ -66,7 +76,16 @@
                             </span>
                         </div>
                     </div>
-                    <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+                    <div class="search-box-wrap">
+                        <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+                        <div class="search-result-box">
+                            <!-- hide 추가시 div 사라짐 -->
+                            
+                            <ul class="col-2">
+                                <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -206,25 +225,25 @@
                         <p class="input-title">현장 사진(선택)</p>
                         <p class="txt-right input-txt-on">최대 8개</p>
                     </div>
-                    <div class="div-wrap">
+                    <div class="div-wrap photo-add">
                         <div class="wrap mt-8 mb-8">
                             <input type="file" id="file1_1" class="a11y-hidden file" />
                             <label for="file1_1">사진을 추가해주세요.</label>
                         </div>
                         <div class="img-wrap">
-                            <button class="img">
+                            <button class="img photo-added">
                                 <img src="../asset/images/company-img1.png" alt="">
                             </button>
-                            <button class="img">
+                            <button class="img photo-added">
                                 <img src="../asset/images/company-img1.png" alt="">
                             </button>
-                            <button class="img">
+                            <button class="img photo-added">
                                 <img src="../asset/images/company-img1.png" alt="">
                             </button>
-                            <button class="img">
+                            <button class="img photo-added">
                                 <img src="../asset/images/company-img1.png" alt="">
                             </button>
-                            <button class="img">
+                            <button class="img photo-added">
                                 <img src="../asset/images/company-img1.png" alt="">
                             </button>
                             <button class="img no-img">
@@ -295,9 +314,9 @@
                         </button>                   
                         <button class="btn red-line radius small fullsize delete align vm">
                             노출정지
-                        </button>                   
+                        </button>
                     </div>
-                    <div class="btn-wrap mt-16">
+                    <div class="btn-wrap mt-24">
                         <button class="btn primary radius small fullsize">신규 공지 추가 <img class="circle-plus" src="../asset/images/ico_plus_circle_24.svg" alt=""></button>
                     </div>
                     <div class="input-wrap align-column add-list">

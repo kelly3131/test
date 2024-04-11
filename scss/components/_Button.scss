@@ -301,4 +301,58 @@
         width: 1.6rem;
         height: 1.6rem;
     }
+
+    .arrow-left, .arrow-right {
+        width: 2.4rem;
+        height: 2.4rem;
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            content: "";
+        }
+    }
+    .arrow-left {
+        &::before {
+            left:0;
+            background: url(../asset/images/ico_arrow_left_32.svg) no-repeat center;
+            background-size: 2.4rem auto;
+        }
+        &.--16 {
+            width: 1.6rem;
+            height: 1.6rem;
+            &::before {
+                width: 1.6rem;
+                height: 1.6rem;
+                background-size: 1.6rem auto;
+            }
+        }
+    }
+    .arrow-right {
+        &::before {
+            right:0;
+            background: url(../asset/images/ico_arrow_right_32.svg) no-repeat center;
+            background-size: 2.4rem auto;
+        }
+        &.--16 {
+            width: 1.6rem;
+            height: 1.6rem;
+            &::before {
+                width: 1.6rem;
+                height: 1.6rem;
+                background-size: 1.6rem auto;
+            }
+        }
+        &--gray {
+            background: url(../asset/images/ico_arrow_right_gray2_24.svg) no-repeat center;
+            background-size: 2.4rem auto;
+        }
+    }
+
+
+
 }
