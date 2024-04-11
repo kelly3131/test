@@ -8,12 +8,18 @@
             align-items: center;
             height: 4rem;
             
+            
             + li {
                 margin-top: -0.1rem;
                 border-top: 1px solid var(--neutral-300);
             }
             label {
                 font-size: 1.4rem !important;
+            }
+        }
+        &.column-3 {
+            li {
+                grid-template-columns: 1fr 7rem 7rem;
             }
         }
         img {
@@ -27,6 +33,8 @@
             overflow: hidden;
         }
         .list-item {
+            padding-left: 0.8rem;
+            padding-right: 0.8rem;
             color: var(--neutral-600);
             font-size: 1.2rem;
             font-weight: 400;
@@ -40,6 +48,16 @@
                 }
                 &.off {
                     color: var(--neutral-500);
+                }
+            }
+        }
+        &.column-3 {
+            .list-item:first-of-type {
+                text-align: left;
+            }
+            .subject {
+                .list-item {
+                    text-align: center;
                 }
             }
         }

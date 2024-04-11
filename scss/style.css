@@ -1307,6 +1307,9 @@
   .line-list li label {
     font-size: 1.4rem !important;
   }
+  .line-list.column-3 li {
+    grid-template-columns: 1fr 7rem 7rem;
+  }
   .line-list img {
     width: auto;
     height: 2.2rem;
@@ -1318,6 +1321,8 @@
     overflow: hidden;
   }
   .line-list .list-item {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
     color: var(--neutral-600);
     font-size: 1.2rem;
     font-weight: 400;
@@ -1331,6 +1336,23 @@
   }
   .line-list .list-item.list-posting.off {
     color: var(--neutral-500);
+  }
+  .line-list.column-3 .list-item:first-of-type {
+    text-align: left;
+  }
+  .line-list.column-3 .subject .list-item {
+    text-align: center;
+  }
+}
+@layer Components.Tag {
+  .tag {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-500);
+    background-color: var(--white);
+    border: 0.1rem solid var(--primary-200);
+    border-radius: 1.2rem;
   }
 }
 @layer Header.Gnb {}
@@ -1638,6 +1660,9 @@
     .area-bar.h1 {
       background-color: var(--neutral-300);
       height: 0.1rem;
+    }
+    .gap-0 {
+      gap: 0;
     }
     .gap-8 {
       gap: 0.8rem;
@@ -3408,10 +3433,6 @@ button.swiper-pagination-bullet {
   .business-list-wrap .div-title {
     gap: 0.4rem;
   }
-  .business-list-wrap .sub-txt {
-    font-size: 1.3rem;
-    color: var(--neutral-500);
-  }
   .business-list-wrap ul.business-list li {
     height: 4rem;
     color: var(--neutral-600);
@@ -3422,6 +3443,16 @@ button.swiper-pagination-bullet {
   .business-list-wrap ul.business-list li a {
     width: 100%;
     height: 100%;
+  }
+  .sub-txt {
+    font-size: 1.3rem;
+    color: var(--neutral-500);
+  }
+  .enterprise-edit-business .top-manager-wrap {
+    padding: 0.4rem 1.6rem;
+    font-size: 1.4rem;
+    color: var(--neutral-600);
+    background-color: var(--neutral-100);
   }
 }
 @layer PopUp {
@@ -3620,6 +3651,9 @@ button.swiper-pagination-bullet {
     .area-bar.h1 {
       background-color: var(--neutral-300);
       height: 0.1rem;
+    }
+    .gap-0 {
+      gap: 0;
     }
     .gap-8 {
       gap: 0.8rem;
