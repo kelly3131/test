@@ -685,6 +685,21 @@
       font-weight: 300;
       border-radius: 1.4rem;
     }
+    .f-weight-500 {
+      font-weight: 500;
+    }
+    .f-weight-600 {
+      font-weight: 600;
+    }
+    .f-weight-700 {
+      font-weight: 700;
+    }
+    .f-weight-800 {
+      font-weight: 800;
+    }
+    .f-weight-900 {
+      font-weight: 900;
+    }
   }
   @layer Emphasis {
     strong {
@@ -3370,6 +3385,14 @@ button.swiper-pagination-bullet {
     font-weight: 400;
     line-height: 1.6;
   }
+  .registered-businesses {
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    color: var(--neutral-600);
+    font-weight: 300;
+    background-color: var(--neutral-200);
+  }
   .my-subscribe .subscribe {
     margin-top: 0.8rem;
     padding: 1.2rem;
@@ -3381,6 +3404,13 @@ button.swiper-pagination-bullet {
   }
   .business-list-wrap {
     gap: 0.8rem;
+  }
+  .business-list-wrap .div-title {
+    gap: 0.4rem;
+  }
+  .business-list-wrap .sub-txt {
+    font-size: 1.1rem;
+    color: var(--neutral-500);
   }
   .business-list-wrap ul.business-list li {
     height: 4rem;

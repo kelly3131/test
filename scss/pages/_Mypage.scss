@@ -242,7 +242,14 @@
             }
         }
     }
-
+    .registered-businesses {
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            font-size: 1.2rem;
+            color: var(--neutral-600);
+            font-weight: 300;
+            background-color: var(--neutral-200);
+    }
     .my-subscribe {
         .subscribe {
             margin-top: 0.8rem;
@@ -256,6 +263,13 @@
     }
     .business-list-wrap {
         gap: 0.8rem;
+        .div-title {
+            gap: 0.4rem;
+        }
+        .sub-txt {
+            font-size: 1.1rem;
+            color: var(--neutral-500);
+        }
         ul.business-list {
             li {
                 height: 4rem;
@@ -270,5 +284,7 @@
             }
         }
     }
-    
+    .enterprise-edit-business {
+        
+    }
 }
