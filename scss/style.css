@@ -3388,7 +3388,7 @@ button.swiper-pagination-bullet {
   .registered-businesses {
     padding: 1.2rem;
     border-radius: 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--neutral-600);
     font-weight: 300;
     background-color: var(--neutral-200);
@@ -3409,7 +3409,7 @@ button.swiper-pagination-bullet {
     gap: 0.4rem;
   }
   .business-list-wrap .sub-txt {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--neutral-500);
   }
   .business-list-wrap ul.business-list li {
