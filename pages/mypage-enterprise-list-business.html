@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/style.css" />
-    <script defer src="../js/common.js"></script>
     <title>건설세상</title>
 </head>
 <body>
@@ -23,7 +22,8 @@
                 <strong class="top-manager">최고관리자</strong><span class="name">김건설</span> 
             </p>
             <div class="div-wrap txt-right pl-16 pr-16">
-                <button class="btn small radius white">사업자등록증 보기</button>
+                <button class="btn small radius white" onclick="openModalA()">사업자등록증 보기</button>
+
             </div>
         </section>
         <section class="gap-0">
@@ -66,6 +66,32 @@
     <footer>
         
     </footer>
-    <div></div>
+    
+    <div class="modal-container" id="myModalA">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <p>사업자등록증 보기</p>
+                </div>
+                <span class="close" onclick="closeModalA()"><img src="../asset/images/ico_close_gray_24.svg" alt=""></span>
+            </div>
+            <div class="modal-inner-content">
+                <img src="../asset/images/test.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+         // 모달 열기
+        function openModalA() {
+            var modal = document.getElementById('myModalA');
+            modal.style.display = 'block';
+        }
+
+        // 모달 닫기
+        function closeModalA() {
+            var modal = document.getElementById('myModalA');
+            modal.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
