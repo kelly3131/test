@@ -3564,9 +3564,6 @@ button.swiper-pagination-bullet {
     padding: 40px 78px;
     border-bottom: 1px solid #e8e8e8;
   }
-  body:has(.modal-container) {
-    overflow: hidden;
-  }
   .modal-container {
     display: none;
     position: fixed;
@@ -3617,7 +3614,6 @@ button.swiper-pagination-bullet {
     padding: 1.6rem;
     width: 80%;
     height: auto;
-    overflow: hidden;
   }
   .modal-inner-content img {
     width: 100%;

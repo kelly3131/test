@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/style.css" />
-    <script defer src="../js/common.js"></script>
-    <title>건설세상</title>
+    <title>현장 정보 등록</title>
 </head>
 <body>
     <header class="sub-header">
         <button class="btn-back" aria-label="뒤로가기"></button>
-        <p>현장 정보 수정</p>
-        <button type="button" class="close hide" aria-label="닫기"></button>
+        <p>현장 정보 등록</p>
+        <p class="hide"></p>
     </header>
-    <main class="enterprise-edit-business registration">
+    <main class="registration">
+
         <section>
-            <h2 class="title">현장 내용을 편집할 수 있습니다.</h2>
+            <h2 class="title">현장에 대해 알려주세요.</h2>
             <div class="input-group">
                 <div class="input-wrap">
                     <p class="input-title">현장명</p>
-                    <input type="text" class="input h40" placeholder="현장명 현장명" />
+                    <input type="text" class="input h40" placeholder="공사예정 또는 공사중인 현장명을 입력하세요." />
                 </div>
                 <div class="input-wrap">
                     <div class="title-wrap align both">
@@ -27,10 +27,10 @@
                         <a class="txt-underline" href="../pages/map.html">지도보기</a>
                     </div>
                     <div class="address">
-                        <input type="number" class="input h40" placeholder="000-000"/>
+                        <input type="number" class="input h40" />
                         <button class="btn small radius white">우편번호 찾기</button>
-                        <input type="text" class="input h40"  placeholder="주소주소주소"/>
-                        <input type="text" class="input h40" placeholder="상세주소" />
+                        <input type="text" class="input h40" />
+                        <input type="text" class="input h40" placeholder="상세주소를 입력하세요." />
                     </div>
                     <span class="align right">
                         <input type="checkbox" name="chk" id="chk6" class="a11y-hidden checkbox">
@@ -46,14 +46,20 @@
                                 <label for="radio1">공개</label>
                             </span>
                             <span class="txt-right">
-                                <input type="radio" name="radio1" id="radio2" class="a11y-hidden radio" checked>
+                                <input type="radio" name="radio1" id="radio2" class="a11y-hidden radio">
                                 <label for="radio2">비공개</label>
                             </span>
                         </div>
                     </div>
                     <div class="search-box-wrap">
-                        <input type="text" class="input h40" placeholder="현장관리자 이름" />
-                        
+                        <input type="text" class="input h40" placeholder="이 현장을 관리할 현장관리자를 입력하세요." />
+                        <div class="search-result-box">
+                            <!-- hide 추가시 div 사라짐 -->
+                            
+                            <ul class="col-2">
+                                <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="input-wrap">
@@ -65,13 +71,20 @@
                                 <label for="radio3">공개</label>
                             </span>
                             <span class="txt-right">
-                                <input type="radio" name="radio2" id="radio4" class="a11y-hidden radio" checked>
+                                <input type="radio" name="radio2" id="radio4" class="a11y-hidden radio">
                                 <label for="radio4">비공개</label>
                             </span>
                         </div>
                     </div>
                     <div class="search-box-wrap">
                         <input type="text" class="input h40" placeholder="이 현장을 관리할 중간관리자를 입력하세요." />
+                        <div class="search-result-box">
+                            <!-- hide 추가시 div 사라짐 -->
+                            
+                            <ul class="col-2">
+                                <li><span class="company-name">한빛건설</span><span class="txt-right">010-1234-4**3</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -363,10 +376,34 @@
                 </div>
             </div>
         </section>
+        <section class="btn-wrap">
+            <a href="javascript:;" class="btn --disabled regular fullsize">다음</a>
+            <!-- --disabled 대신 --active 넣으면 활성화 -->
+        </section>
     </main>
     <footer>
-        
+        <div class="footer-group">
+            <button>
+                <img src="../asset/images/ico_footer_01_24_line.svg" alt="">
+                <p>홈</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_02_24_line.svg" alt="">
+                <p>요청</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_03_24_line.svg" alt="">
+                <p>승인</p>
+            </button>
+            <button>
+                <img src="../asset/images/ico_footer_04_24_line.svg" alt="">
+                <p>문서관리</p>
+            </button>
+            <button class="--active">
+                <img src="../asset/images/ico_footer_05_24_filled.svg" alt="">
+                <p>마이건설</p>
+            </button>
+        </div>
     </footer>
-    <div></div>
 </body>
 </html>
