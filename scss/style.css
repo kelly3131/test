@@ -1575,6 +1575,18 @@
   main section .input-group .input-title {
     padding-bottom: 0.8rem;
   }
+  main.preparing section {
+    text-align: center;
+  }
+  main.preparing section .div-wrap p {
+    padding-bottom: 2rem;
+    color: var(--neutral-600);
+    font-size: 2rem;
+  }
+  main.preparing section .div-wrap img {
+    width: 30rem;
+    height: auto;
+  }
 }
 @layer Layout.Align {
   .align {

@@ -109,4 +109,20 @@
             }
         }
     }
+    main.preparing {
+        section {
+            text-align: center;
+            .div-wrap {
+                p {
+                    padding-bottom: 2rem;
+                    color: var(--neutral-600);
+                    font-size: 2rem;
+                }
+                img {
+                    width: 30rem;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
