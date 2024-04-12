@@ -46,25 +46,32 @@
                     }
                 }
         }
-        .add-settitle {
-            position: relative;
-            margin-bottom: 0.8rem;
-            &::before {
-                @include position(absolute, -1rem, 50%, 0);
-                width: rem(4);
-                height: rem(4);
-                content: '';
-                border-radius: 70%;
-                background-color: var(--neutral-900);
-            }
+    }
+    .add-settitle {
+        position: relative;
+        margin-bottom: 0.8rem;
+        &::before {
+            @include position(absolute, -1rem, 50%, 0);
+            width: rem(4);
+            height: rem(4);
+            content: '';
+            border-radius: 70%;
+            background-color: var(--neutral-900);
         }
-        .add-list {
-            padding: 0.8rem;
-            margin-top: 0.8rem;
-            background-color: var(--neutral-100);
-            .add-settitle {
-                margin-bottom: 0.8rem;
-            }
+    }
+    .add-list, .notice-group {
+        padding: 0.8rem;
+        margin-top: 0.8rem;
+        background-color: var(--neutral-100);
+        .add-settitle {
+            margin-bottom: 0.8rem;
+        }
+    }
+    .edit-company-about-us {
+
+        .notice-group {
+            padding: 1.2rem;
+            border-radius: 1.2rem;
         }
     }
     .list-btn-wrap {

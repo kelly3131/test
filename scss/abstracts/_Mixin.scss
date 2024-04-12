@@ -6,9 +6,13 @@
   //   @content;
   // }
 }
-@mixin bar($method, $width, $height, $margin, $background) {
+@mixin bar($method1, $method2, $width, $height, $margin, $background) {
   // $method가 선표현방식이라면 그렇게 갈것이고, 이미지 표현방식이라면 ~~
-  display: flex;
+  @if $method1 == 'grid'{
+    display: grid;
+  } @else if $method1 == 'flex' {
+      display: flex;
+  }
   > * {
       // > * 부모 기준으로 모든 자신선택자. p, div, span 상관없음
       display: flex;
@@ -21,9 +25,9 @@
               width: $width;
               height: $height;
               margin: 0 $margin;
-              @if $method == 'line' or $method == '1' {
+              @if $method2 == 'line' or $method2 == '1' {
                   background-color: $background;
-              } @else if $method == 'image' or $method == 'img' or $method == 'i' {
+              } @else if $method == 'image' or $method2 == 'img' or $method2 == 'i' {
                   @include background($background, null, null, contain);
               }
           }

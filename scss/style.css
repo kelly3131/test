@@ -1178,6 +1178,25 @@
     margin: 0 0.4rem;
     background-color: var(--neutral-300);
   }
+  .bar-type3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: var(--neutral-700);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+  }
+  .bar-type3 > * {
+    display: flex;
+    align-items: center;
+  }
+  .bar-type3 > * + *::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.2rem;
+    margin: 0 0.4rem;
+    background-color: var(--neutral-300);
+  }
 }
 @layer Certification {
   .certification-number-wrap {
@@ -3107,11 +3126,11 @@ button.swiper-pagination-bullet {
     border-radius: 70%;
     background-color: var(--neutral-900);
   }
-  .registration .add-settitle {
+  .add-settitle {
     position: relative;
     margin-bottom: 0.8rem;
   }
-  .registration .add-settitle::before {
+  .add-settitle::before {
     position: absolute;
     left: -1rem;
     top: 50%;
@@ -3123,13 +3142,17 @@ button.swiper-pagination-bullet {
     border-radius: 70%;
     background-color: var(--neutral-900);
   }
-  .registration .add-list {
+  .add-list, .notice-group {
     padding: 0.8rem;
     margin-top: 0.8rem;
     background-color: var(--neutral-100);
   }
-  .registration .add-list .add-settitle {
+  .add-list .add-settitle, .notice-group .add-settitle {
     margin-bottom: 0.8rem;
+  }
+  .edit-company-about-us .notice-group {
+    padding: 1.2rem;
+    border-radius: 1.2rem;
   }
   .list-btn-wrap {
     display: grid;

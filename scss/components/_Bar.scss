@@ -1,13 +1,21 @@
 @layer Components.Bar{
     .bar-type1 {
-        @include bar(line, rem(1), rem(10), rem(10), var(--neutral-400));
+        @include bar(flex, line, rem(1), rem(10), rem(10), var(--neutral-400));
         color: var(--neutral-700);
         font-size: rem(12);
         font-weight: 500;
         line-height: rem(18);
     }
     .bar-type2 {
-        @include bar(line, rem(8), rem(2), rem(4), var(--neutral-300));
+        @include bar(flex, line, rem(8), rem(2), rem(4), var(--neutral-300));
+        color: var(--neutral-700);
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: rem(18);
+    }
+    .bar-type3 {
+        @include bar(grid, line, rem(8), rem(2), rem(4), var(--neutral-300));
+        grid-template-columns: 1fr 1fr;
         color: var(--neutral-700);
         font-size: rem(12);
         font-weight: 500;
