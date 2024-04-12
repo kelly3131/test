@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/style.css" />
+    <script defer src="../js/common.js"></script>
+    <title>건설세상</title>
+</head>
+<body>
+    <header class="sub-header">
+        <button class="btn-back" aria-label="뒤로가기"></button>
+        <p></p>
+        <button type="button" class="close hide" aria-label="닫기"></button>
+    </header>
+    <main class="enterprise-edit-business gap-0">
+        <section class="pl-0 pr-0 w100">
+            <div class="div-wrap align vm gap-8 pl-16 pr-16">
+                <h3 class="group-title">(주)건설세상</h3>
+                <div class="tag">시공사(건설회사)</div>
+            </div>
+            <p class="top-manager-wrap align vm gap-8">
+                <strong class="top-manager">최고관리자</strong><span class="name">김건설</span> 
+            </p>
+            <div class="div-wrap txt-right pl-16 pr-16">
+                <button class="btn small radius white">사업자등록증 보기</button>
+            </div>
+        </section>
+        <section class="gap-0">
+            <h4>현장 리스트</h4>
+            <p class="sub-txt mb-8 mt-16">현장명 클릭시 편집화면으로 이동합니다.</p>
+            <div class="company-notice">
+                <ul class="company-notice-list line-list column-3">
+                    <li class="subject">
+                        <div class="list-item list-subject">현장명</div>
+                        <div class="list-item list-writer">중간관리자</div>
+                        <div class="list-item list-posted-date">현장관리자</div>
+                    </li>
+                    <li>
+                        
+                        <div class="list-item list-subject"><a class="txt-underline" href="">은평 대조동 아파트 건설</a></div>
+                        <div class="list-item list-writer">김건설</div>
+                        <div class="list-item list-posted-date">선우건설</div>
+                    </li>
+                    <li>
+                        
+                        <div class="list-item list-subject"><a class="txt-underline" href="">구산동 구산 건설 A</a></div>
+                        <div class="list-item list-writer">김건설</div>
+                        <div class="list-item list-posted-date">선우건설</div>
+                    </li>
+                    <li>
+                        
+                        <div class="list-item list-subject"><a class="txt-underline" href="">건설세상 사옥공사 건설세상 사옥공사 건설세상 사옥공사</a></div>
+                        <div class="list-item list-writer">김건설</div>
+                        <div class="list-item list-posted-date">선우건설</div>
+                    </li>
+                </ul>
+                
+                <div class="btn-wrap mt-24">
+                    <a class="btn primary radius small fullsize" href="./registration.html">신규 현장 등록 <img class="circle-plus" src="../asset/images/ico_plus_circle_24.svg" alt=""></a>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <div></div>
+</body>
+</html>
