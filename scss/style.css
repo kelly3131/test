@@ -808,7 +808,7 @@
       height: 4rem;
       padding-left: 1.6rem;
       border-radius: 1.2rem;
-      background: url(../asset/images/ico_arrow_down_black_24.svg) no-repeat right 1.6rem center/2.4rem auto;
+      background: url(../asset/images/ico_arrow_down_gray_24.svg) no-repeat right 0.8rem center/2.4rem auto;
     }
   }
   @layer InputSearch {
@@ -3143,16 +3143,18 @@ button.swiper-pagination-bullet {
     background-color: var(--neutral-900);
   }
   .add-list, .notice-group {
-    padding: 0.8rem;
-    margin-top: 0.8rem;
-    background-color: var(--neutral-100);
+    padding: 1.6rem;
+    margin-top: 1.2rem;
+    border-radius: 1.2rem;
   }
   .add-list .add-settitle, .notice-group .add-settitle {
     margin-bottom: 0.8rem;
   }
+  .add-list.add-list, .notice-group.add-list {
+    background-color: var(--neutral-100);
+  }
   .edit-company-about-us .notice-group {
-    padding: 1.2rem;
-    border-radius: 1.2rem;
+    border: 1px solid var(--neutral-300);
   }
   .list-btn-wrap {
     display: grid;
@@ -3472,6 +3474,13 @@ button.swiper-pagination-bullet {
   }
   .company-situation li .count {
     margin-left: 0.4rem;
+  }
+  ul.sns-write-wrap li {
+    display: grid;
+    grid-template-columns: min-content 10rem 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 0.4rem;
   }
 }
 @layer PopUp {

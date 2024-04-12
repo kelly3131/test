@@ -290,4 +290,15 @@
             }
         }
     }
+
+    ul.sns-write-wrap {
+        
+        li {
+            display: grid;
+            grid-template-columns: min-content 10rem 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
+            gap: 0.4rem;
+        }
+    }
 }
