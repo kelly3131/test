@@ -3442,6 +3442,14 @@ button.swiper-pagination-bullet {
     color: var(--neutral-600);
     background-color: var(--neutral-100);
   }
+  .company-situation li {
+    padding: 1.2rem 0;
+    font-size: 1.4rem;
+    color: var(--neutral-700);
+  }
+  .company-situation li .count {
+    margin-left: 0.4rem;
+  }
 }
 @layer PopUp {
   .up-slide {
