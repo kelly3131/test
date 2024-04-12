@@ -1578,6 +1578,9 @@
   main.preparing section {
     text-align: center;
   }
+  main.preparing section .div-wrap {
+    padding-top: 4rem;
+  }
   main.preparing section .div-wrap p {
     padding-bottom: 2rem;
     color: var(--neutral-600);
