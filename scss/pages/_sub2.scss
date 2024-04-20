@@ -1,3 +1,34 @@
 @layer Pages.sub2 {
-
+    /* 스타일 */
+    details {
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    summary {
+      outline: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  
+    summary::-webkit-details-marker {
+      display: none;
+    }
+  
+    details[open] summary::before {
+      content: "\25BC"; /* ▼ */
+      padding-right: 10px;
+    }
+  
+    /* 활성화된 아코디언 항목 스타일 */
+    details[open] {
+      background-color: #ddd;
+    }
+  
+    /* 아코디언 내용 스타일 */
+    details > div {
+      padding: 10px 20px;
+    }
 }
